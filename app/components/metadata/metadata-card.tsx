@@ -1,10 +1,9 @@
-import { Image } from '@nextui-org/image';
 import { DateTime } from 'luxon';
 
-import { sanityImageBuilder } from '../../clients/sanity';
 import type { Metadata } from '../../controllers/get-metadatas-by-category';
 import { A } from '../elements/a';
 import { Heading } from '../elements/heading';
+import { SanityImage } from '../elements/sanity-image';
 
 type MetadataCardProperties = {
   readonly isAboveTheFold: boolean;
@@ -15,13 +14,6 @@ export function MetadataCard({
   metadata,
   isAboveTheFold,
 }: MetadataCardProperties) {
-  const featuredImageUrl = sanityImageBuilder
-    .image(metadata.featuredImage.image.asset.url)
-    .height(150)
-    .width(150)
-    .format('webp')
-    .url();
-
   return (
     <A
       className="rounded-lg border-2 p-2"
@@ -39,12 +31,12 @@ export function MetadataCard({
           </div>
         </div>
         <div className="flex items-center pt-2">
-          <Image
+          <SanityImage
             alt={metadata.featuredImage.description}
             className="rounded-xl"
             height={100}
             loading={isAboveTheFold ? undefined : 'lazy'}
-            src={featuredImageUrl}
+            src={metadata.featuredImage.image.asset.url}
             width={100}
           />
         </div>
