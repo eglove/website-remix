@@ -27,6 +27,7 @@
     "@sanity/client": "^6.9.0",
     "@sanity/image-url": "^1.0.2",
     "color-convert": "^2.0.1",
+    "convert": "^4.14.0",
     "framer-motion": "^10.16.5",
     "isbot": "^3.6.8",
     "luxon": "^3.4.4",
