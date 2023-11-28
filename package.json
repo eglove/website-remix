@@ -16,6 +16,7 @@
     "extends": "ethang"
   },
   "dependencies": {
+    "@ethang/use-form": "^1.6.37",
     "@ethang/util": "^2.0.14",
     "@nextui-org/react": "^2.2.9",
     "@remix-run/css-bundle": "^2.3.1",

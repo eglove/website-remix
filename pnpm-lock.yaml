@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ethang/use-form':
+    specifier: ^1.6.37
+    version: 1.6.37(react@18.2.0)(zod@3.22.4)
   '@ethang/util':
     specifier: ^2.0.14
     version: 2.0.14
@@ -962,6 +965,16 @@ packages:
     resolution: {integrity: sha512-ut5V+D+fOoWPgGGNj83GGjnntO39xDy6DWxO0wb7Jp3DcMX0TfIqdzHF85VTQkerdyGmuuMD9AKAo5KiNlf/AQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@ethang/use-form@1.6.37(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-dcF2UigkUSgYHNUa7rKVx9pbibFwkAmdlB81/QewicWGYium6H7ZIsJncA4088fILZ4TxnwoLSmF8kN2SWFRHw==}
+    peerDependencies:
+      react: ^18.2.0
+      zod: ^3.21.4
+    dependencies:
+      react: 18.2.0
+      zod: 3.22.4
+    dev: false
 
   /@ethang/util@2.0.14:
     resolution: {integrity: sha512-Iyvw1sfPhC2zlM6vRRiYvDfKcSoaYbwtBts0w7WMWzkhLRCR0x8oFOjNMmKlAVI/5Dg6z8KwHmLzITd7PagA2g==}
@@ -10291,6 +10304,10 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
