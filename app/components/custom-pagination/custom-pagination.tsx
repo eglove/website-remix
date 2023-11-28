@@ -29,7 +29,6 @@ export function CustomPagination({
   className,
   dotsJump,
   isActive,
-  key,
   page,
   searchParameters,
   total,
@@ -41,7 +40,6 @@ export function CustomPagination({
         <PaginationNextPrevious
           className={className}
           isDisabled={categoryPage >= total}
-          key={key}
           type={PaginationItemType.NEXT}
           searchParameterString={setUrl(
             searchParameters,
@@ -57,7 +55,6 @@ export function CustomPagination({
         <PaginationNextPrevious
           className={className}
           isDisabled={categoryPage <= 1}
-          key={key}
           type={PaginationItemType.PREV}
           searchParameterString={setUrl(
             searchParameters,
@@ -84,7 +81,6 @@ export function CustomPagination({
         <PaginationLink
           className={className}
           isActive={isActive}
-          key={key}
           value="..."
           searchParameterString={setUrl(
             searchParameters,
@@ -100,7 +96,6 @@ export function CustomPagination({
         <PaginationLink
           className={className}
           isActive={isActive}
-          key={key}
           value={value}
           searchParameterString={setUrl(
             searchParameters,
