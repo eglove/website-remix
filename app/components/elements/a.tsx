@@ -1,3 +1,4 @@
+import { isNil } from '@ethang/util/data.js';
 import type { LinkProps } from '@nextui-org/link';
 import { Link } from '@nextui-org/link';
 // @ts-expect-error this type exists
@@ -11,6 +12,10 @@ type AProperties = Omit<RemixLinkProps, 'to'> &
   PropsWithChildren;
 
 export function A(properties: AProperties): JSX.Element {
+  if (!isNil(properties.to)) {
+    throw new Error('Use href, not to!');
+  }
+
   return (
     <Link as={RemixLink} {...properties} href={undefined} to={properties.href}>
       {properties.children}
