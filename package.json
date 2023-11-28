@@ -16,12 +16,14 @@
     "extends": "ethang"
   },
   "dependencies": {
-    "@ethang/util": "^2.0.13",
+    "@ethang/util": "^2.0.14",
     "@nextui-org/react": "^2.2.9",
     "@remix-run/css-bundle": "^2.3.1",
     "@remix-run/node": "^2.3.1",
     "@remix-run/react": "^2.3.1",
     "@remix-run/serve": "^2.3.1",
+    "@sanity/client": "^6.9.0",
+    "@sanity/image-url": "^1.0.2",
     "framer-motion": "^10.16.5",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
