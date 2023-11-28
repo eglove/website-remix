@@ -5,12 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ethang/hooks':
+    specifier: ^1.5.4
+    version: 1.5.4(react@18.2.0)
   '@ethang/use-form':
     specifier: ^1.6.37
     version: 1.6.37(react@18.2.0)(zod@3.22.4)
   '@ethang/util':
     specifier: ^2.0.14
     version: 2.0.14
+  '@faker-js/faker':
+    specifier: ^8.3.1
+    version: 8.3.1
   '@heroicons/react':
     specifier: ^2.0.18
     version: 2.0.18(react@18.2.0)
@@ -59,12 +65,18 @@ dependencies:
   react-syntax-highlighter:
     specifier: ^15.5.0
     version: 15.5.0(react@18.2.0)
+  react-toastify:
+    specifier: ^9.1.3
+    version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
   tailwind-merge:
     specifier: ^2.0.0
     version: 2.0.0
   ua-parser-js:
     specifier: ^1.0.37
     version: 1.0.37
+  uuid:
+    specifier: ^9.0.1
+    version: 9.0.1
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -97,6 +109,9 @@ devDependencies:
   '@types/ua-parser-js':
     specifier: ^0.7.39
     version: 0.7.39
+  '@types/uuid':
+    specifier: ^9.0.7
+    version: 9.0.7
   eslint:
     specifier: ^8.38.0
     version: 8.54.0
@@ -987,6 +1002,14 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@ethang/hooks@1.5.4(react@18.2.0):
+    resolution: {integrity: sha512-8MURrRMngZKLBEue6rgoivH47Naayk9aSQcgsQ/piPOy0P2z4D52pPkQeUoMEm9Jqs6P8ecDUIOd7ojkOCO4Aw==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /@ethang/use-form@1.6.37(react@18.2.0)(zod@3.22.4):
     resolution: {integrity: sha512-dcF2UigkUSgYHNUa7rKVx9pbibFwkAmdlB81/QewicWGYium6H7ZIsJncA4088fILZ4TxnwoLSmF8kN2SWFRHw==}
     peerDependencies:
@@ -999,6 +1022,11 @@ packages:
 
   /@ethang/util@2.0.14:
     resolution: {integrity: sha512-Iyvw1sfPhC2zlM6vRRiYvDfKcSoaYbwtBts0w7WMWzkhLRCR0x8oFOjNMmKlAVI/5Dg6z8KwHmLzITd7PagA2g==}
+    dev: false
+
+  /@faker-js/faker@8.3.1:
+    resolution: {integrity: sha512-FdgpFxY6V6rLZE9mmIBb9hM0xpfvQOSNOLnzolzKwsE1DH+gC7lEKV1p1IbR0lAYyvYd5a4u3qWJzowUkw1bIw==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
     dev: false
 
   /@fastify/busboy@2.1.0:
@@ -3885,6 +3913,10 @@ packages:
 
   /@types/unist@2.0.10:
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
+
+  /@types/uuid@9.0.7:
+    resolution: {integrity: sha512-WUtIVRUZ9i5dYXefDEAI7sh9/O7jGvHg7Df/5O/gtH3Yabe5odI3UWopVR1qbPXQtvOxWu3mM4XxlYeZtMWF4g==}
+    dev: true
 
   /@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.54.0)(typescript@5.3.2):
     resolution: {integrity: sha512-TiZzBSJja/LbhNPvk6yc0JrX9XqhQ0hdh6M2svYfsHGejaKFIAGd9MQ+ERIMzLGlN/kZoYIgdxFV0PuljTKXag==}
@@ -8946,6 +8978,17 @@ packages:
       - '@types/react'
     dev: false
 
+  /react-toastify@9.1.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fPfb8ghtn/XMxw3LkxQBk3IyagNpF/LIKjOBflbexr2AWxAH1MJgvnESwEwBn9liLFXgTKWgBSdZpw9m4OTHTg==}
+    peerDependencies:
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
@@ -10082,6 +10125,11 @@ packages:
   /utils-merge@1.0.1:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
+
+  /uuid@9.0.1:
+    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
+    hasBin: true
+    dev: false
 
   /uvu@0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}
