@@ -10,6 +10,7 @@ export default {
   theme: {
     aspectRatio: {
       "2/1": "2/1",
+      "16/9": "16 / 9"
     },
     extend: {
       "gridTemplateColumns": {
