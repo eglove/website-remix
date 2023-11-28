@@ -17,7 +17,13 @@ export function A(properties: AProperties): JSX.Element {
   }
 
   return (
-    <Link as={RemixLink} {...properties} href={undefined} to={properties.href}>
+    <Link
+      as={RemixLink}
+      prefetch="intent"
+      {...properties}
+      href={undefined}
+      to={properties.href}
+    >
       {properties.children}
     </Link>
   );
