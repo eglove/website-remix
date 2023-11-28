@@ -3,6 +3,7 @@ import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData, useSearchParams } from '@remix-run/react';
 
+import { MetadataContainer } from '../components/metadata/metadata-container';
 import { getMetadatasByCategory } from '../controllers/get-metadatas-by-category';
 import type { Category } from '../controllers/types';
 import { categories } from '../controllers/types';
@@ -54,7 +55,13 @@ export default function Index() {
   return (
     <div className="grid gap-4">
       {loaderData.map((datum, index) => {
-        return <div key={Symbol(index).toString()}>{datum.count}</div>;
+        return (
+          <MetadataContainer
+            data={datum}
+            key={Symbol(index).toString()}
+            pages={pages}
+          />
+        );
       })}
     </div>
   );

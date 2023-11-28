@@ -12,7 +12,7 @@ type AProperties = Omit<RemixLinkProps, 'to'> &
 
 export function A(properties: AProperties): JSX.Element {
   return (
-    <Link as={RemixLink} to={properties.href} {...properties}>
+    <Link as={RemixLink} {...properties} href={undefined} to={properties.href}>
       {properties.children}
     </Link>
   );
