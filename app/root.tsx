@@ -12,6 +12,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
+import { Navigation } from './components/navigation';
 import styles from './tailwind.css';
 
 export const links: LinksFunction = () => {
@@ -36,6 +37,7 @@ export default function App() {
       </head>
       <body className="mt-4">
         <NextUIProvider>
+          <Navigation />
           <Card className="mx-auto my-4 max-w-5xl">
             <CardBody>
               <Outlet />
