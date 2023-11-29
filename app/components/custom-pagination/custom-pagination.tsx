@@ -1,5 +1,6 @@
 import type { PaginationItemRenderProps } from '@nextui-org/react';
 import { PaginationItemType } from '@nextui-org/react';
+import { EllipsisIcon } from '@nextui-org/shared-icons';
 import type { ReactNode } from 'react';
 
 import type { Category } from '../../controllers/types';
@@ -81,13 +82,14 @@ export function CustomPagination({
         <PaginationLink
           className={className}
           isActive={isActive}
-          value="..."
           searchParameterString={setUrl(
             searchParameters,
             category,
             String(jumpTo),
           )}
-        />
+        >
+          <EllipsisIcon />
+        </PaginationLink>
       );
     }
 
@@ -96,13 +98,14 @@ export function CustomPagination({
         <PaginationLink
           className={className}
           isActive={isActive}
-          value={value}
           searchParameterString={setUrl(
             searchParameters,
             category,
             String(value),
           )}
-        />
+        >
+          {value}
+        </PaginationLink>
       );
     }
   }

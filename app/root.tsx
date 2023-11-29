@@ -16,14 +16,12 @@ import { Navigation } from './components/navigation';
 import styles from './tailwind.css';
 
 export const links: LinksFunction = () => {
-  return [
-    ...(isNil(cssBundleHref)
-      ? [{ href: styles, rel: 'stylesheet' }]
-      : [
-          { href: cssBundleHref, rel: 'stylesheet' },
-          { href: styles, rel: 'stylesheet' },
-        ]),
-  ];
+  return isNil(cssBundleHref)
+    ? [{ href: styles, rel: 'stylesheet' }]
+    : [
+        { href: cssBundleHref, rel: 'stylesheet' },
+        { href: styles, rel: 'stylesheet' },
+      ];
 };
 
 export default function App() {
