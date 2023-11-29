@@ -20,9 +20,10 @@ export function SanityImage(properties: SanityImageProperties): JSX.Element {
 
   const fallback = sanityImageBuilder
     .image(properties.src)
-    .height(10)
-    .width(10)
+    .height(properties.height)
+    .width(properties.width)
     .blur(60)
+    .quality(10)
     .format('webp')
     .url();
 

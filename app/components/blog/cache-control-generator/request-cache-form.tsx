@@ -1,4 +1,4 @@
-import { useForm } from '@ethang/use-form';
+import { useForm } from '@ethang/use-form/index.js';
 import type { JSX } from 'react';
 
 import type { InputList } from './cache-control-form';

@@ -1,5 +1,5 @@
 import { useSet } from '@ethang/hooks/use-set.js';
-import { useForm } from '@ethang/use-form';
+import { useForm } from '@ethang/use-form/index.js';
 import type { ChangeEvent, FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import { z, ZodError } from 'zod';

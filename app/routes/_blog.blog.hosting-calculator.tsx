@@ -1,4 +1,4 @@
-import { useForm } from '@ethang/use-form';
+import { useForm } from '@ethang/use-form/index.js';
 import { Checkbox } from '@nextui-org/checkbox';
 import { Input } from '@nextui-org/input';
 import type { ChangeEvent, JSX } from 'react';

@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@ethang/hooks':
-    specifier: ^1.5.4
-    version: 1.5.4(react@18.2.0)
+    specifier: ^1.5.5
+    version: 1.5.5(react@18.2.0)
   '@ethang/use-form':
-    specifier: ^1.6.37
-    version: 1.6.37(react@18.2.0)(zod@3.22.4)
+    specifier: ^1.6.42
+    version: 1.6.42(react@18.2.0)(zod@3.22.4)
   '@ethang/util':
-    specifier: ^2.0.14
-    version: 2.0.14
+    specifier: ^2.0.15
+    version: 2.0.15
   '@faker-js/faker':
     specifier: ^8.3.1
     version: 8.3.1
@@ -36,8 +36,8 @@ dependencies:
     specifier: ^2.3.1
     version: 2.3.1(typescript@5.3.2)
   '@sanity/client':
-    specifier: ^6.9.0
-    version: 6.9.0
+    specifier: ^6.9.1
+    version: 6.9.1
   '@sanity/image-url':
     specifier: ^1.0.2
     version: 1.0.2
@@ -116,8 +116,8 @@ devDependencies:
     specifier: ^8.38.0
     version: 8.54.0
   eslint-config-ethang:
-    specifier: ^11.5.6
-    version: 11.5.6(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
+    specifier: ^11.5.7
+    version: 11.5.7(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2)
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5
@@ -150,6 +150,14 @@ packages:
 
   /@babel/code-frame@7.23.4:
     resolution: {integrity: sha512-r1IONyb6Ia+jYR2vvIDhdWdlTGhqbBoFqLTQidzZ4kepUFH15ejXvFHxCVbtl7BOXIudsIubf4E81xeA3h3IXA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      '@babel/highlight': 7.23.4
+      chalk: 2.4.2
+    dev: true
+
+  /@babel/code-frame@7.23.5:
+    resolution: {integrity: sha512-CgH3s1a96LipHCmSUmYFPwY7MNx8C3avkq7i4Wl3cfa662ldtUe4VM1TPXX70pfmrlWTb6jLqTYrZyT2ZTJBgA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/highlight': 7.23.4
@@ -1002,26 +1010,26 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ethang/hooks@1.5.4(react@18.2.0):
-    resolution: {integrity: sha512-8MURrRMngZKLBEue6rgoivH47Naayk9aSQcgsQ/piPOy0P2z4D52pPkQeUoMEm9Jqs6P8ecDUIOd7ojkOCO4Aw==}
+  /@ethang/hooks@1.5.5(react@18.2.0):
+    resolution: {integrity: sha512-PCLYp5U64KBlqDs2ROC9Zod6upmyLBQNLfIfcZHNV60htC0p96r6CNz51kD9huiJHc/t9a1FKsdmhMa74/NQ+g==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
       react: 18.2.0
     dev: false
 
-  /@ethang/use-form@1.6.37(react@18.2.0)(zod@3.22.4):
-    resolution: {integrity: sha512-dcF2UigkUSgYHNUa7rKVx9pbibFwkAmdlB81/QewicWGYium6H7ZIsJncA4088fILZ4TxnwoLSmF8kN2SWFRHw==}
+  /@ethang/use-form@1.6.42(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-bxaCSxmQcY79vNOPR/NUhPhblUyJxVEZbpXaBDhJ8b6zHfWqwVkgzt4j/2/ginX4+r+ET0w+YQukuT4xRwV0YQ==}
     peerDependencies:
       react: ^18.2.0
-      zod: ^3.21.4
+      zod: ^3.22.4
     dependencies:
       react: 18.2.0
       zod: 3.22.4
     dev: false
 
-  /@ethang/util@2.0.14:
-    resolution: {integrity: sha512-Iyvw1sfPhC2zlM6vRRiYvDfKcSoaYbwtBts0w7WMWzkhLRCR0x8oFOjNMmKlAVI/5Dg6z8KwHmLzITd7PagA2g==}
+  /@ethang/util@2.0.15:
+    resolution: {integrity: sha512-thscNLq8dFTHkK0/brrT9ErJMlWVShUt+sDuGmfRYOZ8YJp06e1bFKEzN9DeyUR/gZJuOBz90G4eLeVQ8jsSsg==}
     dev: false
 
   /@faker-js/faker@8.3.1:
@@ -3731,8 +3739,8 @@ packages:
     resolution: {integrity: sha512-2/U3GXA6YiPYQDLGwtGlnNgKYBSwCFIHf8Y9LUY5VATHdtbLlU0Y1R3QoBnT0aB4qv/BEiVVsj7LJXoQCgJ2vA==}
     dev: true
 
-  /@sanity/client@6.9.0:
-    resolution: {integrity: sha512-y2KV0Y/gqDiheuM6c6UTDX5+3fOX/tPIjKpvkyeYLxEJ0fnMXC/Vr1Bj0YEJ1xxVUDg+EGo9gwrc2QTHIInAhQ==}
+  /@sanity/client@6.9.1:
+    resolution: {integrity: sha512-k104Mp3n7uhmY/6DZ5oVxeX1pL3ixv3htodsqW3f2aEQnBXBcRYFQ9OL12p2jpSeOSicOve2joX2sBx0fJBdww==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.1
@@ -5416,8 +5424,17 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-ethang@11.5.6(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.29.1)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-j5s3Tqc8VkP/kazOOPYr+YHu0kZdv57WWMjpH22sLdHd8t0QmWtEvF0/N1fZbILIw8ihhbXtlhHqur9lpGOTJQ==}
+  /eslint-compat-utils@0.1.2(eslint@8.54.0):
+    resolution: {integrity: sha512-Jia4JDldWnFNIru1Ehx1H5s9/yxiRHY/TimCuUc0jNexew3cF1gI6CYZil1ociakfWO3rRqFjl1mskBblB3RYg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      eslint: 8.54.0
+    dev: true
+
+  /eslint-config-ethang@11.5.7(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.0.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.54.0)(prettier@3.1.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-1kzX1bddRlOoKZeRPpjZSjqjnBICbCfpLxrM7NkG+KjhlzgAqGN16pAXkX3FYeSwzRimay0dLWGtaMKgzwIRWQ==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.13.1
       '@typescript-eslint/parser': ^6.13.1
@@ -5427,7 +5444,7 @@ packages:
       eslint-config-xo-react: ^0.27.0
       eslint-config-xo-space: ^0.34.0
       eslint-config-xo-typescript: ^1.0.1
-      eslint-plugin-astro: ^0.29.1
+      eslint-plugin-astro: ^0.30.0
       eslint-plugin-functional: ^6.0.0
       eslint-plugin-import: ^2.29.0
       eslint-plugin-jsx-a11y: ^6.8.0
@@ -5452,7 +5469,7 @@ packages:
       eslint-config-xo-react: 0.27.0(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint@8.54.0)
       eslint-config-xo-space: 0.34.0(eslint@8.54.0)
       eslint-config-xo-typescript: 1.0.1(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)(typescript@5.3.2)
-      eslint-plugin-astro: 0.29.1(eslint@8.54.0)
+      eslint-plugin-astro: 0.30.0(eslint@8.54.0)
       eslint-plugin-functional: 6.0.0(eslint@8.54.0)(typescript@5.3.2)
       eslint-plugin-import: 2.29.0(@typescript-eslint/parser@6.13.1)(eslint@8.54.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.54.0)
@@ -5658,8 +5675,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-astro@0.29.1(eslint@8.54.0):
-    resolution: {integrity: sha512-ffuUc7zFz8HavaAVaS5iRUzWqBf3/YbrFWUhx0GxXW3gVtnbri5UyvkN8EMOkZWkNXG1zqD2y9dlEsAezhbC0w==}
+  /eslint-plugin-astro@0.30.0(eslint@8.54.0):
+    resolution: {integrity: sha512-LDbbs836SiHqhuiuAF4CPqSSWsfa7R8vfX5lckphCUD/kBFIsobViI8fuTyMktQ9isCg+Q86LIQAHTFl3PWKTA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -5669,6 +5686,7 @@ packages:
       '@typescript-eslint/types': 5.62.0
       astro-eslint-parser: 0.16.0
       eslint: 8.54.0
+      eslint-compat-utils: 0.1.2(eslint@8.54.0)
       postcss: 8.4.31
       postcss-selector-parser: 6.0.13
     transitivePeerDependencies:
@@ -8457,7 +8475,7 @@ packages:
     resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/code-frame': 7.23.4
+      '@babel/code-frame': 7.23.5
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4

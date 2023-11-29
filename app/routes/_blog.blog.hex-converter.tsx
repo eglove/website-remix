@@ -1,4 +1,4 @@
-import { useForm } from '@ethang/use-form';
+import { useForm } from '@ethang/use-form/index.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import { Input } from '@nextui-org/input';
 import { Snippet } from '@nextui-org/snippet';

@@ -1,4 +1,4 @@
-import { useForm } from '@ethang/use-form';
+import { useForm } from '@ethang/use-form/index.js';
 import { Button } from '@nextui-org/button';
 import { Input } from '@nextui-org/input';
 import { Select, SelectItem } from '@nextui-org/select';
