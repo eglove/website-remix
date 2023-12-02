@@ -10,7 +10,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from '@remix-run/react';
+import { twMerge } from 'tailwind-merge';
 
 import { Navigation } from './components/navigation';
 import styles from './tailwind.css';
@@ -25,22 +27,29 @@ export const links: LinksFunction = () => {
 };
 
 export default function App() {
+  const location = useLocation();
+  const isIgnoredPath = location.pathname === '/resume';
+
   return (
-    <html className="bg-sky-950" lang="en-US">
+    <html className={twMerge(!isIgnoredPath && 'bg-sky-950')} lang="en-US">
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <Meta />
         <Links />
       </head>
-      <body className="mt-4">
+      <body className={twMerge(!isIgnoredPath && 'mt-4')}>
         <NextUIProvider>
-          <Navigation />
-          <Card className="mx-auto my-4 max-w-5xl">
-            <CardBody>
-              <Outlet />
-            </CardBody>
-          </Card>
+          {!isIgnoredPath && <Navigation />}
+          {isIgnoredPath ? (
+            <Outlet />
+          ) : (
+            <Card className="mx-auto my-4 max-w-5xl">
+              <CardBody>
+                <Outlet />
+              </CardBody>
+            </Card>
+          )}
           <ScrollRestoration />
           <Scripts />
           <LiveReload />
