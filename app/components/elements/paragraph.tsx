@@ -10,7 +10,7 @@ export function Paragraph({
   ...rest
 }: Readonly<ParagraphProperties>): JSX.Element {
   return (
-    <p {...rest} className={twMerge('my-4', rest.className)}>
+    <p {...rest} className={twMerge('my-2', rest.className)}>
       {children}
     </p>
   );
