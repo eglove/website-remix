@@ -14,6 +14,7 @@ export function A(properties: AProperties): JSX.Element {
   return (
     <Link
       as={RemixLink}
+      prefetch="viewport"
       {...properties}
       href={undefined}
       to={properties.href ?? properties.to}
