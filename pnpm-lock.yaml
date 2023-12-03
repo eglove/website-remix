@@ -6,14 +6,14 @@ settings:
 
 dependencies:
   '@ethang/hooks':
-    specifier: ^1.5.8
-    version: 1.5.8(react@18.2.0)
+    specifier: ^1.5.14
+    version: 1.5.14(react@18.2.0)
   '@ethang/use-form':
-    specifier: ^1.6.45
-    version: 1.6.45(react@18.2.0)(zod@3.22.4)
+    specifier: ^1.6.48
+    version: 1.6.48(react@18.2.0)(zod@3.22.4)
   '@ethang/util':
-    specifier: ^2.0.18
-    version: 2.0.18
+    specifier: ^2.0.21
+    version: 2.0.21
   '@faker-js/faker':
     specifier: ^8.3.1
     version: 8.3.1
@@ -84,7 +84,7 @@ dependencies:
 devDependencies:
   '@ethang/project-builder':
     specifier: ^1.0.17
-    version: 1.0.17(@ethang/util@2.0.18)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2)
+    version: 1.0.17(@ethang/util@2.0.21)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2)
   '@remix-run/dev':
     specifier: ^2.3.1
     version: 2.3.1(@remix-run/serve@2.3.1)(typescript@5.3.2)
@@ -116,8 +116,8 @@ devDependencies:
     specifier: ^8.55.0
     version: 8.55.0
   eslint-config-ethang:
-    specifier: ^11.5.10
-    version: 11.5.10(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.1.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.55.0)(prettier@3.1.0)(typescript@5.3.2)
+    specifier: ^11.5.16
+    version: 11.5.16(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.1.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.55.0)(prettier@3.1.0)(typescript@5.3.2)
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5
@@ -1200,15 +1200,15 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ethang/hooks@1.5.8(react@18.2.0):
-    resolution: {integrity: sha512-zlv39bLJ3vknBkpUsgtrNNJxPTUSL0Lu5z0rrJXDqxUK8/WTxXABw251+bBuCqY0rOzKRjlXDpfZZymU/oj06g==}
+  /@ethang/hooks@1.5.14(react@18.2.0):
+    resolution: {integrity: sha512-ggcqc8U++z/7Ul3YSTAAbLoiJHnJV5OYUlQms7ckZgQeYURhr8uQ46MvVl3VbUkGyJ/QJ1n87p0etM+KwSttGw==}
     peerDependencies:
-      react: ^18.0.0
+      react: ^18.2.0
     dependencies:
       react: 18.2.0
     dev: false
 
-  /@ethang/project-builder@1.0.17(@ethang/util@2.0.18)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2):
+  /@ethang/project-builder@1.0.17(@ethang/util@2.0.21)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2):
     resolution: {integrity: sha512-wwHkJw+IwqdnUAdG5NRagm076PgK3UT+tBCBGpVr88pi5z75OkrT3oqNKqe7dVONqUUgtC8FdHkFcJu9AJAXOw==}
     peerDependencies:
       '@ethang/util': ^2.0.18
@@ -1219,7 +1219,7 @@ packages:
       tsup: ^8.0.1
       typescript: ^5.3.2
     dependencies:
-      '@ethang/util': 2.0.18
+      '@ethang/util': 2.0.21
       chalk: 5.3.0
       inquirer: 9.2.12
       rimraf: 5.0.5
@@ -1228,8 +1228,8 @@ packages:
       typescript: 5.3.2
     dev: true
 
-  /@ethang/use-form@1.6.45(react@18.2.0)(zod@3.22.4):
-    resolution: {integrity: sha512-b6vgv3v7wN8+7dqFOCn3PeAsqv/5b2NWYhHWai2bYBu91NorRshJwjYzVOgSx4TnNjSgDcrQ805QXNFS099Xlg==}
+  /@ethang/use-form@1.6.48(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-0tE7eGruqJa2YLQETWiGmZYvqrOitiJJUkoTitjgTkNo/MseAeGmnCqVEM2MXazcTt8hR8HRTOQC0LIvdwb4Bg==}
     peerDependencies:
       react: ^18.2.0
       zod: ^3.22.4
@@ -1238,8 +1238,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@ethang/util@2.0.18:
-    resolution: {integrity: sha512-tUbFgyRbFOSj16H+JhGinquddPhi3IxbMIe4A++F6KRBfQc9N0fCsXMLlfXH5RsvCLa7w0DeeaFtwHpEPa/FXg==}
+  /@ethang/util@2.0.21:
+    resolution: {integrity: sha512-PT5wX5/iINErLqKMLLIBvV17gckaTXoMpSPBy97jmDl3PNbPk+yn594gnsKH5Xv+GLr/ZcDlMFU33yKUMSX4Kg==}
 
   /@faker-js/faker@8.3.1:
     resolution: {integrity: sha512-FdgpFxY6V6rLZE9mmIBb9hM0xpfvQOSNOLnzolzKwsE1DH+gC7lEKV1p1IbR0lAYyvYd5a4u3qWJzowUkw1bIw==}
@@ -5785,8 +5785,8 @@ packages:
       eslint: 8.55.0
     dev: true
 
-  /eslint-config-ethang@11.5.10(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.1.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.55.0)(prettier@3.1.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-shDOhGtWCwsvgpg/iEIE4fkbjCiwwIk4/alAb6vso4KYoJ5o7/jCKMq9mbXaxG1DJB6ae2e5bbyKKkldu7a9Ng==}
+  /eslint-config-ethang@11.5.16(@typescript-eslint/eslint-plugin@6.13.1)(@typescript-eslint/parser@6.13.1)(eslint-config-prettier@9.1.0)(eslint-config-xo-react@0.27.0)(eslint-config-xo-space@0.34.0)(eslint-config-xo-typescript@1.0.1)(eslint-config-xo@0.43.1)(eslint-plugin-astro@0.30.0)(eslint-plugin-functional@6.0.0)(eslint-plugin-import@2.29.0)(eslint-plugin-jsx-a11y@6.8.0)(eslint-plugin-prettier@5.0.1)(eslint-plugin-react-hooks@4.6.0)(eslint-plugin-react@7.33.2)(eslint-plugin-simple-import-sort@10.0.0)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tailwindcss@3.13.0)(eslint-plugin-typescript-sort-keys@3.1.0)(eslint-plugin-unicorn@49.0.0)(eslint-plugin-unused-imports@3.0.0)(eslint@8.55.0)(prettier@3.1.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-u/DwCp330Tzyu0wz/P242La7XjBdo5KxtMDkrYhYIWLfabVSu00Sn20TmOXm6h/MAUegrt6Odhtje2P8xaXnug==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^6.13.1
       '@typescript-eslint/parser': ^6.13.1
