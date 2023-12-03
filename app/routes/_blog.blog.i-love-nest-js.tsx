@@ -1,3 +1,4 @@
+// eslint-disable-next-line unicorn/prevent-abbreviations
 import { A } from '../components/elements/a';
 import { Paragraph } from '../components/elements/paragraph';
 import { SanityImage } from '../components/elements/sanity-image';

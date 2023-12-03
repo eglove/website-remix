@@ -1,4 +1,3 @@
-import type { LoaderFunctionArgs } from '@remix-run/node';
 import { useLoaderData, useLocation } from '@remix-run/react';
 import type { JSX } from 'react';
 
@@ -12,7 +11,7 @@ import { TocHeader } from '../components/elements/toc-header';
 
 const numberFormatter = Intl.NumberFormat('en-US');
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader() {
   const zodDownloadsResponse = await fetch(
     'https://api.npmjs.org/downloads/point/last-week/zod',
   );

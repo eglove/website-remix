@@ -6,6 +6,7 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev --manual",
+    "lint": "eslint . --fix --ignore-path .gitignore",
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc"
   },
@@ -13,9 +14,9 @@
     "extends": "ethang"
   },
   "dependencies": {
-    "@ethang/hooks": "^1.5.6",
-    "@ethang/use-form": "^1.6.43",
-    "@ethang/util": "^2.0.16",
+    "@ethang/hooks": "^1.5.8",
+    "@ethang/use-form": "^1.6.45",
+    "@ethang/util": "^2.0.18",
     "@faker-js/faker": "^8.3.1",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.2.9",
@@ -50,7 +51,7 @@
     "@types/ua-parser-js": "^0.7.39",
     "@types/uuid": "^9.0.7",
     "eslint": "^8.55.0",
-    "eslint-config-ethang": "^11.5.8",
+    "eslint-config-ethang": "^11.5.10",
     "tailwindcss": "^3.3.5",
     "typescript": "^5.1.6"
   }

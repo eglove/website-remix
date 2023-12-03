@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import { A } from '../components/elements/a';
 import { CodeWrapper } from '../components/elements/code-wrapper';
 import { Heading } from '../components/elements/heading';
