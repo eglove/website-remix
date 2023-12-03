@@ -9,9 +9,6 @@
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc"
   },
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "eslintConfig": {
     "extends": "ethang"
   },
