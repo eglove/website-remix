@@ -21,7 +21,6 @@ export function PaginationLink({
       preventScrollReset
       replace
       href={`?${searchParameterString}`}
-      prefetch="viewport"
       className={twMerge(
         className,
         isActive ? 'bg-primary text-white' : 'text-foreground',

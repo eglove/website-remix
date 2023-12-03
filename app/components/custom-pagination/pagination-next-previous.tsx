@@ -26,7 +26,6 @@ export function PaginationNextPrevious({
       className={className}
       href={`?${searchParameterString}`}
       isDisabled={isDisabled}
-      prefetch="viewport"
     >
       <ChevronIcon
         className={twMerge(type === PaginationItemType.NEXT && 'rotate-180')}
