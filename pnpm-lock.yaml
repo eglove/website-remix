@@ -83,8 +83,8 @@ dependencies:
 
 devDependencies:
   '@ethang/project-builder':
-    specifier: ^1.0.22
-    version: 1.0.22(@ethang/util@2.0.21)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2)
+    specifier: ^1.0.23
+    version: 1.0.23(@ethang/util@2.0.21)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2)
   '@remix-run/dev':
     specifier: ^2.3.1
     version: 2.3.1(@remix-run/serve@2.3.1)(typescript@5.3.2)
@@ -1208,8 +1208,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@ethang/project-builder@1.0.22(@ethang/util@2.0.21)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2):
-    resolution: {integrity: sha512-b3Pt+64CQpMetidVnUF28517S35af/AiSYmCn1BpqcYoer5pUuOUhvM/SJ8rYFlnh4+6RbOY2AcauV2mofJPqQ==}
+  /@ethang/project-builder@1.0.23(@ethang/util@2.0.21)(chalk@5.3.0)(inquirer@9.2.12)(rimraf@5.0.5)(simple-git@3.21.0)(tsup@8.0.1)(typescript@5.3.2):
+    resolution: {integrity: sha512-4So6uVCcMizATDmDH2rSwTYvqa30Jj9bNsYDCu9SkD+Yj6M8pvKElmsUIzqsIYD8sZRO7tg33pejtQ+KshJ+tA==}
     peerDependencies:
       '@ethang/util': ^2.0.21
       chalk: ^5.3.0
