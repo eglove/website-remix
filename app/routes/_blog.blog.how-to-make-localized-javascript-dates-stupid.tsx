@@ -1,5 +1,4 @@
-import { CodeWrapper } from 'app/components/elements/code-wrapper';
-
+import { CodeWrapper } from '../components/elements/code-wrapper';
 import { Heading } from '../components/elements/heading';
 import { Paragraph } from '../components/elements/paragraph';
 
