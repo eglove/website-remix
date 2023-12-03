@@ -18,14 +18,5 @@ export function SanityImage(properties: SanityImageProperties): JSX.Element {
     .format('webp')
     .url();
 
-  const fallback = sanityImageBuilder
-    .image(properties.src)
-    .height(properties.height)
-    .width(properties.width)
-    .blur(60)
-    .quality(10)
-    .format('webp')
-    .url();
-
-  return <Image {...properties} fallbackSrc={fallback} src={url} />;
+  return <Image {...properties} src={url} />;
 }
