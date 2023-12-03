@@ -1,4 +1,3 @@
-import { Card, CardHeader } from '@nextui-org/card';
 import { DateTime } from 'luxon';
 
 import type { Metadata } from '../../controllers/get-metadatas-by-category';
@@ -17,12 +16,12 @@ export function MetadataCard({
 }: MetadataCardProperties) {
   return (
     <A
-      className="h-64 w-64 rounded-xl"
+      className="rounded-lg border-2 p-2"
       color="foreground"
       href={`/blog/${metadata.slug.current}`}
     >
-      <Card className="rounded-none shadow-none">
-        <CardHeader className="absolute z-10 grid bg-black/60 text-white">
+      <div className="flex w-full justify-between gap-1">
+        <div>
           <Heading variant="h3">{metadata.title}</Heading>
           <div>
             Updated:{' '}
@@ -30,17 +29,18 @@ export function MetadataCard({
               zone: 'America/Chicago',
             }).toRelative() ?? ''}
           </div>
-        </CardHeader>
-        <SanityImage
-          isZoomed
-          alt={metadata.featuredImage.description}
-          className="z-0 h-full w-full object-fill"
-          height={256}
-          loading={isAboveTheFold ? undefined : 'lazy'}
-          src={metadata.featuredImage.image.asset.url}
-          width={256}
-        />
-      </Card>
+        </div>
+        <div className="flex items-center pt-2">
+          <SanityImage
+            alt={metadata.featuredImage.description}
+            className="rounded-xl"
+            height={100}
+            loading={isAboveTheFold ? undefined : 'lazy'}
+            src={metadata.featuredImage.image.asset.url}
+            width={100}
+          />
+        </div>
+      </div>
     </A>
   );
 }

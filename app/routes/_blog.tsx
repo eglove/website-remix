@@ -15,10 +15,6 @@ import { CONTENT_CACHE_CONTROL } from '../util';
 export const meta: MetaFunction = ({ data }) => {
   const typedData = data as GetMetadataBySlug;
 
-  if (isNil(typedData)) {
-    return [];
-  }
-
   return [
     { title: `EthanG | ${typedData.title}` },
     { content: typedData.description, name: 'description' },
@@ -48,10 +44,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
   if (!isNil(slug)) {
     const data = await getMetadataBySlug(slug);
 
-    if (isNil(data)) {
-      return null;
-    }
-
     return json(data, {
       headers: CONTENT_CACHE_CONTROL,
     });
@@ -66,7 +58,7 @@ export default function BlogLayout() {
   const loaderData = useLoaderData<typeof loader>();
 
   if (isNil(loaderData)) {
-    return <Outlet />;
+    return null;
   }
 
   const imageUrl = sanityImageBuilder

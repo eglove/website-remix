@@ -61,14 +61,12 @@ export function MetadataContainer({
   return (
     <Card>
       <CardHeader>
-        <Heading className="text-3xl" variant="h2">
+        <Heading variant="h2">
           {category === 'courseReview' ? (
             <A
               isExternal
               showAnchorIcon
-              className="text-3xl"
               href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a"
-              underline="always"
             >
               {categoryLabel}
             </A>
@@ -77,7 +75,7 @@ export function MetadataContainer({
           )}
         </Heading>
       </CardHeader>
-      <CardBody className="grid place-items-center gap-2 px-2 pb-2 pt-0 md:grid-cols-3">
+      <CardBody className="grid gap-2 px-2 pb-2 pt-0 md:grid-cols-3">
         {data.metadata.map(item => {
           return (
             <MetadataCard
