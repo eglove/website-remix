@@ -7,6 +7,7 @@ import { Outlet, useLoaderData } from '@remix-run/react';
 import { DateTime } from 'luxon';
 
 import { sanityImageBuilder } from '../clients/sanity';
+import { A } from '../components/elements/a';
 import { Heading } from '../components/elements/heading';
 import type { GetMetadataBySlug } from '../controllers/get-metadata-by-slug';
 import { getMetadataBySlug } from '../controllers/get-metadata-by-slug';
@@ -71,9 +72,19 @@ export default function BlogLayout() {
   return (
     <>
       <Breadcrumbs underline="hover">
-        <BreadcrumbItem href="/">Home</BreadcrumbItem>
-        <BreadcrumbItem href={`/blog/${loaderData.slug.current}`}>
-          {loaderData.title}
+        <BreadcrumbItem>
+          <A className="text-sm" color="foreground" href="/">
+            Home
+          </A>
+        </BreadcrumbItem>
+        <BreadcrumbItem>
+          <A
+            className="text-sm"
+            color="foreground"
+            href={`/blog/${loaderData.slug.current}`}
+          >
+            {loaderData.title}
+          </A>
         </BreadcrumbItem>
       </Breadcrumbs>
       <div className="my-4 grid gap-4 border-b-2 sm:grid-cols-2-max-content">
