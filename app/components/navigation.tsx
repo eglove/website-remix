@@ -66,9 +66,9 @@ export function Navigation() {
         </NavbarContent>
       </Navbar>
       <Progress
-        aria-label={`Scroll Progress at ${scrollWidth}%`}
+        aria-label="Scroll Progress"
         className="sticky top-16 z-40 mx-auto max-w-5xl"
-        value={scrollWidth}
+        value={Math.ceil(scrollWidth)}
         classNames={{
           indicator: 'bg-gradient-to-r from-blue-500 to-blue-800 rounded-none',
           track: 'rounded-none',
