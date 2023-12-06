@@ -14,9 +14,9 @@
     "extends": "ethang"
   },
   "dependencies": {
-    "@ethang/hooks": "^1.5.15",
-    "@ethang/use-form": "^1.6.49",
-    "@ethang/util": "^2.0.21",
+    "@ethang/hooks": "^1.5.16",
+    "@ethang/use-form": "^1.6.50",
+    "@ethang/util": "^2.0.22",
     "@faker-js/faker": "^8.3.1",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.2.9",
@@ -41,7 +41,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.9",
+    "@ethang/project-builder": "^1.1.10",
     "@remix-run/dev": "^2.3.1",
     "@remix-run/eslint-config": "^2.3.1",
     "@types/color-convert": "^2.0.3",
@@ -52,8 +52,8 @@
     "@types/ua-parser-js": "^0.7.39",
     "@types/uuid": "^9.0.7",
     "eslint": "^8.55.0",
-    "eslint-config-ethang": "^11.5.17",
+    "eslint-config-ethang": "^11.5.18",
     "tailwindcss": "^3.3.6",
-    "typescript": "^5.1.6"
+    "typescript": "^5.3.3"
   }
 }
