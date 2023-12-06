@@ -44,7 +44,7 @@ export default function App() {
           {isIgnoredPath ? (
             <Outlet />
           ) : (
-            <Card className="mx-auto my-4 max-w-5xl">
+            <Card className="mx-auto my-4 max-w-5xl rounded-none">
               <CardBody>
                 <Outlet />
               </CardBody>
