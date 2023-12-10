@@ -63,11 +63,7 @@ export function MetadataContainer({
       <CardHeader>
         <Heading variant="h2">
           {category === 'courseReview' ? (
-            <A
-              isExternal
-              showAnchorIcon
-              href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a"
-            >
+            <A href="/courses" underline="always">
               {categoryLabel}
             </A>
           ) : (
