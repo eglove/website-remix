@@ -17,7 +17,12 @@ export function CodeWrapper({
   styles = { maxHeight: 500 },
 }: CodeProperties): JSX.Element {
   return (
-    <SyntaxHighlighter customStyle={styles} language={language} style={theme}>
+    <SyntaxHighlighter
+      showLineNumbers
+      customStyle={styles}
+      language={language}
+      style={theme}
+    >
       {codeString(children)}
     </SyntaxHighlighter>
   );

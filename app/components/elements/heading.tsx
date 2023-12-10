@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 const headingStyleMap = {
   h1: 'text-3xl font-bold',
   h2: 'text-xl font-bold',
-  h3: 'my-4 text-lg font-bold',
+  h3: 'my-4 text-lg font',
 };
 
 type HeadingProperties = {

@@ -16,7 +16,7 @@
   "dependencies": {
     "@ethang/hooks": "^1.5.18",
     "@ethang/use-form": "^1.6.52",
-    "@ethang/util": "^2.0.24",
+    "@ethang/util": "^3.0.0",
     "@faker-js/faker": "^8.3.1",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.2.9",
@@ -41,7 +41,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.12",
+    "@ethang/project-builder": "^1.1.13",
     "@remix-run/dev": "^2.3.1",
     "@remix-run/eslint-config": "^2.3.1",
     "@types/color-convert": "^2.0.3",

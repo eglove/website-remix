@@ -1,6 +1,6 @@
 import { isNil } from '@ethang/util/data.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
-import { json } from '@remix-run/node';
+import { json, type MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import { A } from '../components/elements/a';
@@ -13,6 +13,23 @@ const authorFormat = new Intl.ListFormat('en', {
   style: 'long',
   type: 'conjunction',
 });
+
+export const meta: MetaFunction = () => {
+  const description = 'Recommended cousres for learning web development';
+  const title = 'EthanG | Courses';
+
+  return [
+    { title },
+    { content: description, name: 'description' },
+    { content: description, name: 'og:description' },
+    { content: title, name: 'og:title' },
+    { content: 'EthanG', name: 'og:site_name' },
+    { content: 'article', name: 'og:type' },
+    { name: 'twitter:card', value: 'summary' },
+    { name: 'twitter:title', value: title },
+    { name: 'twitter:description', value: description },
+  ];
+};
 
 export async function loader() {
   const courses = await getRecommendedCourses();
