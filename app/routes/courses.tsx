@@ -53,7 +53,7 @@ export default function () {
           <Heading variant="h1">Learn Web Dev</Heading>
         </CardHeader>
       </Card>
-      <div className="grid grid-cols-ram-300 gap-4">
+      <div className="grid grid-cols-ram-400 gap-4">
         {courses.map((course: Course, index: number) => {
           return (
             <Card key={course._id}>

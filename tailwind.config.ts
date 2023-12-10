@@ -21,7 +21,7 @@ export default {
         "5-max": "repeat(5, max-content)",
         header: "minmax(0,1fr) minmax(40px,auto)",
         ram: "repeat(auto-fit, minmax(150px, 1fr))",
-        ['ram-300']: "repeat(auto-fit, minmax(300px, 1fr))",
+        ['ram-400']: "repeat(auto-fit, minmax(400px, 1fr))",
       }
     },
   },
