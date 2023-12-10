@@ -48,7 +48,7 @@ export default function () {
 
   return (
     <>
-      <Card className="my-4">
+      <Card className="my-4" shadow="sm">
         <CardHeader>
           <Heading variant="h1">Learn Web Dev</Heading>
         </CardHeader>
@@ -56,7 +56,7 @@ export default function () {
       <div className="grid grid-cols-ram-400 gap-4">
         {courses.map((course: Course, index: number) => {
           return (
-            <Card key={course._id}>
+            <Card key={course._id} shadow="sm">
               <CardHeader className="grid">
                 <Heading variant="h2">{`#${index + 1} ${
                   course.title
