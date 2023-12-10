@@ -16,7 +16,7 @@
   "dependencies": {
     "@ethang/hooks": "^1.5.18",
     "@ethang/use-form": "^1.6.52",
-    "@ethang/util": "^3.0.0",
+    "@ethang/util": "^3.1.0",
     "@faker-js/faker": "^8.3.1",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^2.2.9",
