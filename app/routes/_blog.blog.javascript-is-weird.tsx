@@ -117,7 +117,6 @@ export default function () {
         <Input
           label="Epsilon"
           name="epsilon"
-          type="number"
           value={formState.epsilon}
           onChange={handleChange}
         />
