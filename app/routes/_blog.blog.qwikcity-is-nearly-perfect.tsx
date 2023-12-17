@@ -252,6 +252,11 @@ export default function () {
         forward that I wish more frameworks would attempt to implement. For now,
         I would favor QwikCity with React Islands over any other framework.
       </Paragraph>
+      <Paragraph>
+        With React islands you can get consistent state and not have to worry
+        about serialization boundaries, solving two big problems by simply using
+        the more intuitive React API&apos;s.
+      </Paragraph>
     </>
   );
 }
