@@ -248,8 +248,8 @@ export default function () {
         I think QwikCity is viable with React islands. I wouldn&apos;t use it by
         itself. To me it&apos;s a more high performance version of Remix +
         Astro. I think resumability is the proper path forward for web
-        applications, not NextJS render patterns, or even worse WASM. This is a
-        proper step forward that I wish more frameworks would attempt to
+        applications, not NextJS render patterns, or even worse WASM.
+        Resumability is something that I wish more frameworks would attempt to
         implement. For now, I would favor QwikCity with React Islands over any
         other framework.
       </Paragraph>
