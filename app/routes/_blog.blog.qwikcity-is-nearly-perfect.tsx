@@ -47,7 +47,7 @@ export default function () {
       <Paragraph>
         Today frameworks like NextJS are implementing more and more,
         increasingly complex render patterns. SSG, SSR, ISR, and now PPR. The
-        latter of two only work with specialized infrastructure, primarily
+        latter of the two only work with specialized infrastructure, primarily
         Vercel. QwikCity takes a different approach by attempting to open-source
         the methodologies behind Google&apos;s internal Wiz framework. Namely
         instead of JavaScript files being treated as blocking resources, it
@@ -193,8 +193,8 @@ export default function () {
         And the result is 1 0 0. This is exactly the same as Svelte did in
         Carniato&apos;s post. His comments: &ldquo;Svelte doesn&apos;t even try
         to be consistent. This might be a blessing and a curse.&rdquo; If you
-        continue to click subsequent results are &lsquo;2 2 2&rsquo;, &lsquo;3 4
-        4&rsquo;. So the DOM is always one step behind. Inconsistent with
+        continue to click, subsequent results are &lsquo;2 2 2&rsquo;, &lsquo;3
+        4 4&rsquo;. So the DOM is always one step behind. Inconsistent with
         everything else.
       </Paragraph>
       <Paragraph>
@@ -246,11 +246,12 @@ export default function () {
       <Heading variant="h2">Should I use QwikCity?</Heading>
       <Paragraph>
         I think QwikCity is viable with React islands. I wouldn&apos;t use it by
-        itself. To me it&apos;s more high performance version of Remix + Astro.
-        I think resumability is the proper path forward for web applications,
-        not NextJS render patterns, or even worse WASM. This is a proper step
-        forward that I wish more frameworks would attempt to implement. For now,
-        I would favor QwikCity with React Islands over any other framework.
+        itself. To me it&apos;s a more high performance version of Remix +
+        Astro. I think resumability is the proper path forward for web
+        applications, not NextJS render patterns, or even worse WASM. This is a
+        proper step forward that I wish more frameworks would attempt to
+        implement. For now, I would favor QwikCity with React Islands over any
+        other framework.
       </Paragraph>
       <Paragraph>
         With React islands you can get consistent state and not have to worry
