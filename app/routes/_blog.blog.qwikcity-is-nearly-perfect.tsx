@@ -112,7 +112,10 @@ export default function () {
             Cache-Control Headers
           </A>{' '}
           while{' '}
-          <A isExternal= href="https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control">
+          <A
+            isExternal
+            href="https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control"
+          >
             Next will strip them out of your application altogether
           </A>
           .
