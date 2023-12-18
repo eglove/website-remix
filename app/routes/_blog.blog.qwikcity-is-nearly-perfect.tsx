@@ -98,18 +98,21 @@ export default function () {
         </li>
         <li className="mb-2">
           <strong>RPC calls:</strong> Taking inspiration from NextJS you can go
-          for <A href="https://qwik.builder.io/docs/server$/">RPC calls</A> for
-          mutations as well.
+          for{' '}
+          <A isExternal href="https://qwik.builder.io/docs/server$/">
+            RPC calls
+          </A>{' '}
+          for mutations as well.
         </li>
         <li className="mb-2">
           <strong>Cache-Control Headers:</strong> Next&apos;s ISR is nice, but
           it requires unique infrastructure. QwikCity allows you to go back to
           plain{' '}
-          <A href="https://qwik.builder.io/docs/caching/">
+          <A isExternal href="https://qwik.builder.io/docs/caching/">
             Cache-Control Headers
           </A>{' '}
           while{' '}
-          <A href="https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control">
+          <A isExternal= href="https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control">
             Next will strip them out of your application altogether
           </A>
           .
