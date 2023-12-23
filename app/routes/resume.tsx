@@ -59,10 +59,7 @@ export default function () {
           {' '}
           Software Contractor/Consultant
         </span>
-        <span>
-          {dateFormatter.format(new Date('Nov 2018'))} -{' '}
-          {dateFormatter.format(new Date('Aug 2023'))}
-        </span>
+        <span>{dateFormatter.format(new Date('Nov 2018'))} - (Current)</span>
       </h2>
       <StLouisCounty />
       <Proagrica />
