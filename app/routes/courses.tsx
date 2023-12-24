@@ -1,11 +1,11 @@
 import { isNil } from '@ethang/util/data.js';
-import { Card, CardBody, CardHeader } from '@nextui-org/card';
+import { Accordion, AccordionItem } from '@nextui-org/accordion';
 import { json, type MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import { A } from '../components/elements/a';
 import { Heading } from '../components/elements/heading';
-import type { Course } from '../controllers/get-recommended-courses';
+import { Paragraph } from '../components/elements/paragraph';
 import { getRecommendedCourses } from '../controllers/get-recommended-courses';
 import { CONTENT_CACHE_CONTROL } from '../util';
 
@@ -15,7 +15,7 @@ const authorFormat = new Intl.ListFormat('en', {
 });
 
 export const meta: MetaFunction = () => {
-  const description = 'Recommended cousres for learning web development';
+  const description = 'Recommended courses for learning web development';
   const title = 'EthanG | Courses';
 
   return [
@@ -48,43 +48,61 @@ export default function () {
 
   return (
     <>
-      <Card className="my-4" shadow="sm">
-        <CardHeader>
-          <Heading variant="h1">Learn Web Dev</Heading>
-        </CardHeader>
-      </Card>
-      <div className="grid grid-cols-ram-400 gap-4">
-        {courses.map((course: Course, index: number) => {
+      <Heading variant="h1">Learn Web Dev</Heading>
+      <Paragraph>
+        I have been maintaining this list of course for over 4 years. It&apos;s
+        meant as a way to provide a straightforward curriculum of what you need
+        to learn for web development. It&apos;s updated constantly but at any
+        given point in time, I believe this is the best way to get started with,
+        and learn everything you need to know to work with the web.
+      </Paragraph>
+      <Paragraph>
+        <span className="font-bold">
+          What about free sources like Odin Project?
+        </span>{' '}
+        If free learning resources were at the same quality of the paid courses
+        found on this list, they&apos;d be here. I do not use affiliate links,
+        there is 0 incentive for me to suggest any particular source. The Odin
+        Project looks very thorough on the outside to beginners, but it&apos;s
+        dialogue around being the &ldquo;proper way to learn&rdquo; because it
+        links to documentation is misleading. As courses in this list will also
+        link to that same documentation and give you the same advice. Yes, you
+        need to read documentation, in fact React&apos;s official documentation
+        is on this list. But it&apos;s simply not enough to gain the context,
+        mental models, and advice that can be provided by experienced, quality
+        instructors.
+      </Paragraph>
+      <Accordion variant="bordered">
+        {courses.map((course, index) => {
+          const title = `#${index + 1} ${course.title}`;
+
           return (
-            <Card key={course._id} shadow="sm">
-              <CardHeader className="grid">
-                <Heading variant="h2">{`#${index + 1} ${
-                  course.title
-                }`}</Heading>{' '}
-                <div>
-                  {authorFormat.format(
-                    course.authors.map(author => {
-                      return author.name;
-                    }),
-                  )}
-                </div>
-              </CardHeader>
-              <CardBody>
-                <div>{course.publisher.name}</div>
-                <div className="flex gap-2">
-                  {course.links.map(link => {
-                    return (
-                      <A isExternal showAnchorIcon href={link} key={link}>
-                        {new URL(link).hostname}
-                      </A>
-                    );
-                  })}
-                </div>
-              </CardBody>
-            </Card>
+            <AccordionItem aria-label={title} key={course._id} title={title}>
+              <div>
+                <span className="font-bold">Instructors:</span>{' '}
+                {authorFormat.format(
+                  course.authors.map(author => {
+                    return author.name;
+                  }),
+                )}
+              </div>
+              <div>
+                <span className="font-bold">Publisher:</span>{' '}
+                {course.publisher.name}
+              </div>
+              <div className="mt-3 flex gap-2">
+                {course.links.map(link => {
+                  return (
+                    <A isExternal showAnchorIcon href={link} key={link}>
+                      {new URL(link).hostname}
+                    </A>
+                  );
+                })}
+              </div>
+            </AccordionItem>
           );
         })}
-      </div>
+      </Accordion>
     </>
   );
 }
