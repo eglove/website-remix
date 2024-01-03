@@ -12,7 +12,6 @@ import { StLouisCounty } from '../components/resume/positions/st-louis-county';
 import { EslintConfig } from '../components/resume/projects/eslint-config';
 import { Fetch } from '../components/resume/projects/fetch';
 import { Hooks } from '../components/resume/projects/hooks';
-import { Introspect } from '../components/resume/projects/introspect';
 import { Sterett } from '../components/resume/projects/sterett';
 import { UseForm } from '../components/resume/projects/use-form';
 import { SkillBars } from '../components/resume/skill-bars';
@@ -75,7 +74,6 @@ export default function () {
       <Hooks />
       <EslintConfig />
       <Sterett />
-      <Introspect />
     </div>
   );
 }
