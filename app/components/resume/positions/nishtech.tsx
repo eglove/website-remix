@@ -20,8 +20,8 @@ export function Nishtech(): JSX.Element {
         and instead making use of modern accessible UI libraries like NextUI.
       </li>
       <li>
-        Taught team unfamiliar with server-side rendering how to make full
-        advantage of modern frameworks and avoid antipatterns with React
+        Taught team unfamiliar with server-side rendering how to take full
+        advantage of modern frameworks and avoid anti-patterns with React
         useEffect, overusing Redux, etc.
       </li>
     </ExperienceCard>
