@@ -75,7 +75,7 @@ export function LocaleDateStringForm(): JSX.Element {
     // @ts-expect-error allow this
     if (formState[key] === '' || typeof formState[key] === 'function') {
       // @ts-expect-error allow this
-      // eslint-disable-next-line functional/immutable-data
+
       formState[key] = undefined;
     }
   }

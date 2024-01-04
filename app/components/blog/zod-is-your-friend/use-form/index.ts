@@ -51,7 +51,6 @@ export const useForm = <StateType extends Record<string, unknown>>(
   const [formState, setFormState] = useState(() => {
     const defaultState: Record<string, unknown> = {};
     for (const key of Object.keys(initialState)) {
-      // eslint-disable-next-line functional/immutable-data
       defaultState[key] =
         initialState[key] === undefined ? '' : initialState[key];
     }
