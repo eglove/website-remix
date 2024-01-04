@@ -2,27 +2,11 @@ import { Link } from '@nextui-org/link';
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function Epa(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="Nov 2022"
-      methodologiesUsed={['rest', 'agile', 'tdd', 'dependencyInjection']}
-      startDate="Jun 2022"
-      title="US Environmental Protection Agency (EPA)"
-      techUsed={[
-        'typeScript',
-        'node',
-        'nestJs',
-        'typeOrm',
-        'jest',
-        'javascript',
-        'redux',
-        'react',
-        'uswds',
-        'github',
-      ]}
-    >
+    <ExperienceCard {...positions.epa}>
       <li>
         Helped rebuild Emissions Collection and Monitoring System (ECMPS) for
         reporting emissions data with new tech stack.{' '}

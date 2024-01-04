@@ -5,6 +5,7 @@ import { Avatara } from '../components/resume/positions/avatara';
 import { CenturyLink } from '../components/resume/positions/century-link';
 import { EightBase } from '../components/resume/positions/eight-base';
 import { Epa } from '../components/resume/positions/epa';
+import { Nishtech } from '../components/resume/positions/nishtech';
 import { Proagrica } from '../components/resume/positions/proagrica';
 import { Prologue } from '../components/resume/positions/prologue';
 import { SeoConsulting } from '../components/resume/positions/seo-consulting';
@@ -60,6 +61,7 @@ export default function () {
         </span>
         <span>{dateFormatter.format(new Date('Nov 2018'))} - (Current)</span>
       </h2>
+      <Nishtech />
       <StLouisCounty />
       <Proagrica />
       <Epa />

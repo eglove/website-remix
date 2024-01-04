@@ -1,16 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function Prologue(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="Jul 2021"
-      methodologiesUsed={['rest']}
-      startDate="Jan 2021"
-      techUsed={['php', 'yii', 'vue', 'laravel']}
-      title="Prologue Technology"
-    >
+    <ExperienceCard {...positions.prologue}>
       <li>
         Extended public shipment tracking pages for international and domestic
         shipments with Vue and Laravel.

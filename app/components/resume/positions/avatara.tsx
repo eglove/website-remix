@@ -1,33 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function Avatara(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="Mar 2022"
-      methodologiesUsed={['monorepo', 'onPremHosting']}
-      startDate="Jul 2021"
-      title="Avatara"
-      techUsed={[
-        'webRtc',
-        'webSockets',
-        'graphQl',
-        'nextJs',
-        'apollo',
-        'nx',
-        'node',
-        'twilio',
-        'prisma',
-        'javascript',
-        'typeScript',
-        'htmlCss',
-        'stencil',
-        'rust',
-        'webAssembly',
-        'cSharpDotNet',
-      ]}
-    >
+    <ExperienceCard {...positions.avatara}>
       <li>
         Worked with multiple technologies in an experimental environment using
         WebRTC, GraphQL, Rust, WebAssembly, Web Components, .NET MAUI and more.

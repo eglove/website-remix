@@ -1,16 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function SeoConsulting(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="May 2020"
-      methodologiesUsed={['seo']}
-      startDate="Nov 2018"
-      techUsed={['react', 'graphQl']}
-      title="SEO Consulting"
-    >
+    <ExperienceCard {...positions.seoConsulting}>
       <li>
         Consulted with two national radio stations to help with WordPress SEO.
         This primarily took the form of making use of YoastSEO, as well as

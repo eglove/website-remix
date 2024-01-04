@@ -26,6 +26,9 @@ export function ExperienceCard({
     <Card className="mb-2 mt-6 border-2" shadow="none">
       <CardHeader className="flex items-center justify-between">
         <span className="text-medium font-bold">{title}</span>
+        {!isNil(startDate) && isNil(endDate) && (
+          <span>{dateFormatter.format(new Date(startDate))} - (Current)</span>
+        )}
         {!isNil(startDate) && !isNil(endDate) && (
           <span>
             {dateFormatter.format(new Date(startDate))} -{' '}

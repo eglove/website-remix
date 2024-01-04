@@ -1,35 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function StLouisCounty(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="Aug 2023"
-      startDate="Jun 2023"
-      title="St. Louis County"
-      methodologiesUsed={[
-        'rest',
-        'mvc',
-        'tdd',
-        'composableDesign',
-        'crabTesting',
-        'onPremHosting',
-        'dependencyInjection',
-      ]}
-      techUsed={[
-        'react',
-        'playwright',
-        'bootstrap',
-        'cSharp',
-        'dotNet',
-        'entityFramework',
-        'xUnit',
-        'moq',
-        'javascript',
-        'typeScript',
-      ]}
-    >
+    <ExperienceCard {...positions.stLouisCounty}>
       <li>
         Consulted with St. Louis County Treasurer to write tickets and refine
         requirements for a sales tax distribution application. Discussions had

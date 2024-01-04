@@ -1,23 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function EightBase(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="May 2022"
-      methodologiesUsed={['agile']}
-      startDate="Mar 2022"
-      title="8base"
-      techUsed={[
-        'graphQl',
-        'react',
-        'node',
-        'javascript',
-        'typeGraphQl',
-        'awsLambda',
-      ]}
-    >
+    <ExperienceCard {...positions.eightBase}>
       <li>
         Worked on a low-code platform for a startup for generating GraphQL APIs
         through a React-based user interface.

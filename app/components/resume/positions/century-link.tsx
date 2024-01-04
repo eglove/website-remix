@@ -1,26 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function CenturyLink(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="Dec 2020"
-      methodologiesUsed={['agile']}
-      startDate="May 2020"
-      title="CenturyLink"
-      techUsed={[
-        'java',
-        'springBoot',
-        'apacheVelocity',
-        'htmlCss',
-        'vue',
-        'javascript',
-        'jira',
-        'typeScript',
-        'subversion',
-      ]}
-    >
+    <ExperienceCard {...positions.centuryLink}>
       <li>
         Redesigned customer dashboard for users managing their accounts with
         vanilla JavaScript and CSS stylesheets. Maintained compatibility with

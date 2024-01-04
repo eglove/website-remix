@@ -1,36 +1,11 @@
 import type { JSX } from 'react';
 
 import { ExperienceCard } from '../experience-card';
+import { positions } from './positions';
 
 export function Proagrica(): JSX.Element {
   return (
-    <ExperienceCard
-      endDate="May 2023"
-      methodologiesUsed={['agile', 'rest', 'tdd', 'dependencyInjection']}
-      startDate="Dec 2022"
-      title="Proagrica"
-      techUsed={[
-        'react',
-        'redux',
-        'tailwind',
-        'javascript',
-        'reactTestingLibrary',
-        'storybook',
-        'cSharp',
-        'dotNet',
-        'entityFramework',
-        'mediatR',
-        'i18next',
-        'node',
-        'typeScript',
-        'zod',
-        'reactPdf',
-        'jira',
-        'esLint',
-        'docker',
-        'gitlab',
-      ]}
-    >
+    <ExperienceCard {...positions.proagrica}>
       <li>
         Worked with highly dynamic farming dashboard for an international
         audience. Made use of Redux to manage complex state interactions and

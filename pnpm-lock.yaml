@@ -53,6 +53,9 @@ dependencies:
   isbot:
     specifier: ^4.1.1
     version: 4.1.1
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   luxon:
     specifier: ^3.4.4
     version: 3.4.4
@@ -94,6 +97,9 @@ devDependencies:
   '@types/color-convert':
     specifier: ^2.0.3
     version: 2.0.3
+  '@types/lodash':
+    specifier: ^4.14.202
+    version: 4.14.202
   '@types/luxon':
     specifier: ^3.3.7
     version: 3.3.7
@@ -4170,6 +4176,10 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
+  /@types/lodash@4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
+    dev: true
+
   /@types/luxon@3.3.7:
     resolution: {integrity: sha512-gKc9P2d4g5uYwmy4s/MO/yOVPmvHyvzka1YH6i5dM03UrFofHSmgc0D0ymbDRStFWHusk6cwwF6nhLm/ckBbbQ==}
     dev: true
@@ -7756,7 +7766,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==}
