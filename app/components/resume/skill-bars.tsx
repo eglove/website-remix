@@ -1,10 +1,10 @@
 import type { JSX } from 'react';
 
 import { getExperience } from './positions/positions';
-import { skill } from './skills';
+import { skillMap } from './skills';
 
 const yearFormatter = Intl.NumberFormat('en-US', {
-  maximumFractionDigits: 1,
+  maximumFractionDigits: 2,
   style: 'unit',
   unit: 'year',
 });
@@ -18,7 +18,7 @@ export function SkillBars(): JSX.Element {
         return (
           <div className="grid items-center gap-2" key={item.skill}>
             <div className="flex justify-between">
-              <div>{skill[item.skill as keyof typeof skill]}</div>
+              <div>{skillMap[item.skill as keyof typeof skillMap]}</div>
               <div>{yearFormatter.format(item.experience)}</div>
             </div>
             <div className="w-full rounded bg-gray-300" key={item.skill}>

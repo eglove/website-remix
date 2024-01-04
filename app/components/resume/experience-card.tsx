@@ -2,15 +2,15 @@ import { isEmpty, isNil } from '@ethang/util/data.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import type { JSX, ReactNode } from 'react';
 
-import type { skill } from './skills';
+import type { skillMap } from './skills';
 import { dateFormatter, formatTech } from './tech-format';
 
 type ContractPositionProperties = {
   readonly children: ReactNode;
   readonly endDate?: string;
-  readonly methodologiesUsed: Array<keyof typeof skill>;
+  readonly methodologiesUsed: Array<keyof typeof skillMap>;
   readonly startDate?: string;
-  readonly techUsed: Array<keyof typeof skill>;
+  readonly techUsed: Array<keyof typeof skillMap>;
   readonly title: string;
 };
 

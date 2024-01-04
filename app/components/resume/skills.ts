@@ -1,4 +1,4 @@
-export const skill = {
+export const skillMap = {
   accessibility: 'Accessibility',
   agile: 'Agile',
   apacheVelocity: 'Apache Velocity',
@@ -70,13 +70,13 @@ export const skill = {
 };
 
 export const skills = new Set([
-  { skill: skill.cSharpDotNet, years: 1.499 },
-  { skill: skill.react, years: 3.9147 },
-  { skill: skill.typeScript, years: 2.4157 },
-  { skill: skill.javascript, years: 5.1637 },
-  { skill: skill.node, years: 3.748 },
-  { skill: skill.php, years: 0.5829 },
-  { skill: skill.java, years: 0.6662 },
+  { skill: skillMap.cSharpDotNet, years: 1.499 },
+  { skill: skillMap.react, years: 3.9147 },
+  { skill: skillMap.typeScript, years: 2.4157 },
+  { skill: skillMap.javascript, years: 5.1637 },
+  { skill: skillMap.node, years: 3.748 },
+  { skill: skillMap.php, years: 0.5829 },
+  { skill: skillMap.java, years: 0.6662 },
 ]);
 
 export const sortedSkills = [...skills].sort((a, b) => {

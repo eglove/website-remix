@@ -1,13 +1,13 @@
 import lodash from 'lodash';
 import { DateTime } from 'luxon';
 
-import type { skill } from '../skills';
+import type { skillMap } from '../skills';
 
 type Position = {
   readonly endDate?: string;
-  readonly methodologiesUsed: Array<keyof typeof skill>;
+  readonly methodologiesUsed: Array<keyof typeof skillMap>;
   readonly startDate: string;
-  readonly techUsed: Array<keyof typeof skill>;
+  readonly techUsed: Array<keyof typeof skillMap>;
   readonly title: string;
 };
 
@@ -184,7 +184,7 @@ export const positions = {
 };
 
 export function getExperience() {
-  const experience = {} as Record<keyof typeof skill, number>;
+  const experience = {} as Record<keyof typeof skillMap, number>;
 
   lodash.forEach(positions, position => {
     const { startDate, endDate, techUsed, methodologiesUsed } = position;
@@ -206,8 +206,7 @@ export function getExperience() {
 
   lodash.forEach(experience, (months, skill) => {
     if (months >= 13) {
-      // @ts-expect-error allow this
-      experience[skill as keyof typeof skill] = (months / 12).toPrecision(2);
+      experience[skill as keyof typeof skillMap] = Number(months / 12);
     } else {
       // @ts-expect-error allow this
       delete experience[skill as keyof typeof skill];

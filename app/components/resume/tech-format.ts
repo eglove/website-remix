@@ -1,13 +1,13 @@
-import { skill } from './skills';
+import { skillMap } from './skills';
 
 export const unitFormat = new Intl.ListFormat('en-US', {
   type: 'unit',
 });
 
-export function formatTech(techs: Array<keyof typeof skill>): string {
+export function formatTech(techs: Array<keyof typeof skillMap>): string {
   const sorted = [...new Set(techs)]
     .map(tech => {
-      return skill[tech];
+      return skillMap[tech];
     })
     .sort((a, b) => {
       if (a < b) return -1;
