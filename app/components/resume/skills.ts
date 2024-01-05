@@ -1,3 +1,5 @@
+export type SkillKey = keyof typeof skillMap;
+
 export const skillMap = {
   accessibility: 'Accessibility',
   agile: 'Agile',
