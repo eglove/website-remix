@@ -33,7 +33,7 @@
     "@sanity/image-url": "^1.0.2",
     "color-convert": "^2.0.1",
     "convert": "^4.14.0",
-    "framer-motion": "^10.17.4",
+    "framer-motion": "^10.17.9",
     "isbot": "^4.3.0",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
