@@ -38,6 +38,7 @@ export const skillMap = {
   php: 'PHP',
   playwright: 'Playwright',
   prisma: 'Prisma',
+  qwikCity: 'QwikCity',
   react: 'React',
   reactPdf: 'ReactPDF',
   reactTestingLibrary: 'React Testing Library',

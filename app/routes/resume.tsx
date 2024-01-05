@@ -1,22 +1,9 @@
 import type { MetaFunction } from '@remix-run/node';
 
 import { A } from '../components/elements/a';
-import { Avatara } from '../components/resume/positions/avatara';
-import { CenturyLink } from '../components/resume/positions/century-link';
-import { EightBase } from '../components/resume/positions/eight-base';
-import { Epa } from '../components/resume/positions/epa';
-import { Nishtech } from '../components/resume/positions/nishtech';
-import { Proagrica } from '../components/resume/positions/proagrica';
-import { Prologue } from '../components/resume/positions/prologue';
-import { SeoConsulting } from '../components/resume/positions/seo-consulting';
-import { StLouisCounty } from '../components/resume/positions/st-louis-county';
-import { EslintConfig } from '../components/resume/projects/eslint-config';
-import { Fetch } from '../components/resume/projects/fetch';
-import { Hooks } from '../components/resume/projects/hooks';
-import { Sterett } from '../components/resume/projects/sterett';
-import { UseForm } from '../components/resume/projects/use-form';
+import { PositionSummary } from '../components/resume/positions/position-summary';
+import { ProjectSummary } from '../components/resume/projects/summary';
 import { SkillBars } from '../components/resume/skill-bars';
-import { dateFormatter } from '../components/resume/tech-format';
 
 export const meta: MetaFunction = () => {
   return [{ title: 'Ethan Glover Resume' }];
@@ -54,28 +41,8 @@ export default function () {
       </p>
       <h2 className="my-4 text-xl font-bold">Core Skills</h2>
       <SkillBars />
-      <h2 className="mt-8 flex items-center justify-between">
-        <span className="text-xl font-bold">
-          {' '}
-          Software Contractor/Consultant
-        </span>
-        <span>{dateFormatter.format(new Date('Nov 2018'))} - (Current)</span>
-      </h2>
-      <Nishtech />
-      <StLouisCounty />
-      <Proagrica />
-      <Epa />
-      <EightBase />
-      <Avatara />
-      <Prologue />
-      <CenturyLink />
-      <SeoConsulting />
-      <h2 className="my-4 text-xl font-bold">Projects</h2>
-      <Fetch />
-      <UseForm />
-      <Hooks />
-      <EslintConfig />
-      <Sterett />
+      <PositionSummary />
+      <ProjectSummary />
     </div>
   );
 }
