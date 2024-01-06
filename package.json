@@ -52,15 +52,15 @@
     "@remix-run/eslint-config": "^2.4.1",
     "@types/color-convert": "^2.0.3",
     "@types/lodash": "^4.14.202",
-    "@types/luxon": "^3.3.8",
-    "@types/react": "^18.2.46",
+    "@types/luxon": "^3.4.0",
+    "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "@types/react-syntax-highlighter": "^15.5.11",
     "@types/ua-parser-js": "^0.7.39",
     "@types/uuid": "^9.0.7",
     "eslint": "^8.56.0",
-    "eslint-config-ethang": "^11.7.4",
-    "tailwindcss": "^3.4.0",
+    "eslint-config-ethang": "^11.7.5",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
 }
