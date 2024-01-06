@@ -215,7 +215,7 @@ export function getExperience() {
     })
     .map((_, skill) => {
       return {
-        experience: experience[skill as SkillKey] as number,
+        experience: experience[skill as SkillKey],
         skill,
       };
     })
