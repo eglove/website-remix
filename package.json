@@ -59,7 +59,7 @@
     "@types/ua-parser-js": "^0.7.39",
     "@types/uuid": "^9.0.7",
     "eslint": "^8.56.0",
-    "eslint-config-ethang": "^11.7.5",
+    "eslint-config-ethang": "^11.7.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
