@@ -97,7 +97,7 @@ export default function BlogLayout() {
             width={72}
           />
         </div>
-        <div>
+        <div className="p-2">
           <Heading variant="h2">{loaderData.title}</Heading>
           <div>
             {formatter.format(

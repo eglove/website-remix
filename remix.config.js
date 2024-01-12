@@ -1,8 +1,11 @@
-/** @type {import('@remix-run/dev').AppConfig} */
+/** @type {import("@remix-run/dev").AppConfig} */
 export default {
   ignoredRouteFiles: ["**/.*"],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
   // serverBuildPath: "build/index.js",
+  serverDependenciesToBundle: ["@hyper-fetch/core"],
+  clientDependenciesToBundle: ["@hyper-fetch/core"],
+  browserNodeBuiltinsPolyfill: { modules: { events: true } }
 };
