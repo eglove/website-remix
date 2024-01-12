@@ -10,15 +10,16 @@ import { CodeWrapper } from '../components/elements/code-wrapper';
 import { Paragraph } from '../components/elements/paragraph';
 import { getPosts, getPostsRequest } from '../data/typicode';
 
-let loaderCalled: 'server' | 'client' = 'server';
+let isRetrievingFromServer = false;
+let isRetrievingFromCache = false;
 
 export async function loader() {
-  loaderCalled = 'server';
+  isRetrievingFromServer = true;
   return getPosts();
 }
 
 export async function clientLoader({ serverLoader }: ClientLoaderFunctionArgs) {
-  loaderCalled = 'client';
+  isRetrievingFromCache = true;
   const request = getPostsRequest();
 
   const cache = await caches.open('ethang');
@@ -26,9 +27,11 @@ export async function clientLoader({ serverLoader }: ClientLoaderFunctionArgs) {
 
   if (isNil(cachedRequest)) {
     await cache.add(request);
+    isRetrievingFromCache = false;
     return serverLoader();
   }
 
+  isRetrievingFromCache = false;
   return cachedRequest;
 }
 
@@ -75,7 +78,7 @@ export default function () {
       <Paragraph>
         So let&apos;s give this a shot. First we can create a basic API call.
         There&apos;s many advantages to separating Request creation from
-        actually calling the API. One if you want to ignore the default fetch
+        actually calling the API. First, if you want to ignore the default fetch
         function and customize Request headers, or if you have no need from
         response.json(), it&apos;s very easy to opt out of the default call.
         Second, we can use Cache API.
@@ -110,10 +113,6 @@ export default function () {
       <CodeWrapper>
         {['export async function loader() {', '  return getPosts();', '}']}
       </CodeWrapper>
-      <Paragraph>That data is now available in our component.</Paragraph>
-      <CodeWrapper>
-        {['const { data, success } = useLoaderData<typeof loader>();']}
-      </CodeWrapper>
       <Paragraph>Finally, we can use the client loader.</Paragraph>
       <CodeWrapper>
         {[
@@ -133,6 +132,13 @@ export default function () {
         ]}
       </CodeWrapper>
       <Paragraph>
+        Regardless of which the data comes from, they&apos;re both available on
+        useLoaderData.
+      </Paragraph>
+      <CodeWrapper>
+        {['const { data, success } = useLoaderData<typeof loader>();']}
+      </CodeWrapper>
+      <Paragraph>
         In this scenario, on the initial load the server loader will be called
         to get initial data. On subsequent calls, the server loader is not
         called, and instead only client loader is called. It checks if the data
@@ -140,28 +146,11 @@ export default function () {
         it will make a call to the server loader.
       </Paragraph>
       <Paragraph>
-        And because this blog is written in Remix you can see exactly, this
-        tells you exactly which one was called:
+        And because this blog is written in Remix you can try these fun buttons
+        to get an idea for how this works. (Don&apos;t forget to try deleting
+        data from Cache API).
       </Paragraph>
       <div className="mb-4 flex gap-2">
-        <div
-          className={twMerge(
-            'text-white py-1 px-2',
-            loaderCalled === 'server' ? 'bg-green-500' : 'bg-red-500',
-          )}
-        >
-          Server
-        </div>
-        <div
-          className={twMerge(
-            'text-white p-2',
-            loaderCalled === 'client' ? 'bg-green-500' : 'bg-red-500',
-          )}
-        >
-          Client
-        </div>
-      </div>
-      <div className="flex gap-2">
         <Button
           className="rounded-none"
           color="primary"
@@ -182,6 +171,24 @@ export default function () {
         >
           Hard Reload
         </Button>
+      </div>
+      <div className="flex gap-2">
+        <div
+          className={twMerge(
+            'text-white p-2',
+            isRetrievingFromServer ? 'bg-green-500' : 'bg-red-500',
+          )}
+        >
+          Getting data from API
+        </div>
+        <div
+          className={twMerge(
+            'text-white p-2',
+            isRetrievingFromCache ? 'bg-green-500' : 'bg-red-500',
+          )}
+        >
+          Getting data from Cache
+        </div>
       </div>
       <Paragraph>
         The question is now, why? Why not just depend on the built in caching of
