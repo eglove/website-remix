@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access */
 import { isNil } from '@ethang/util/data.js';
 import {
   Table,
