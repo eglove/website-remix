@@ -20,7 +20,7 @@ export default function handleRequest(
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars,unused-imports/no-unused-vars,no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars,unused-imports/no-unused-vars
   loadContext: AppLoadContext,
 ) {
   return request.headers.get('user-agent') !== null &&

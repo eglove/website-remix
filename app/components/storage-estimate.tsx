@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 import convert from 'convert';
 import type { JSX } from 'react';
 import { useEffect, useState } from 'react';
