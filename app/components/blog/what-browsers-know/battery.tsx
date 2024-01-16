@@ -60,11 +60,15 @@ export function Battery(): JSX.Element {
 
     // @ts-expect-error this exists
     if (typeof navigator !== 'undefined' && !isNil(navigator.getBattery)) {
-      // @ts-expect-error this exists
-      // eslint-disable-next-line  @typescript-eslint/no-unsafe-call
-      navigator.getBattery().then(batteryManager => {
-        getBatteryData(batteryManager);
-      });
+      navigator
+        // @ts-expect-error this exists
+        .getBattery()
+        .then((batteryManager: BatteryManager) => {
+          getBatteryData(batteryManager);
+        })
+        .catch((error: unknown) => {
+          console.error(error);
+        });
     }
   }, []);
 

@@ -61,7 +61,9 @@ export function Hardware(): JSX.Element {
         <Button
           color="primary"
           onClick={() => {
-            return getDevices();
+            getDevices().catch(error => {
+              console.error(error);
+            });
           }}
         >
           Get Hardware
