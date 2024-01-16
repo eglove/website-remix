@@ -21,7 +21,7 @@ export function CodeWrapper({
       showLineNumbers
       customStyle={styles}
       language={language}
-      style={theme}
+      style={theme as Record<string, CSSProperties>}
     >
       {codeString(children)}
     </SyntaxHighlighter>

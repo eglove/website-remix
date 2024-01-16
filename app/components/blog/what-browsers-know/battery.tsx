@@ -61,6 +61,7 @@ export function Battery(): JSX.Element {
     // @ts-expect-error this exists
     if (typeof navigator !== 'undefined' && !isNil(navigator.getBattery)) {
       // @ts-expect-error this exists
+      // eslint-disable-next-line  @typescript-eslint/no-unsafe-call
       navigator.getBattery().then(batteryManager => {
         getBatteryData(batteryManager);
       });

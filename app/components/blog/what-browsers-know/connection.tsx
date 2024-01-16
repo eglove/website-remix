@@ -33,7 +33,9 @@ export function Connection(): JSX.Element {
       })
       .then(data => {
         setIp((data as { ip: string }).ip);
-      });
+      }).catch(error => {
+        console.error(error)
+    });
 
     fetch('https://eu.httpbin.org/stream-bytes/500000')
       .then(response => {
@@ -47,7 +49,9 @@ export function Connection(): JSX.Element {
         const speedKbps = fileSizeInMegabits / timeInSeconds;
 
         setSpeed(speedKbps);
-      });
+      }).catch(error => {
+        console.error(error)
+    });
   }, []);
 
   return (

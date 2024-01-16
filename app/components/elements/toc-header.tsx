@@ -15,7 +15,7 @@ export function TocHeader({
     <Heading className="flex gap-2" id={id} variant="h3">
       {text}{' '}
       <Link href={`${href}#toc`}>
-        <ChevronDoubleUpIcon className="h-8 w-8 cursor-pointer" />
+        <ChevronDoubleUpIcon className="size-8 cursor-pointer" />
       </Link>
     </Heading>
   );

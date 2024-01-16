@@ -45,6 +45,6 @@ export async function getMetadataBySlug(
 
   const query = `${where}${select}`;
 
-  const data = await sanityClient.fetch(query);
+  const data = await sanityClient.fetch<GetMetadataBySlug[]>(query);
   return data[0];
 }

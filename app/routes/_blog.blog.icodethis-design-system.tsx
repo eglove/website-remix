@@ -19,7 +19,7 @@ export default function () {
             className="flex w-max items-center gap-2 rounded bg-blue-600 p-3 text-white hover:bg-blue-700"
             type="button"
           >
-            Primary <ChevronDownIcon className="h-4 w-4" />
+            Primary <ChevronDownIcon className="size-4" />
           </button>
         </div>
         <div className="my-4 flex gap-2">
@@ -33,7 +33,7 @@ export default function () {
             className="flex w-max cursor-default items-center gap-2 rounded bg-gray-500 p-3 text-white"
             type="button"
           >
-            Primary <ChevronDownIcon className="h-4 w-4" />
+            Primary <ChevronDownIcon className="size-4" />
           </button>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function () {
             className="flex w-max items-center gap-2 rounded border-2 border-blue-600 bg-white p-3 text-blue-600 hover:border-blue-800 hover:text-blue-800"
             type="button"
           >
-            Secondary <ChevronDownIcon className="h-4 w-4" />
+            Secondary <ChevronDownIcon className="size-4" />
           </button>
         </div>
         <div className="my-4 flex gap-2">
@@ -63,7 +63,7 @@ export default function () {
             className="flex w-max cursor-default items-center gap-2 rounded border-2 border-gray-600 bg-white p-3 text-gray-600"
             type="button"
           >
-            Secondary <ChevronDownIcon className="h-4 w-4" />
+            Secondary <ChevronDownIcon className="size-4" />
           </button>
         </div>
       </div>
@@ -96,19 +96,19 @@ export default function () {
         <div className="flex gap-2">
           <div className="my-3 rounded-full bg-blue-500 p-2 text-white">
             Default{' '}
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white p-1">
+            <span className="inline-flex size-8 items-center justify-center rounded-full border-2 border-white p-1">
               4
             </span>
           </div>
           <div className="my-3 rounded-full bg-green-500 p-2 text-white">
             Positive{' '}
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white p-1">
+            <span className="inline-flex size-8 items-center justify-center rounded-full border-2 border-white p-1">
               2
             </span>
           </div>
           <div className="my-3 rounded-full bg-red-500 p-2 text-white">
             Negative{' '}
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white p-1">
+            <span className="inline-flex size-8 items-center justify-center rounded-full border-2 border-white p-1">
               9
             </span>
           </div>

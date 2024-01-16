@@ -58,7 +58,12 @@ export function Hardware(): JSX.Element {
   return (
     <div>
       {tracks.length <= 0 && (
-        <Button color="primary" onClick={getDevices}>
+        <Button
+          color="primary"
+          onClick={() => {
+            return getDevices();
+          }}
+        >
           Get Hardware
         </Button>
       )}
@@ -74,7 +79,9 @@ export function Hardware(): JSX.Element {
               return (
                 <TableRow key={track.id}>
                   {(columnKey): JSX.Element => {
-                    const value = getKeyValue(track, columnKey);
+                    const value = getKeyValue(track, columnKey) as
+                      | string
+                      | boolean;
 
                     if (typeof value === 'boolean') {
                       return <TableCell>{value ? 'Yes' : 'No'}</TableCell>;

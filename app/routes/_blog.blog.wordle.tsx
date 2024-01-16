@@ -10,7 +10,7 @@ import { ToastContainer } from 'react-toastify';
 import { Guess } from '../components/blog/wordle/guess';
 import { useWordle } from '../components/blog/wordle/use-wordle';
 
-export async function loader() {
+export function loader() {
   const answer = faker.word.noun({ length: 5 });
 
   return json(answer, {

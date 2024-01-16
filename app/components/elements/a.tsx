@@ -17,7 +17,7 @@ export function A(properties: AProperties): JSX.Element {
       prefetch="viewport"
       {...properties}
       href={undefined}
-      to={properties.href ?? properties.to}
+      to={properties.href ?? (properties.to as string)}
     >
       {properties.children}
     </Link>
