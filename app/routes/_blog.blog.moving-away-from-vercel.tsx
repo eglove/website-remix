@@ -20,6 +20,31 @@ export default function () {
         , Pilcrow
       </Paragraph>
       <Paragraph>
+        <A
+          isExternal
+          href="https://twitter.com/tannerlinsley/status/1746970043836158330"
+        >
+          ...dancing around experimental APIs that my open source users think
+          are officially ready for prime time
+        </A>
+        , Tanner Linsly
+      </Paragraph>
+      <Paragraph>
+        <A isExternal href="https://blog.cassidoo.co/post/annoyed-at-react/">
+          Kind of annoyed at React
+        </A>
+        , Cassidy Williams
+      </Paragraph>
+      <Paragraph>
+        <A
+          isExternal
+          href="https://macwright.com/2024/01/03/miffed-about-react"
+        >
+          Increasingly miffed about the state of React releases
+        </A>
+        , Tom MacWright
+      </Paragraph>
+      <Paragraph>
         I&apos;ve been a Vercel and NextJS stan for years. Since version 7 when
         it was being compared to Jekyll and Hugo, I&apos;ve been defending it as
         a professional grade tool for building modern web applications. And just
