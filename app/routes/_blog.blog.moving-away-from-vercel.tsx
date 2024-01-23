@@ -27,7 +27,7 @@ export default function () {
           ...dancing around experimental APIs that my open source users think
           are officially ready for prime time
         </A>
-        , Tanner Linsly
+        , Tanner Linsley
       </Paragraph>
       <Paragraph>
         <A isExternal href="https://blog.cassidoo.co/post/annoyed-at-react/">
@@ -45,6 +45,12 @@ export default function () {
         , Tom MacWright
       </Paragraph>
       <Paragraph>
+        <A isExternal href="https://www.youtube.com/watch?v=oQiEZ8adag0">
+          React&apos;s becoming a bit weird...
+        </A>
+        , Maximilian Schwarzmuller
+      </Paragraph>
+      <Paragraph>
         I&apos;ve been a Vercel and NextJS stan for years. Since version 7 when
         it was being compared to Jekyll and Hugo, I&apos;ve been defending it as
         a professional grade tool for building modern web applications. And just
@@ -59,7 +65,7 @@ export default function () {
         hearing about for the first time and thinking, &ldquo;this is actually
         pretty good.&rdquo; React now recommends NextJS for new projects. At
         first, I was excited about this. Finally React is growing up. I gushed
-        over the documentation changes in
+        over the documentation changes in{' '}
         <A href="https://ethang.dev/blog/react-development-about-change">
           React Development is About to Change
         </A>
