@@ -51,6 +51,15 @@ export default function () {
         , Maximilian Schwarzmuller
       </Paragraph>
       <Paragraph>
+        <A
+          isExternal
+          href="https://www.flightcontrol.dev/blog/nextjs-app-router-migration-the-good-bad-and-ugly"
+        >
+          Next.Js App Router Migration: The Good, Bad, And Ugly
+        </A>
+        , Brandon Bayer
+      </Paragraph>
+      <Paragraph>
         I&apos;ve been a Vercel and NextJS stan for years. Since version 7 when
         it was being compared to Jekyll and Hugo, I&apos;ve been defending it as
         a professional grade tool for building modern web applications. And just
