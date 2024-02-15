@@ -29,7 +29,7 @@
     }
   },
   "dependencies": {
-    "@ethang/hooks": "^1.5.21",
+    "@ethang/hooks": "^1.5.23",
     "@ethang/use-form": "^1.6.53",
     "@ethang/util": "^3.1.1",
     "@faker-js/faker": "^8.4.1",
@@ -57,7 +57,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.20",
+    "@ethang/project-builder": "^1.1.21",
     "@remix-run/dev": "^2.6.0",
     "@remix-run/eslint-config": "^2.6.0",
     "@types/color-convert": "^2.0.3",
@@ -69,7 +69,7 @@
     "@types/ua-parser-js": "^0.7.39",
     "@types/uuid": "^9.0.8",
     "eslint": "^8.56.0",
-    "eslint-config-ethang": "^13.0.11",
+    "eslint-config-ethang": "^13.0.13",
     "tailwindcss": "^3.4.1",
     "type-fest": "^4.10.2",
     "typescript": "^5.3.3"
