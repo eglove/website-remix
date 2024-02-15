@@ -209,8 +209,6 @@ export function getExperience(): {
     }
   });
 
-  console.log(experience);
-
   return (
     lodash
       .chain(experience)

@@ -10,16 +10,38 @@ export function ProjectSummary() {
         <ul className="list-inside list-disc">
           <li className="pl-4">
             Very strict, opinionated ESLint config. Extends
-            eslint-plugin-unicorn and eslint-config-xo. Adds additional rules
-            for immutable object mutations, Tailwind, Prettier, and others.
+            eslint-plugin-unicorn. Takes into account every rule from vanilla
+            EsLint and @typescrit/eslint.
           </li>
           <li className="pl-4">
             <A
-              className="text-medium"
+              className="text-sm"
               href="https://github.com/eglove/eslint-config-ethang"
               isExternal
             >
               github.com/eglove/eslint-config-ethang
+            </A>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span className="font-bold">Toolbelt</span>
+        <ul className="list-inside list-disc">
+          <li className="pl-4">
+            TypeScript utilities with a strict, consistent error handling
+            inteface. Forces error checking, inspired by GoLang and Zod.
+          </li>
+          <li className="pl-4">
+            Includes tool for building a centralized API and fetch abstractions
+            to use the standard Cache API.
+          </li>
+          <li className="pl-4">
+            <A
+              className="text-sm"
+              href="https://github.com/eglove/toolbelt"
+              isExternal
+            >
+              github.com/eglove/toolbelt
             </A>
           </li>
         </ul>
@@ -39,6 +61,10 @@ export function ProjectSummary() {
             need for writing useEffects for events in React.
           </li>
           <li className="pl-4">
+            useForm idiomatic patterns for React + AJAX form submissions.
+            Includes ability to validate forms with Zod schemas.
+          </li>
+          <li className="pl-4">
             Also includes:{' '}
             {unitFormat.format([
               'useCopyClipboard',
@@ -54,49 +80,11 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              className="text-medium"
+              className="text-sm"
               href="https://github.com/eglove/hooks"
               isExternal
             >
               github.com/eglove/hooks
-            </A>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <span className="font-bold">useForm</span>
-        <ul className="list-inside list-disc">
-          <li className="pl-4">
-            NPM library to deal with forms in React. Uses idiomatic patterns for
-            React + AJAX form submissions. Includes ability to validate forms
-            with Zod schemas.
-          </li>
-          <li className="pl-4">
-            <A
-              className="text-medium"
-              href="https://github.com/eglove/use-form"
-              isExternal
-            >
-              github.com/eglove/use-form
-            </A>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <span className="font-bold">fetch</span>
-        <ul className="list-inside list-disc">
-          <li className="pl-4">
-            NPM library for building a centralized API and fetch abstractions to
-            use the standard Cache API. This essentially works as my replacement
-            for both Axios and TanStack Query in my own personal projects.
-          </li>
-          <li className="pl-4">
-            <A
-              className="text-medium"
-              href="https://github.com/eglove/fetch"
-              isExternal
-            >
-              github.com/eglove/fetch
             </A>
           </li>
         </ul>
@@ -110,7 +98,7 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              className="text-medium"
+              className="text-sm"
               href="https://github.com/eglove/project-builder"
               isExternal
             >
@@ -129,7 +117,7 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              className="text-medium"
+              className="text-sm"
               href="https://github.com/eglove/sterett"
               isExternal
             >
@@ -138,7 +126,7 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              className="text-medium"
+              className="text-sm"
               href="https://sterettcreekvillagetrustee.com/"
               isExternal
             >
