@@ -1,8 +1,10 @@
+import type { JSX } from 'react';
+
 import { A } from '../components/elements/a';
 import { CodeWrapper } from '../components/elements/code-wrapper';
 import { Paragraph } from '../components/elements/paragraph';
 
-export default function () {
+export default function RevisitingOldGraphqlFriend(): JSX.Element {
   return (
     <>
       <Paragraph>

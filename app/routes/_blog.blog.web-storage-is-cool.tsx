@@ -1,4 +1,5 @@
 import { Link } from '@nextui-org/link';
+import type { JSX } from 'react';
 
 import { A } from '../components/elements/a';
 import { Heading } from '../components/elements/heading';
@@ -6,7 +7,7 @@ import { Paragraph } from '../components/elements/paragraph';
 import { SanityImage } from '../components/elements/sanity-image';
 import { StorageEstimate } from '../components/storage-estimate';
 
-export default function () {
+export default function WebStorageIsCool(): JSX.Element {
   return (
     <>
       <Paragraph>
@@ -25,9 +26,9 @@ export default function () {
       <ol className="list-inside list-decimal">
         <li className="mb-2">
           <A
-            isExternal
             className="font-bold"
             href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage"
+            isExternal
           >
             Local Storage:
           </A>{' '}
@@ -39,9 +40,9 @@ export default function () {
         </li>
         <li className="mb-2">
           <A
-            isExternal
             className="font-bold"
             href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage"
+            isExternal
           >
             Session Storage:
           </A>{' '}
@@ -53,9 +54,9 @@ export default function () {
         </li>
         <li className="mb-2">
           <A
-            isExternal
             className="font-bold"
             href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
+            isExternal
           >
             IndexedDB:
           </A>{' '}
@@ -75,9 +76,9 @@ export default function () {
         </li>
         <li className="mb-2">
           <A
-            isExternal
             className="font-bold"
             href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies"
+            isExternal
           >
             Cookies:
           </A>{' '}
@@ -118,9 +119,9 @@ export default function () {
         </li>
         <li className="mb-2">
           <A
-            isExternal
             className="font-bold"
             href="https://developer.mozilla.org/en-US/docs/Web/API/Cache"
+            isExternal
           >
             Cache Storage:
           </A>{' '}
@@ -141,18 +142,18 @@ export default function () {
         storage, and local storage. Why aren&apos;t we using at the very least
         IndexedDB and Cache Storage more often? I think the short answer to that
         is{' '}
-        <Link isExternal href="https://tanstack.com/query/latest">
+        <Link href="https://tanstack.com/query/latest" isExternal>
           TanStack Query
         </Link>{' '}
         and state management. Web standards are very slow to change, and a lot
         of these were created as proposals in reaction to modern web
         development. When building a React app, it is generally smarter to
         choose TanStack Query over Cache Storage. And if needed{' '}
-        <Link isExternal href="https://redux-toolkit.js.org">
+        <Link href="https://redux-toolkit.js.org" isExternal>
           Redux Toolkit
         </Link>{' '}
         over IndexedDB. Mobile developers are familiar with tools like{' '}
-        <Link isExternal href="https://github.com/localForage/localForage">
+        <Link href="https://github.com/localForage/localForage" isExternal>
           localForage
         </Link>
         . All of these options allow you to configure various methods of
@@ -189,7 +190,7 @@ export default function () {
         good to reach for in small apps that don&apos;t have a lot of
         interactivity outside of form submissions that just need a little
         offline storage. In fact, I found it very easy to create a{' '}
-        <Link isExternal href="https://github.com/eglove/fetch">
+        <Link href="https://github.com/eglove/fetch" isExternal>
           client-side fetcher
         </Link>{' '}
         that makes use of the Cache API and Indexed DB for cache invalidation in

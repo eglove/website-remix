@@ -1,16 +1,22 @@
 import type { JSX } from 'react';
 import { twMerge } from 'tailwind-merge';
+import type { ReadonlyDeep } from 'type-fest';
 
-type ParagraphProperties = JSX.IntrinsicElements['p'] & {
-  children: (JSX.Element | string)[] | JSX.Element | string;
-};
+type ParagraphProperties = ReadonlyDeep<
+  JSX.IntrinsicElements['p'] & {
+    children: (JSX.Element | string)[] | JSX.Element | string;
+  }
+>;
 
 export function Paragraph({
   children,
   ...rest
 }: Readonly<ParagraphProperties>): JSX.Element {
   return (
-    <p {...rest} className={twMerge('my-2', rest.className)}>
+    <p
+      {...(rest as JSX.IntrinsicElements['p'])}
+      className={twMerge('my-2', rest.className)}
+    >
       {children}
     </p>
   );

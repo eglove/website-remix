@@ -28,8 +28,8 @@ export default function () {
         performance was getting. Lighthouse scores were not satisfactory. So I
         thought I&apos;d build my own CMS. I bought ‘
         <A
-          isExternal
           href="https://smile.amazon.com/PHP-MySQL-Dynamic-Web-Sites/dp/0134301846"
+          isExternal
         >
           PHP and MySQL for Dynamic Web Sites
         </A>

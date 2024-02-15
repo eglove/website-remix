@@ -22,6 +22,7 @@ export function StorageEstimate(): JSX.Element {
     };
 
     getValues().catch(error => {
+      // eslint-disable-next-line no-console
       console.error(error);
     });
   }, []);

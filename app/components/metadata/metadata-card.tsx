@@ -1,14 +1,15 @@
 import { DateTime } from 'luxon';
+import type { ReadonlyDeep } from 'type-fest';
 
 import type { Metadata } from '../../controllers/get-metadatas-by-category';
 import { A } from '../elements/a';
 import { Heading } from '../elements/heading';
 import { SanityImage } from '../elements/sanity-image';
 
-type MetadataCardProperties = {
+type MetadataCardProperties = ReadonlyDeep<{
   readonly isAboveTheFold: boolean;
   readonly metadata: Metadata;
-};
+}>;
 
 export function MetadataCard({
   metadata,

@@ -14,7 +14,7 @@ export default function () {
       </Paragraph>
       <Paragraph>
         I recently moved another project of mine to QwikCity using{' '}
-        <A isExternal href="https://qwik.builder.io/docs/integrations/react/">
+        <A href="https://qwik.builder.io/docs/integrations/react/" isExternal>
           React islands
         </A>{' '}
         for the entire app. All of the UI components use NextUI which need to
@@ -37,7 +37,7 @@ export default function () {
       <Paragraph>
         So not quite 100. But it&apos;s still very impressive considering the UI
         library I&apos;m using is{' '}
-        <A isExternal href="https://nextui.org/">
+        <A href="https://nextui.org/" isExternal>
           NextUI
         </A>{' '}
         which uses framer motion and a very large Tailwind bundle due to
@@ -52,12 +52,12 @@ export default function () {
         the methodologies behind Google&apos;s internal Wiz framework. Namely
         instead of JavaScript files being treated as blocking resources, it
         pre-populates the browsers cache in the background with service workers.{' '}
-        <A isExternal href="https://qwik.builder.io/docs/concepts/resumable/">
+        <A href="https://qwik.builder.io/docs/concepts/resumable/" isExternal>
           Qwik has no hydration step.
         </A>{' '}
         <A
-          isExternal
           href="https://www.builder.io/blog/our-current-frameworks-are-on-we-need-o1"
+          isExternal
         >
           Which gives it O(1) performance.
         </A>
@@ -87,11 +87,11 @@ export default function () {
         <li className="mb-2">
           <strong>Loader/Action data pattern:</strong> Borrowing from Remix,
           QwikCity allows the use of{' '}
-          <A isExternal href="https://qwik.builder.io/docs/route-loader/">
+          <A href="https://qwik.builder.io/docs/route-loader/" isExternal>
             loaders
           </A>{' '}
           and{' '}
-          <A isExternal href="https://qwik.builder.io/docs/action/">
+          <A href="https://qwik.builder.io/docs/action/" isExternal>
             actions
           </A>{' '}
           for server communication.
@@ -99,7 +99,7 @@ export default function () {
         <li className="mb-2">
           <strong>RPC calls:</strong> Taking inspiration from NextJS you can go
           for{' '}
-          <A isExternal href="https://qwik.builder.io/docs/server$/">
+          <A href="https://qwik.builder.io/docs/server$/" isExternal>
             RPC calls
           </A>{' '}
           for mutations as well.
@@ -108,13 +108,13 @@ export default function () {
           <strong>Cache-Control Headers:</strong> Next&apos;s ISR is nice, but
           it requires unique infrastructure. QwikCity allows you to go back to
           plain{' '}
-          <A isExternal href="https://qwik.builder.io/docs/caching/">
+          <A href="https://qwik.builder.io/docs/caching/" isExternal>
             Cache-Control Headers
           </A>{' '}
           while{' '}
           <A
-            isExternal
             href="https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control"
+            isExternal
           >
             Next will strip them out of your application altogether
           </A>
@@ -124,8 +124,8 @@ export default function () {
           <strong>Progressive Enhancement:</strong> Like Remix, Qwik provides an
           easy way to write{' '}
           <A
-            isExternal
             href="https://qwik.builder.io/docs/action/#using-actions-with-form"
+            isExternal
           >
             progressively enhanced forms
           </A>{' '}
@@ -140,8 +140,8 @@ export default function () {
         To put it simply, the Qwik implementation of signals isn&apos;t great.
         Pulling from{' '}
         <A
-          isExternal
           href="https://dev.to/this-is-learning/the-cost-of-consistency-in-ui-frameworks-4agi"
+          isExternal
         >
           Ryan Carniato&apos;s blog post on state consistency
         </A>
@@ -218,8 +218,8 @@ export default function () {
         hydrate. This is fantastic, however it can get confusing trying to
         figure out exactly what a{' '}
         <A
-          isExternal
           href="https://qwik.builder.io/docs/guides/serialization/#-boundaries"
+          isExternal
         >
           $ boundary
         </A>{' '}

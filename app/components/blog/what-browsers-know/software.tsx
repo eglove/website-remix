@@ -21,7 +21,7 @@ export function Software(): JSX.Element {
   }, []);
 
   return (
-    <Table isStriped aria-label="browser">
+    <Table aria-label="browser" isStriped>
       <TableHeader>
         <TableColumn>Type</TableColumn>
         <TableColumn>Name</TableColumn>

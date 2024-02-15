@@ -52,15 +52,15 @@ export default function () {
         Because of the quality of presentation and level of knowledge presented,
         I give Mike Meyers&apos; TOTAL: CompTIA A+ Certification{' '}
         <A
-          isExternal
           href="https://www.udemy.com/course/new-comptia-a-2019-certification-1001-the-total-course/"
+          isExternal
         >
           Core 1
         </A>{' '}
         and{' '}
         <A
-          isExternal
           href="https://www.udemy.com/course/new-comptia-a-2019-certification-1002-the-total-course/"
+          isExternal
         >
           Core 2
         </A>{' '}

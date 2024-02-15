@@ -3,7 +3,9 @@ import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import type { ClientLoaderFunctionArgs } from '@remix-run/react';
 import { useLoaderData, useNavigate } from '@remix-run/react';
+import { useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
+import type { ReadonlyDeep } from 'type-fest';
 
 import { Blockquote } from '../components/elements/blockquote';
 import { CodeWrapper } from '../components/elements/code-wrapper';
@@ -18,7 +20,9 @@ export async function loader() {
   return getPosts();
 }
 
-export async function clientLoader({ serverLoader }: ClientLoaderFunctionArgs) {
+export async function clientLoader({
+  serverLoader,
+}: ReadonlyDeep<ClientLoaderFunctionArgs>) {
   isRetrievingFromCache = true;
   const request = getPostsRequest();
 
@@ -41,6 +45,16 @@ export default function () {
   useLoaderData<typeof clientLoader>();
   const navigate = useNavigate();
 
+  const navigateWithScroll = useCallback(() => {
+    navigate('/blog/remix-client-data', {
+      preventScrollReset: true,
+    });
+  }, [navigate]);
+
+  const reload = useCallback(() => {
+    location.reload();
+  }, []);
+
   return (
     <div>
       <Paragraph>
@@ -48,15 +62,15 @@ export default function () {
         a second class citizen in JS frameworks. In order to use powerful
         browser tools like{' '}
         <Link
-          isExternal
           href="https://developer.mozilla.org/en-US/docs/Web/API/Cache"
+          isExternal
         >
           Cache API
         </Link>{' '}
         and{' '}
         <Link
-          isExternal
           href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
+          isExternal
         >
           IndexedDB
         </Link>{' '}
@@ -154,21 +168,11 @@ export default function () {
         <Button
           className="rounded-none"
           color="primary"
-          onPress={() => {
-            navigate('/blog/remix-client-data', {
-              preventScrollReset: true,
-            });
-          }}
+          onPress={navigateWithScroll}
         >
           Client Navigate
         </Button>
-        <Button
-          className="rounded-none"
-          color="secondary"
-          onPress={() => {
-            location.reload();
-          }}
-        >
+        <Button className="rounded-none" color="secondary" onPress={reload}>
           Hard Reload
         </Button>
       </div>

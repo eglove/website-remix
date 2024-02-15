@@ -14,7 +14,8 @@ import { renderToPipeableStream } from 'react-dom/server';
 
 const ABORT_DELAY = 5000;
 
-// eslint-disable-next-line max-params
+/* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
+// eslint-disable-next-line max-params,@typescript-eslint/max-params
 export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
@@ -39,6 +40,7 @@ export default async function handleRequest(
       );
 }
 
+// eslint-disable-next-line @typescript-eslint/max-params
 async function handleBotRequest(
   request: Request,
   responseStatusCode: number,
@@ -79,6 +81,7 @@ async function handleBotRequest(
            * reject and get logged in handleDocumentRequest.
            */
           if (shellRendered) {
+            // eslint-disable-next-line no-console
             console.error(error);
           }
         },
@@ -94,6 +97,7 @@ async function handleBotRequest(
   });
 }
 
+// eslint-disable-next-line @typescript-eslint/max-params
 async function handleBrowserRequest(
   request: Request,
   responseStatusCode: number,
@@ -118,6 +122,7 @@ async function handleBrowserRequest(
            * reject and get logged in handleDocumentRequest.
            */
           if (shellRendered) {
+            // eslint-disable-next-line no-console
             console.error(error);
           }
         },

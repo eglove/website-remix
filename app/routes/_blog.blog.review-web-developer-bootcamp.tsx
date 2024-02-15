@@ -7,8 +7,8 @@ export default function () {
       <Paragraph>
         Sixty-three and a half hours of web development goodness.{' '}
         <A
-          isExternal
           href="https://www.udemy.com/course/the-web-developer-bootcamp/"
+          isExternal
         >
           Colt Steele&apos;s Web Developer Bootcamp
         </A>{' '}

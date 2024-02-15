@@ -87,8 +87,8 @@ export default function () {
         And of course the code for this utility function with both a sync and
         async version{' '}
         <A
-          isExternal
           href="https://github.com/eglove/util/blob/3a78991ca4e56ca4c765cfb5d82a436257917789/src/data.ts#L23"
+          isExternal
         >
           can be found in my util library
         </A>

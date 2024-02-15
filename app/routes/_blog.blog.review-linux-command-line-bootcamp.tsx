@@ -33,8 +33,8 @@ export default function () {
         performance in presentation and the in depth, knowledgeable coverage of
         the linux command line means{' '}
         <A
-          isExternal
           href="https://www.udemy.com/course/the-linux-command-line-bootcamp/"
+          isExternal
         >
           The Linux Command Line Bootcamp
         </A>{' '}

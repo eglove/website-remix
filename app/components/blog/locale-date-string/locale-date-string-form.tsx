@@ -107,13 +107,13 @@ export function LocaleDateStringForm(): JSX.Element {
     <>
       <Button
         className="my-2"
-        type="button"
         onClick={(): void => {
           setIsShowingAll(isShowingAll_ => {
             resetForm();
             return !isShowingAll_;
           });
         }}
+        type="button"
       >
         Show {isShowingAll ? 'fewer options' : 'all options'}
       </Button>
@@ -123,8 +123,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Calendar"
               name="calendar"
-              value={formState.calendar}
               onChange={handleChange}
+              value={formState.calendar}
             >
               {[...Intl.supportedValuesOf('calendar')].map(item => {
                 return (
@@ -138,18 +138,18 @@ export function LocaleDateStringForm(): JSX.Element {
           <Input
             label="Date"
             name="date"
-            type="datetime-local"
-            value={formState.date}
-            variant="underlined"
             onChange={
               handleChange as unknown as ChangeEventHandler<HTMLInputElement>
             }
+            type="datetime-local"
+            value={formState.date}
+            variant="underlined"
           />
           <Select
             label="Date Style"
             name="dateStyle"
-            value={formState.dateStyle}
             onChange={handleChange}
+            value={formState.dateStyle}
           >
             {dateStyles.map(style => {
               return (
@@ -163,8 +163,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Day"
               name="day"
-              value={formState.day}
               onChange={handleChange}
+              value={formState.day}
             >
               {numberDigits.map(item => {
                 return (
@@ -179,8 +179,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Day Period"
               name="dayPeriod"
-              value={formState.dayPeriod}
               onChange={handleChange}
+              value={formState.dayPeriod}
             >
               {lengths.map(item => {
                 return (
@@ -195,8 +195,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Era"
               name="era"
-              value={formState.era}
               onChange={handleChange}
+              value={formState.era}
             >
               {lengths.map(item => {
                 return (
@@ -211,8 +211,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Format Matcher"
               name="formatMatcher"
-              value={formState.formatMatcher}
               onChange={handleChange}
+              value={formState.formatMatcher}
             >
               {fits.map(item => {
                 return (
@@ -227,8 +227,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Fractional Second Digits"
               name="fractionalSecondDigits"
-              value={formState.fractionalSecondDigits}
               onChange={handleChange}
+              value={formState.fractionalSecondDigits}
             >
               {fractionalSecondDigits.map(item => {
                 return (
@@ -243,8 +243,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Hour"
               name="hour"
-              value={formState.hour}
               onChange={handleChange}
+              value={formState.hour}
             >
               {numberDigits.map(item => {
                 return (
@@ -259,8 +259,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Hour12"
               name="hour12"
-              value={formState.hour12}
               onChange={handleChange}
+              value={formState.hour12}
             >
               {booleans.map(item => {
                 return (
@@ -275,8 +275,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Hour Cycle"
               name="hourCycle"
-              value={formState.hourCycle}
               onChange={handleChange}
+              value={formState.hourCycle}
             >
               {hourCycles.map(item => {
                 return (
@@ -290,8 +290,8 @@ export function LocaleDateStringForm(): JSX.Element {
           <Select
             label="Locale"
             name="locale"
-            value={formState.locale}
             onChange={handleChange}
+            value={formState.locale}
           >
             {locales.map(item => {
               return (
@@ -305,8 +305,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Locale Matcher"
               name="localeMatcher"
-              value={formState.localeMatcher}
               onChange={handleChange}
+              value={formState.localeMatcher}
             >
               {fits2.map(item => {
                 return (
@@ -321,8 +321,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Minute"
               name="minute"
-              value={formState.minute}
               onChange={handleChange}
+              value={formState.minute}
             >
               {numberDigits.map(item => {
                 return (
@@ -337,8 +337,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Month"
               name="month"
-              value={formState.month}
               onChange={handleChange}
+              value={formState.month}
             >
               {monthOptions.map(item => {
                 return (
@@ -353,8 +353,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Numbering System"
               name="numberingSystem"
-              value={formState.numberingSystem}
               onChange={handleChange}
+              value={formState.numberingSystem}
             >
               {[...Intl.supportedValuesOf('numberingSystem')].map(item => {
                 return (
@@ -369,8 +369,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Second"
               name="second"
-              value={formState.second}
               onChange={handleChange}
+              value={formState.second}
             >
               {numberDigits.map(item => {
                 return (
@@ -384,8 +384,8 @@ export function LocaleDateStringForm(): JSX.Element {
           <Select
             label="Time Style"
             name="timeStyle"
-            value={formState.timeStyle}
             onChange={handleChange}
+            value={formState.timeStyle}
           >
             {dateStyles.map(item => {
               return (
@@ -398,8 +398,8 @@ export function LocaleDateStringForm(): JSX.Element {
           <Select
             label="TimeZone"
             name="timeZone"
-            value={formState.timeZone}
             onChange={handleChange}
+            value={formState.timeZone}
           >
             {Intl.supportedValuesOf('timeZone').map(item => {
               return (
@@ -413,8 +413,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="TimeZone Name"
               name="timeZoneName"
-              value={formState.timeZoneName}
               onChange={handleChange}
+              value={formState.timeZoneName}
             >
               {timeZoneNames.map(item => {
                 return (
@@ -429,8 +429,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Weekday"
               name="weekday"
-              value={formState.weekday}
               onChange={handleChange}
+              value={formState.weekday}
             >
               {lengths.map(item => {
                 return (
@@ -445,8 +445,8 @@ export function LocaleDateStringForm(): JSX.Element {
             <Select
               label="Year"
               name="year"
-              value={formState.year}
               onChange={handleChange}
+              value={formState.year}
             >
               {numberDigits.map(item => {
                 return (

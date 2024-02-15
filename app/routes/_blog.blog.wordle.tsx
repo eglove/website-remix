@@ -2,6 +2,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { range } from '@ethang/util/data.js';
 import { faker } from '@faker-js/faker';
+import type { TypedResponse } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import type { JSX } from 'react';
@@ -10,7 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import { Guess } from '../components/blog/wordle/guess';
 import { useWordle } from '../components/blog/wordle/use-wordle';
 
-export function loader() {
+export function loader(): TypedResponse<string> {
   const answer = faker.word.noun({ length: 5 });
 
   return json(answer, {
@@ -22,7 +23,7 @@ export function loader() {
 
 export const maxGuessesAllowed = 6;
 
-export default function (): JSX.Element {
+export default function Wordle(): JSX.Element {
   const answer = useLoaderData<typeof loader>();
   const { guesses, handleSubmit, isInputDisabled, formState, handleChange } =
     useWordle({ answer });
@@ -33,9 +34,9 @@ export default function (): JSX.Element {
         {range(0, maxGuessesAllowed).map(index => {
           return (
             <Guess
-              key={index}
               answer={answer}
               guess={[...guesses][index] ?? '     '}
+              key={index}
             />
           );
         })}
@@ -52,9 +53,9 @@ export default function (): JSX.Element {
           disabled={isInputDisabled}
           id="guess"
           name="guess"
+          onChange={handleChange}
           type="text"
           value={formState.guess}
-          onChange={handleChange}
         />
       </form>
       <ToastContainer />

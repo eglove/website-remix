@@ -24,7 +24,7 @@ export default function () {
       <Paragraph>
         So in the past I&apos;ve always stored HTML as text on a database and
         used something like{' '}
-        <A isExternal href="https://www.npmjs.com/package/react-html-parser">
+        <A href="https://www.npmjs.com/package/react-html-parser" isExternal>
           react-html-parser
         </A>{' '}
         to parse it on the page. Then it&apos;s just a matter of using server

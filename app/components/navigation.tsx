@@ -25,7 +25,7 @@ export function Navigation() {
     .url();
 
   return (
-    <Navbar isBordered className="mx-auto max-w-5xl rounded-none bg-white">
+    <Navbar className="mx-auto max-w-5xl rounded-none bg-white" isBordered>
       <NavbarBrand>
         <A href="/">
           <Heading className="text-xl" variant="h1">
@@ -34,20 +34,20 @@ export function Navigation() {
         </A>
       </NavbarBrand>
       <NavbarContent justify="end">
-        <A isExternal href="https://github.com">
+        <A href="https://github.com" isExternal>
           <Avatar
-            isBordered
             alt="GitHub"
             color="secondary"
+            isBordered
             size="sm"
             src={gitHubImage}
           />
         </A>
-        <A isExternal href="https://www.linkedin.com/in/ethan-glover/">
+        <A href="https://www.linkedin.com/in/ethan-glover/" isExternal>
           <Avatar
-            isBordered
             alt="LinkedIn"
             color="primary"
+            isBordered
             size="sm"
             src={linkedInImage}
           />

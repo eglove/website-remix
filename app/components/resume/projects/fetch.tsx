@@ -17,9 +17,9 @@ export function Fetch(): JSX.Element {
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://github.com/eglove/fetch"
+          isExternal
         >
           github.com/eglove/fetch
         </Link>

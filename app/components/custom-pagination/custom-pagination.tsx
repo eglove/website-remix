@@ -41,12 +41,12 @@ export function CustomPagination({
         <PaginationNextPrevious
           className={className}
           isDisabled={categoryPage >= total}
-          type={PaginationItemType.NEXT}
           searchParameterString={setUrl(
             searchParameters,
             category,
             String(categoryPage + 1),
           )}
+          type={PaginationItemType.NEXT}
         />
       );
     }
@@ -56,12 +56,12 @@ export function CustomPagination({
         <PaginationNextPrevious
           className={className}
           isDisabled={categoryPage <= 1}
-          type={PaginationItemType.PREV}
           searchParameterString={setUrl(
             searchParameters,
             category,
             String(categoryPage - 1),
           )}
+          type={PaginationItemType.PREV}
         />
       );
     }

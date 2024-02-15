@@ -36,9 +36,9 @@ export function Hooks(): JSX.Element {
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://github.com/eglove/hooks"
+          isExternal
         >
           github.com/eglove/hooks
         </Link>

@@ -1,7 +1,7 @@
 import { Button } from '@nextui-org/button';
 import { Image } from '@nextui-org/image';
 import type { JSX } from 'react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { YouTube } from '../components/elements/youtube';
 
@@ -24,40 +24,55 @@ const rockPaperScissorsNumbers = {
   3: 'Scissors',
 } as const;
 
-export default function (): JSX.Element {
+export default function RockPaperScissorsChances(): JSX.Element {
   const [currentStreak, setCurrentStreak] = useState(0);
   const [lastRoundMessage, setLastRoundMessage] = useState<string>();
 
   const chances = (1 / 3 ** (currentStreak + 1)) * 100;
   const opposition = (Math.floor(Math.random() * 3) + 1) as 1 | 2 | 3;
 
-  const handlePlay = (player: keyof typeof rockPaperScissorsNumbers): void => {
-    if (player === opposition) {
-      setLastRoundMessage('Draws are not a win!');
-      setCurrentStreak(0);
-    } else if (
-      (player === rockPaperScissors.Rock &&
-        opposition === rockPaperScissors.Scissors) ||
-      (player === rockPaperScissors.Paper &&
-        opposition === rockPaperScissors.Rock) ||
-      (player === rockPaperScissors.Scissors &&
-        opposition === rockPaperScissors.Paper)
-    ) {
-      setLastRoundMessage(
-        `${rockPaperScissorsNumbers[player]} beats ${rockPaperScissorsNumbers[opposition]}!`,
-      );
+  const handlePlay = useCallback(
+    (player: keyof typeof rockPaperScissorsNumbers): void => {
+      if (player === opposition) {
+        setLastRoundMessage('Draws are not a win!');
+        setCurrentStreak(0);
+      } else if (
+        (player === rockPaperScissors.Rock &&
+          opposition === rockPaperScissors.Scissors) ||
+        (player === rockPaperScissors.Paper &&
+          opposition === rockPaperScissors.Rock) ||
+        (player === rockPaperScissors.Scissors &&
+          opposition === rockPaperScissors.Paper)
+      ) {
+        setLastRoundMessage(
+          `${rockPaperScissorsNumbers[player]} beats ${rockPaperScissorsNumbers[opposition]}!`,
+        );
 
-      setCurrentStreak(timesPlayed_ => {
-        return timesPlayed_ + 1;
-      });
-    } else {
-      setLastRoundMessage(
-        `${rockPaperScissorsNumbers[player]} loses to ${rockPaperScissorsNumbers[opposition]}!`,
-      );
+        setCurrentStreak(timesPlayed_ => {
+          return timesPlayed_ + 1;
+        });
+      } else {
+        setLastRoundMessage(
+          `${rockPaperScissorsNumbers[player]} loses to ${rockPaperScissorsNumbers[opposition]}!`,
+        );
 
-      setCurrentStreak(0);
-    }
-  };
+        setCurrentStreak(0);
+      }
+    },
+    [opposition],
+  );
+
+  const handleRock = useCallback(() => {
+    handlePlay(rockPaperScissors.Rock);
+  }, [handlePlay]);
+
+  const handlePaper = useCallback(() => {
+    handlePlay(rockPaperScissors.Paper);
+  }, [handlePlay]);
+
+  const handleScissors = useCallback(() => {
+    handlePlay(rockPaperScissors.Scissors);
+  }, [handlePlay]);
 
   return (
     <div>
@@ -73,11 +88,9 @@ export default function (): JSX.Element {
       <div className="my-4 flex gap-4">
         <Button
           className="h-max p-2"
+          onPress={handleRock}
           type="button"
           variant="bordered"
-          onPress={(): void => {
-            handlePlay(rockPaperScissors.Rock);
-          }}
         >
           <Image
             height={50}
@@ -88,11 +101,9 @@ export default function (): JSX.Element {
         </Button>
         <Button
           className="h-max p-2"
+          onPress={handlePaper}
           type="button"
           variant="bordered"
-          onPress={(): void => {
-            handlePlay(rockPaperScissors.Paper);
-          }}
         >
           <Image
             height={50}
@@ -103,11 +114,9 @@ export default function (): JSX.Element {
         </Button>
         <Button
           className="h-max p-2"
+          onPress={handleScissors}
           type="button"
           variant="bordered"
-          onPress={(): void => {
-            handlePlay(rockPaperScissors.Scissors);
-          }}
         >
           <Image
             height={50}

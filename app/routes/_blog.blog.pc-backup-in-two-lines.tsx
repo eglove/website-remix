@@ -26,16 +26,16 @@ export default function () {
       <Paragraph>
         So what exactly does the{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/master/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1"
+          isExternal
         >
           actual script
         </A>{' '}
         do? Well, the first step is the most important step and the one that
         made me realize I could write this script, to begin with. It installs
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L46"
+          isExternal
         >
           Chocolatey Pro
         </A>{' '}
@@ -45,8 +45,8 @@ export default function () {
       <Paragraph>
         Second, while I&apos;m there, I may as well{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L54"
+          isExternal
         >
           set up WSL 2 and Ubuntu
         </A>
@@ -65,8 +65,8 @@ export default function () {
       <Paragraph>
         With that done, it&apos;s just a matter of{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L69"
+          isExternal
         >
           installing all the software I have listed in an array
         </A>{' '}
@@ -76,8 +76,8 @@ export default function () {
       <Paragraph>
         And I couldn&apos;t forget to{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L85"
+          isExternal
         >
           download, install, and set an environment variable for all my other
           scripts
@@ -91,8 +91,8 @@ export default function () {
         up as I like it. That can all be done by changing Registry settings.
         Which can be set via PowerShell. So I{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L98"
+          isExternal
         >
           applied any Windows settings
         </A>{' '}
@@ -102,16 +102,16 @@ export default function () {
         And while I have a script to update software, I allow the JetBrains
         toolbox to handle IDE updates and generate shell scripts. So I{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L109"
+          isExternal
         >
           updated those settings
         </A>{' '}
         as well as the theme and any other settings I have set on IntelliJ. And
         settings for terminus, can&apos;t forget to backup my{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L115"
+          isExternal
         >
           terminus settings
         </A>
@@ -120,8 +120,8 @@ export default function () {
       <Paragraph>
         All wrapping up in a{' '}
         <A
-          isExternal
           href="https://github.com/eglove/ethang-one/blob/68a44f7ab7e4abd912a50ad56fee3bfd9d604622/apps/computer-cli/src/app/commands/powershell-scripts/pcSetup.ps1#L120"
+          isExternal
         >
           clean up process
         </A>{' '}

@@ -15,9 +15,9 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://github.com/eglove/eslint-config-ethang"
+              isExternal
             >
               github.com/eglove/eslint-config-ethang
             </A>
@@ -54,9 +54,9 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://github.com/eglove/hooks"
+              isExternal
             >
               github.com/eglove/hooks
             </A>
@@ -73,9 +73,9 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://github.com/eglove/use-form"
+              isExternal
             >
               github.com/eglove/use-form
             </A>
@@ -92,9 +92,9 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://github.com/eglove/fetch"
+              isExternal
             >
               github.com/eglove/fetch
             </A>
@@ -110,9 +110,9 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://github.com/eglove/project-builder"
+              isExternal
             >
               github.com/eglove/project-builder
             </A>
@@ -129,18 +129,18 @@ export function ProjectSummary() {
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://github.com/eglove/sterett"
+              isExternal
             >
               github.com/eglove/sterett
             </A>
           </li>
           <li className="pl-4">
             <A
-              isExternal
               className="text-medium"
               href="https://sterettcreekvillagetrustee.com/"
+              isExternal
             >
               sterettcreekvillagetrustee.com
             </A>

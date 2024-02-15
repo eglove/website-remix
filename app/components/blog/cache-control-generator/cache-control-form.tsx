@@ -72,13 +72,13 @@ export function CacheControlForm<T extends Record<string, boolean | string>>({
         {inputs.map(input => {
           return (
             <Input
-              key={input.key as string}
               description={input.description}
+              key={input.key as string}
               label={input.key as string}
               name={input.key as string}
+              onChange={handleChange}
               type="number"
               value={formState[input.key] as string}
-              onChange={handleChange}
             />
           );
         })}

@@ -39,16 +39,16 @@ export function ExampleForm(): JSX.Element {
           errorMessage={fieldErrors?.firstName?.[0]}
           label="First Name"
           name="firstName"
-          value={formState.firstName}
           onChange={handleChange}
+          value={formState.firstName}
         />
         <Input
           className="mb-2"
           errorMessage={fieldErrors?.lastName?.[0]}
           label="Last Name"
           name="lastName"
-          value={formState.lastName}
           onChange={handleChange}
+          value={formState.lastName}
         />
         <Input
           autoComplete="email"
@@ -56,9 +56,9 @@ export function ExampleForm(): JSX.Element {
           errorMessage={fieldErrors?.email?.[0]}
           label="Email"
           name="email"
+          onChange={handleChange}
           type="email"
           value={formState.email}
-          onChange={handleChange}
         />
 
         <Input
@@ -67,9 +67,9 @@ export function ExampleForm(): JSX.Element {
           errorMessage={fieldErrors?.password?.[0]}
           label="Password"
           name="password"
+          onChange={handleChange}
           type="password"
           value={formState.password}
-          onChange={handleChange}
         />
         <Input
           autoComplete="new-password"
@@ -77,16 +77,16 @@ export function ExampleForm(): JSX.Element {
           errorMessage={fieldErrors?.confirmPassword?.[0]}
           label="Confirm Password"
           name="confirmPassword"
+          onChange={handleChange}
           type="password"
           value={formState.confirmPassword}
-          onChange={handleChange}
         />
         {isSuccess ? (
           <div className="flex gap-2">
             <p className="w-max rounded bg-green-500 p-2 text-white">
               Success!
             </p>
-            <Button type="button" onClick={handleReset}>
+            <Button onClick={handleReset} type="button">
               Reset
             </Button>
           </div>

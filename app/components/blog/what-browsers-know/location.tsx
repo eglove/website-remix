@@ -43,17 +43,17 @@ export function Location(): JSX.Element {
       {location ? (
         <div>
           <A
-            isExternal
-            showAnchorIcon
             className="mb-4"
             href={`https://maps.google.com/?q=${location.coords.latitude},${location.coords.longitude}`}
+            isExternal
+            showAnchorIcon
           >
             Open in Google Maps
           </A>
         </div>
       ) : null}
       {location ? (
-        <Table hideHeader isStriped aria-label="Location">
+        <Table aria-label="Location" hideHeader isStriped>
           <TableHeader>
             <TableColumn>Name</TableColumn>
             <TableColumn>Value</TableColumn>

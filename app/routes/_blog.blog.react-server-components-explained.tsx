@@ -14,8 +14,8 @@ export default function () {
         Turbolinks, Islands, etc. I wanted to put one of his tweet threads into
         a longer blog form, but you can{' '}
         <A
-          isExternal
           href="https://twitter.com/dan_abramov/status/1633574036767662080"
+          isExternal
         >
           find the original here
         </A>

@@ -54,7 +54,7 @@ export default function () {
         disappointed with the basic rundown this course provides. But the course
         is well done and well taught. So I can&apos;t knock it too much.
         That&apos;s why I give{' '}
-        <A isExternal href="https://www.udemy.com/course/learn-typescript/">
+        <A href="https://www.udemy.com/course/learn-typescript/" isExternal>
           Colt Steele&apos;s Mastering TypeScript
         </A>{' '}
         a 4 out of 5.

@@ -203,7 +203,7 @@ export default function () {
         it to. And I kinda&apos; like that.
       </Paragraph>
       <Paragraph>
-        <A isExternal href="https://github.com/eglove/fetch">
+        <A href="https://github.com/eglove/fetch" isExternal>
           github.com/eglove/fetch
         </A>
       </Paragraph>

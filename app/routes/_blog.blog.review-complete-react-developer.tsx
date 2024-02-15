@@ -71,8 +71,8 @@ export default function () {
         To me these tools are very bad abstractions. Styled Components had some
         importance before{' '}
         <A
-          isExternal
           href="https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/"
+          isExternal
         >
           React supported CSS modules
         </A>
@@ -113,7 +113,7 @@ export default function () {
         So because of the quality of presentation, the coverage of many
         different modern approaches to state management, and a very impressive
         turnaround on the update, I give Yihua Zhang&apos;s{' '}
-        <A isExternal href="https://zerotomastery.io/courses/learn-react/">
+        <A href="https://zerotomastery.io/courses/learn-react/" isExternal>
           Complete React Developer
         </A>{' '}
         a 5 out of 5.

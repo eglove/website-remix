@@ -13,7 +13,7 @@ export default function () {
         GraphQL when I came across it. I got excited by the fact that I could
         easily use the framework to generate a GraphQL API with a simple OOP
         approach. I forgot that{' '}
-        <A isExternal href="https://youtu.be/QM1iUe6IofM">
+        <A href="https://youtu.be/QM1iUe6IofM" isExternal>
           Object Oriented Programming is Bad
         </A>
         . In that excitement I wrote up the post comparing the{' '}
@@ -30,8 +30,8 @@ export default function () {
       <Paragraph>
         Shortly after, I added two NestJS courses to my{' '}
         <A
-          isExternal
           href="https://introspect.dev/list/6cb1ab98-e847-408d-b64d-4a47f2e8a2dc"
+          isExternal
         >
           recommended list
         </A>
@@ -59,7 +59,7 @@ export default function () {
       </Paragraph>
       <Paragraph>
         Let&apos;s take an example from{' '}
-        <A isExternal href="https://refactoring.guru/design-patterns/decorator">
+        <A href="https://refactoring.guru/design-patterns/decorator" isExternal>
           Refactoring Guru
         </A>
         . In this example a decorator is used to create a composition pattern in
@@ -142,15 +142,15 @@ export default function () {
       <Paragraph>
         This is just another word for object validation. class-validator sucks.
         For a more complete solution I recommend{' '}
-        <A isExternal href="https://github.com/colinhacks/zod">
+        <A href="https://github.com/colinhacks/zod" isExternal>
           Zod
         </A>{' '}
         but there is also{' '}
-        <A isExternal href="https://github.com/jquense/yup">
+        <A href="https://github.com/jquense/yup" isExternal>
           Yup
         </A>{' '}
         and{' '}
-        <A isExternal href="https://joi.dev/">
+        <A href="https://joi.dev/" isExternal>
           Joi
         </A>
         . All of these follow a more standard syntax, are regularly updated,
@@ -195,7 +195,7 @@ export default function () {
         exciting to see how it generates GraphQL, or having an Angular-like CLI.
         But good GraphQL takes a lot of work no matter how you slice it, and if
         you want the CLI, try{' '}
-        <A isExternal href="https://nx.dev/">
+        <A href="https://nx.dev/" isExternal>
           NX
         </A>
         . NestJS just creates a mess and nothing more. You&apos;re better off

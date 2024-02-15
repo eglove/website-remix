@@ -39,8 +39,8 @@ export default function () {
         recommend this course. That&apos;s why I&apos;m giving Brian
         Douglas&apos;{' '}
         <A
-          isExternal
           href="https://leveluptutorials.com/tutorials/code-automation-with-github"
+          isExternal
         >
           Code Automation With GitHub
         </A>{' '}

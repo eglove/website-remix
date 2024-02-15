@@ -8,7 +8,7 @@ import type { JSX } from 'react';
 import { A } from '../components/elements/a';
 import { Paragraph } from '../components/elements/paragraph';
 
-export default function (): JSX.Element {
+export default function StateOfJsFrameworks(): JSX.Element {
   return (
     <>
       <Paragraph>
@@ -24,8 +24,8 @@ export default function (): JSX.Element {
         But there&apos;s another project I&apos;ve been struggling with,
         Introspect. My home for my{' '}
         <A
-          isExternal
           href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a"
+          isExternal
         >
           recommended courses.
         </A>
@@ -47,7 +47,7 @@ export default function (): JSX.Element {
       <ul className="grid list-inside list-decimal gap-2">
         <li>
           Uses JSX for{' '}
-          <A isExternal href="https://github.com/eglove/eslint-config-ethang">
+          <A href="https://github.com/eglove/eslint-config-ethang" isExternal>
             eslint-config-ethang
           </A>{' '}
           compatibility.
@@ -66,12 +66,12 @@ export default function (): JSX.Element {
       </ul>
       <Paragraph>Let&apos;s talk about the options.</Paragraph>
       <Paragraph>
-        <A isExternal className="font-bold" href="https://htmx.org/">
+        <A className="font-bold" href="https://htmx.org/" isExternal>
           HTMX:
         </A>{' '}
         The JavaScript library that pretends not to be JavaScript to appeal to
         backend-only devs who hate JavaScript. The{' '}
-        <A isExternal href="https://htmx.org/essays/">
+        <A href="https://htmx.org/essays/" isExternal>
           HTMLX Essay page
         </A>{' '}
         is full of rants about how nothing follows REST, and why HTMX&apos;s
@@ -107,7 +107,7 @@ export default function (): JSX.Element {
         </p>
       </div>
       <Paragraph>
-        <A isExternal className="font-bold" href="https://astro.build/">
+        <A className="font-bold" href="https://astro.build/" isExternal>
           Astro:
         </A>{' '}
         This is of course what I landed on originally. And it works great for my
@@ -153,7 +153,7 @@ export default function (): JSX.Element {
       </div>
 
       <Paragraph>
-        <A isExternal className="font-bold" href="https://nextjs.org/">
+        <A className="font-bold" href="https://nextjs.org/" isExternal>
           NextJS:
         </A>{' '}
         The framework that swears it&apos;s stable, even if the entire world is
@@ -207,7 +207,7 @@ export default function (): JSX.Element {
         </p>
       </div>
       <Paragraph>
-        <A isExternal className="font-bold" href="https://remix.run/">
+        <A className="font-bold" href="https://remix.run/" isExternal>
           Remix:
         </A>{' '}
         This framework has always felt like a response to NextJS. Always
@@ -249,7 +249,7 @@ export default function (): JSX.Element {
         </p>
       </div>
       <Paragraph>
-        <A isExternal className="font-bold" href="https://qwik.builder.io/">
+        <A className="font-bold" href="https://qwik.builder.io/" isExternal>
           QwikCity:
         </A>{' '}
         I have been watching Qwik for a very long time and have been enamored by

@@ -13,7 +13,7 @@ export default function () {
       </Paragraph>
       <Paragraph>
         My design choices tend to be a more “modern” version of something like{' '}
-        <A isExternal href="https://www.paulgraham.com/articles.html">
+        <A href="https://www.paulgraham.com/articles.html" isExternal>
           Paul Graham&apos;s essays
         </A>
         . I think that page looks far better and is more practical than anything

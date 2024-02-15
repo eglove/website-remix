@@ -1,18 +1,19 @@
 import { isEmpty, isNil } from '@ethang/util/data.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import type { JSX, ReactNode } from 'react';
+import type { ReadonlyDeep } from 'type-fest';
 
 import type { skillMap } from './skills';
 import { dateFormatter, formatTech } from './tech-format';
 
-type ContractPositionProperties = {
+type ContractPositionProperties = ReadonlyDeep<{
   readonly children: ReactNode;
   readonly endDate?: string;
   readonly methodologiesUsed: (keyof typeof skillMap)[];
   readonly startDate?: string;
   readonly techUsed: (keyof typeof skillMap)[];
   readonly title: string;
-};
+}>;
 
 export function ExperienceCard({
   children,

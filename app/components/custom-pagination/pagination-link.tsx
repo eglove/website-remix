@@ -18,13 +18,13 @@ export function PaginationLink({
 }: PaginationLinkProperties): JSX.Element {
   return (
     <A
-      preventScrollReset
-      replace
-      href={`?${searchParameterString}`}
       className={twMerge(
         className,
         isActive ? 'bg-primary text-white' : 'text-foreground',
       )}
+      href={`?${searchParameterString}`}
+      preventScrollReset
+      replace
     >
       {children}
     </A>

@@ -1,19 +1,20 @@
 import { useForm } from '@ethang/use-form/index.js';
 import { Checkbox } from '@nextui-org/checkbox';
 import { Input } from '@nextui-org/input';
-import type { ChangeEvent, JSX } from 'react';
+import type { JSX } from 'react';
+import type { ReadonlyDeep } from 'type-fest';
 
 import { A } from '../components/elements/a';
 import { Heading } from '../components/elements/heading';
 import { Paragraph } from '../components/elements/paragraph';
 
-type FormulateProperties = {
+type FormulateProperties = ReadonlyDeep<{
   currentValue: number;
   defaultValue: number;
   multiplier: number;
   step: number;
   totalCost: number;
-};
+}>;
 
 const formulate = ({
   multiplier,
@@ -231,7 +232,7 @@ export default function (): JSX.Element {
     <div>
       <Heading variant="h2">Vercel Pro Price Calculator</Heading>
       <Paragraph>
-        <A isExternal href="https://vercel.com/pricing">
+        <A href="https://vercel.com/pricing" isExternal>
           Pricing Source
         </A>
       </Paragraph>
@@ -245,10 +246,8 @@ export default function (): JSX.Element {
       <Checkbox
         className="m-2"
         name="previewDeploymentSuffix"
+        onChange={handleChange}
         value={String(formState.previewDeploymentSuffix)}
-        onChange={(event): void => {
-          handleChange(event as unknown as ChangeEvent);
-        }}
       >
         Preview Deployment Suffix
       </Checkbox>
@@ -258,181 +257,181 @@ export default function (): JSX.Element {
           label="Edge Function Executions"
           min={initialState.edgeFunctions}
           name="edgeFunctions"
+          onChange={handleChange}
           step={1_000_000}
           type="number"
           value={String(formState.edgeFunctions)}
-          onChange={handleChange}
         />
         <Input
           label="Edge Middleware Invocations"
           min={initialState.edgeMiddleware}
           name="edgeMiddleware"
+          onChange={handleChange}
           step={1_000_000}
           type="number"
           value={String(formState.edgeMiddleware)}
-          onChange={handleChange}
         />
         <Input
           label="Serverless Function Executions"
           min={initialState.serverlessFunctionExecution}
           name="serverlessFunctionExecution"
+          onChange={handleChange}
           step={100}
           type="number"
           value={String(formState.serverlessFunctionExecution)}
-          onChange={handleChange}
         />
         <Input
           label="Source Images"
           min={initialState.sourceImages}
           name="sourceImages"
+          onChange={handleChange}
           step={1000}
           type="number"
           value={String(formState.sourceImages)}
-          onChange={handleChange}
         />
         <Input
           label="Concurrent Builds"
           min={initialState.concurrentBuilds}
           name="concurrentBuilds"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.concurrentBuilds)}
-          onChange={handleChange}
         />
         <Input
           label="Bandwidth (GB)"
           min={initialState.bandwidth}
           name="bandwidth"
+          onChange={handleChange}
           step={100}
           type="number"
           value={String(formState.bandwidth)}
-          onChange={handleChange}
         />
         <Input
           label="Team Members"
           min={initialState.teamMembers}
           name="teamMembers"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.teamMembers)}
-          onChange={handleChange}
         />
         <Input
           label="Remote Cache Artifact Downloads (GB)"
           min={initialState.remoteCacheArtifactDownloads}
           name="remoteCacheArtifactDownloads"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.remoteCacheArtifactDownloads)}
-          onChange={handleChange}
         />
         <Input
           label="Monitoring (Data Points)"
           min={initialState.monitoring}
           name="monitoring"
+          onChange={handleChange}
           step={250_000}
           type="number"
           value={String(formState.monitoring)}
-          onChange={handleChange}
         />
         <Input
           label="Web Analytics Events"
           min={initialState.webAnalytics}
           name="webAnalytics"
+          onChange={handleChange}
           step={100_000}
           type="number"
           value={String(formState.webAnalytics)}
-          onChange={handleChange}
         />
         <Input
           label="KV Databases"
           min={initialState.kvDatabases}
           name="kvDatabases"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.kvDatabases)}
-          onChange={handleChange}
         />
         <Input
           label="KV Requests"
           min={initialState.kvRequests}
           name="kvRequests"
+          onChange={handleChange}
           step={100_000}
           type="number"
           value={String(formState.kvRequests)}
-          onChange={handleChange}
         />
         <Input
           label="KV Storage (GB)"
           min={initialState.kvStorage}
           name="kvStorage"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.kvStorage)}
-          onChange={handleChange}
         />
         <Input
           label="KV Data Transfer (GB)"
           min={initialState.kvDataTransfer}
           name="kvDataTransfer"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.kvDataTransfer)}
-          onChange={handleChange}
         />
         <Input
           label="Postgres Databases"
           min={initialState.pgDatabases}
           name="pgDatabases"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.pgDatabases)}
-          onChange={handleChange}
         />
         <Input
           label="Postgres Compute Time (hrs)"
           min={initialState.pgComputeTime}
           name="pgComputeTime"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.pgComputeTime)}
-          onChange={handleChange}
         />
         <Input
           label="Postgres Storage (GB)"
           min={initialState.pgStorage}
           name="pgStorage"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.pgStorage)}
-          onChange={handleChange}
         />
         <Input
           label="Postgres Writes (GB)"
           min={initialState.pgWrites}
           name="pgWrites"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.pgWrites)}
-          onChange={handleChange}
         />
         <Input
           label="Postgres Data Transfer (GB)"
           min={initialState.pgDataTransfer}
           name="pgDataTransfer"
+          onChange={handleChange}
           step={1}
           type="number"
           value={String(formState.pgDataTransfer)}
-          onChange={handleChange}
         />
         <Input
           label="Edge Config Reads"
           min={initialState.edgeConfig}
           name="edgeConfig"
+          onChange={handleChange}
           step={1_000_000}
           type="number"
           value={String(formState.edgeConfig)}
-          onChange={handleChange}
         />
       </div>
     </div>

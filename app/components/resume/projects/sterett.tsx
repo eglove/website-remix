@@ -7,7 +7,6 @@ export function Sterett(): JSX.Element {
   return (
     <ExperienceCard
       methodologiesUsed={['edgeDeployment', 'serverless']}
-      title="Sterett Creek Village Trustee"
       techUsed={[
         'astro',
         'nextUi',
@@ -17,6 +16,7 @@ export function Sterett(): JSX.Element {
         'javascript',
         'zod',
       ]}
+      title="Sterett Creek Village Trustee"
     >
       <li>
         Website used by the Sterett Creek Village Trustee board to post news
@@ -25,18 +25,18 @@ export function Sterett(): JSX.Element {
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://github.com/eglove/sterett"
+          isExternal
         >
           github.com/eglove/sterett
         </Link>
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://sterettcreekvillagetrustee.com/"
+          isExternal
         >
           sterettcreekvillagetrustee.com
         </Link>

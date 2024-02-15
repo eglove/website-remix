@@ -7,7 +7,6 @@ export function Introspect(): JSX.Element {
   return (
     <ExperienceCard
       methodologiesUsed={['serverless', 'edgeDeployment']}
-      title="Introspect"
       techUsed={[
         'react',
         'javascript',
@@ -20,6 +19,7 @@ export function Introspect(): JSX.Element {
         'vitest',
         'prisma',
       ]}
+      title="Introspect"
     >
       <li>
         Work in progress web app with multiple features planned. First feature
@@ -29,18 +29,18 @@ export function Introspect(): JSX.Element {
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://github.com/eglove/introspect-2"
+          isExternal
         >
           github.com/eglove/introspect-2
         </Link>
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a/"
+          isExternal
         >
           introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a
         </Link>

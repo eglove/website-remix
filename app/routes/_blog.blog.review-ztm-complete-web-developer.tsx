@@ -1,6 +1,8 @@
+import type { JSX } from 'react';
+
 import { Paragraph } from '../components/elements/paragraph';
 
-export default function () {
+export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
   return (
     <>
       <Paragraph>

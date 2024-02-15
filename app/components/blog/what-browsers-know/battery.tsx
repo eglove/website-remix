@@ -74,7 +74,7 @@ export function Battery(): JSX.Element {
   }, []);
 
   return (
-    <Table hideHeader isStriped aria-label="Location">
+    <Table aria-label="Location" hideHeader isStriped>
       <TableHeader>
         <TableColumn>Name</TableColumn>
         <TableColumn>Value</TableColumn>

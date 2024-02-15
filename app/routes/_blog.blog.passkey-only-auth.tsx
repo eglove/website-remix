@@ -16,7 +16,6 @@ export default function () {
       <Image
         alt="Sign Up/In form with only a username field"
         height={200}
-        width={528}
         src={sanityImageBuilder
           .image(
             'https://cdn.sanity.io/images/drccvtog/production/7c724fc022bfb4bc8541d9851eeae96c68be9f70-483x183.png',
@@ -25,6 +24,7 @@ export default function () {
           .width(528)
           .format('webp')
           .url()}
+        width={528}
       />
       <Paragraph>
         I&apos;m working on rebuilding Introspect.dev from scratch with Astro
@@ -56,9 +56,9 @@ export default function () {
       <Blockquote link="https://web.dev/passkey-registration/" source="web.dev">
         Using{' '}
         <A
+          href="https://developers.google.com/identity/passkeys"
           isExternal
           showAnchorIcon
-          href="https://developers.google.com/identity/passkeys"
         >
           passkeys
         </A>
@@ -78,7 +78,6 @@ export default function () {
       <Image
         alt="Flowchart showing the steps we will discuss below"
         height={384}
-        width={436}
         src={sanityImageBuilder
           .image(
             'https://cdn.sanity.io/images/drccvtog/production/34ca5aefa1f560e1c287f49252dde838b31d0aa2-546x481.png',
@@ -87,6 +86,7 @@ export default function () {
           .height(384)
           .format('webp')
           .url()}
+        width={436}
       />
       <Paragraph>
         <span className="font-bold">1. Check for Existing Users:</span> Given
@@ -385,9 +385,9 @@ export default function () {
         standard supported by every major browser. No third parties needed.
         We&apos;re making use of the native{' '}
         <A
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API"
           isExternal
           showAnchorIcon
-          href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API"
         >
           Web Authentication API
         </A>

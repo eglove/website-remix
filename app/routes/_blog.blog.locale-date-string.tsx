@@ -9,9 +9,9 @@ export default function (): JSX.Element {
     <>
       <Paragraph>
         <A
-          isExternal
           className="rounded-lg bg-blue-600 p-2 text-white"
           href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat"
+          isExternal
         >
           Docs
         </A>

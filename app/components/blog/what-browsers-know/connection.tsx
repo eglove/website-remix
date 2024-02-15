@@ -58,7 +58,7 @@ export function Connection(): JSX.Element {
 
   return (
     <div>
-      <Table hideHeader isStriped aria-label="connection">
+      <Table aria-label="connection" hideHeader isStriped>
         <TableHeader>
           <TableColumn>Name</TableColumn>
           <TableColumn>Value</TableColumn>
@@ -68,7 +68,7 @@ export function Connection(): JSX.Element {
             <TableCell>Previous Page</TableCell>
             <TableCell>
               {!isNil(referrer) && (
-                <A isExternal href={referrer}>
+                <A href={referrer} isExternal>
                   {referrer}
                 </A>
               )}

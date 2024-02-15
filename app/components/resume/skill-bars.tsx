@@ -18,12 +18,12 @@ export function SkillBars(): JSX.Element {
       <CardBody className="grid grid-cols-3 gap-4 p-2">
         {[...experience].map(item => {
           return (
-            <div key={item.skill} className="grid items-center gap-2">
+            <div className="grid items-center gap-2" key={item.skill}>
               <div className="flex justify-between">
                 <div>{skillMap[item.skill as keyof typeof skillMap]}</div>
                 <div>{yearFormatter.format(item.experience)}</div>
               </div>
-              <div key={item.skill} className="w-full rounded bg-gray-300">
+              <div className="w-full rounded bg-gray-300" key={item.skill}>
                 <div
                   className="h-2 rounded bg-blue-500"
                   style={{

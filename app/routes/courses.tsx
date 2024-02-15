@@ -81,7 +81,7 @@ export default function Courses(): JSX.Element | null {
           const title = `#${index + INCREMENT} ${course.title}`;
 
           return (
-            <AccordionItem key={course._id} aria-label={title} title={title}>
+            <AccordionItem aria-label={title} key={course._id} title={title}>
               <div>
                 <span className="font-bold">Instructors:</span>{' '}
                 {authorFormat.format(
@@ -97,7 +97,7 @@ export default function Courses(): JSX.Element | null {
               <div className="mt-3 flex gap-2">
                 {course.links.map(link => {
                   return (
-                    <A key={link} isExternal showAnchorIcon href={link}>
+                    <A href={link} isExternal key={link} showAnchorIcon>
                       {new URL(link).hostname}
                     </A>
                   );

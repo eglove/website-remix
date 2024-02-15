@@ -17,9 +17,9 @@ export function EslintConfig(): JSX.Element {
       </li>
       <li>
         <Link
-          isExternal
           className="text-medium"
           href="https://github.com/eglove/eslint-config-ethang"
+          isExternal
         >
           github.com/eglove/eslint-config-ethang
         </Link>

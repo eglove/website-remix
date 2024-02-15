@@ -103,29 +103,29 @@ export default function () {
         <Input
           label="Value 1"
           name="value1"
+          onChange={handleChange}
           type="number"
           value={formState.value1}
-          onChange={handleChange}
         />
         <Input
           label="Value 2"
           name="value2"
+          onChange={handleChange}
           type="number"
           value={formState.value2}
-          onChange={handleChange}
         />
         <Input
           label="Epsilon"
           name="epsilon"
-          value={formState.epsilon}
           onChange={handleChange}
+          value={formState.epsilon}
         />
         <Input
           label="Expected Sum"
           name="expectedSum"
+          onChange={handleChange}
           type="number"
           value={formState.expectedSum}
-          onChange={handleChange}
         />
       </div>
       <div className="grid gap-2">

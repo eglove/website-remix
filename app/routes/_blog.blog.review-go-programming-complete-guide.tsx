@@ -61,7 +61,7 @@ export default function () {
         There&apos;s not a lot of Go courses out there, and this may be good
         enough if you HAVE to learn Go right now. Because of that, Jayson
         Lennon&apos;s{' '}
-        <A isExternal href="https://academy.zerotomastery.io/p/learn-golang">
+        <A href="https://academy.zerotomastery.io/p/learn-golang" isExternal>
           Go Programming Language (Golang): A Complete Developer&apos;s Guide
         </A>{' '}
         get&apos;s a 2 out of 5.

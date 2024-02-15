@@ -9,8 +9,8 @@ export default function (): JSX.Element {
   return (
     <>
       <A
-        isExternal
         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control"
+        isExternal
         underline="always"
       >
         <Heading variant="h2">Cache-Control Docs</Heading>

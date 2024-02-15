@@ -17,7 +17,7 @@ export const exampleSignUpSchema = z
       .min(8, 'Password must be at least 8 characters long')
       .max(30, 'Password cannot be longer than 30 characters')
       .regex(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%&*@^])/,
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!#$%&*@^])/u,
         'Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character (!@#$%^&*)',
       ),
   })

@@ -59,7 +59,7 @@ export default function () {
         information taught in this course is paramount, and missing among a lot
         of professional developers. With great presentation, competent detail,
         and its ability to rise to the top of the category, I give{' '}
-        <A isExternal href="https://css-for-js.com/">
+        <A href="https://css-for-js.com/" isExternal>
           Josh Comeau&apos;s CSS for JavaScript Developers
         </A>{' '}
         a 5 out of 5.

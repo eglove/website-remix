@@ -20,12 +20,12 @@ export function PaginationNextPrevious({
 }: PaginationNextPreviousProperties): JSX.Element {
   return (
     <A
-      preventScrollReset
-      replace
       aria-label={type === PaginationItemType.NEXT ? 'Next' : 'Previous'}
       className={className}
       href={`?${searchParameterString}`}
       isDisabled={isDisabled}
+      preventScrollReset
+      replace
     >
       <ChevronIcon
         className={twMerge(type === PaginationItemType.NEXT && 'rotate-180')}

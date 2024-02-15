@@ -186,6 +186,7 @@ export const positions = {
 export function getExperience() {
   const experience = {} as Record<SkillKey, number>;
 
+  // eslint-disable-next-line unicorn/no-array-for-each
   lodash.forEach(positions, position => {
     const { startDate, endDate, techUsed, methodologiesUsed } = position;
 
@@ -204,21 +205,25 @@ export function getExperience() {
     }
   });
 
-  return lodash
-    .chain(experience)
-    .forEach((months, skill) => {
-      if (months >= 13) {
-        experience[skill as SkillKey] = Number(months / 12);
-      } else {
-        delete experience[skill as SkillKey];
-      }
-    })
-    .map((_, skill) => {
-      return {
-        experience: experience[skill as SkillKey],
-        skill,
-      };
-    })
-    .orderBy(['experience'], ['desc'])
-    .value();
+  return (
+    lodash
+      .chain(experience)
+      // eslint-disable-next-line unicorn/no-array-for-each
+      .forEach((months, skill) => {
+        if (months >= 13) {
+          experience[skill as SkillKey] = Number(months / 12);
+        } else {
+          // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
+          delete experience[skill as SkillKey];
+        }
+      })
+      .map((_, skill) => {
+        return {
+          experience: experience[skill as SkillKey],
+          skill,
+        };
+      })
+      .orderBy(['experience'], ['desc'])
+      .value()
+  );
 }

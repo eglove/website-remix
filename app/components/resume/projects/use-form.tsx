@@ -17,9 +17,9 @@ export function UseForm(): JSX.Element {
       </li>
       <li>
         <A
-          isExternal
           className="text-medium"
           href="https://github.com/eglove/use-form"
+          isExternal
         >
           github.com/eglove/use-form
         </A>

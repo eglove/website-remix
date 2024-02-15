@@ -13,7 +13,7 @@ import { Paragraph } from '../components/elements/paragraph';
 const hexConverterSchema = z.object({
   color: z
     .string()
-    .regex(/^[\dA-Fa-f]{3,6}$/, 'Invalid Hex Format')
+    .regex(/^[\dA-Fa-f]{3,6}$/u, 'Invalid Hex Format')
     .transform(color => {
       if (!color.startsWith('#')) {
         return `#${color}`;
@@ -55,9 +55,9 @@ export default function (): JSX.Element {
           <Input
             label="Hex Color"
             name="color"
+            onChange={handleChange}
             value={formState.color}
             variant="bordered"
-            onChange={handleChange}
           />
         </fieldset>
       </form>

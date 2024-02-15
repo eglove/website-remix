@@ -1,7 +1,9 @@
+import type { JSX } from 'react';
+
 import { A } from '../components/elements/a';
 import { Paragraph } from '../components/elements/paragraph';
 
-export default function () {
+export default function StackoverflowNotHelpForum(): JSX.Element {
   return (
     <>
       <Paragraph>

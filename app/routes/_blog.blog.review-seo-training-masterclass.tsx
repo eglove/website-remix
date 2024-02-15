@@ -90,8 +90,8 @@ export default function () {
         things that others just don&apos;t which I very much appreciate.
         That&apos;s why I give Alex Genadinik&apos;s{' '}
         <A
-          isExternal
           href="https://www.udemy.com/course/seo-with-google-other-large-platforms-to-get-great-scale/"
+          isExternal
         >
           SEO Training Masterclass
         </A>{' '}

@@ -4,7 +4,7 @@ export const unitFormat = new Intl.ListFormat('en-US', {
   type: 'unit',
 });
 
-export function formatTech(techs: (keyof typeof skillMap)[]): string {
+export function formatTech(techs: readonly (keyof typeof skillMap)[]): string {
   const sorted = [...new Set(techs)]
     .map(tech => {
       return skillMap[tech];

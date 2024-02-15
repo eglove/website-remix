@@ -16,7 +16,6 @@ export function Guess({ guess, answer }: GuessProperties): JSX.Element {
       {withId.map((item, index) => {
         return (
           <span
-            key={item.id}
             className={twMerge(
               'grid h-10 w-10 place-items-center border-2 font-bold text-white',
               checkGuess(item.character, index, answer) === 'Neutral' &&
@@ -28,6 +27,7 @@ export function Guess({ guess, answer }: GuessProperties): JSX.Element {
               checkGuess(item.character, index, answer) === 'Misplaced' &&
                 'bg-yellow-500',
             )}
+            key={item.id}
           >
             {item.character}
           </span>

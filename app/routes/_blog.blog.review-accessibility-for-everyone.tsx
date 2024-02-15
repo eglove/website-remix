@@ -40,8 +40,8 @@ export default function () {
         But the knowledge is competent, Amy is a good presenter, and this
         information is very much needed. I give{' '}
         <A
-          isExternal
           href="https://leveluptutorials.com/tutorials/accessibility-for-everyone/"
+          isExternal
         >
           Amy Kapernick&apos;s Accessibility For Everyone
         </A>{' '}

@@ -8,21 +8,21 @@ export default function () {
     <>
       <Heading variant="h3">Echoed Opinions</Heading>
       <Paragraph>
-        <A isExternal href="https://www.epicweb.dev/why-i-wont-use-nextjs">
+        <A href="https://www.epicweb.dev/why-i-wont-use-nextjs" isExternal>
           Why I Won&apos;t Use Next.js
         </A>
         , Kent C. Dodds
       </Paragraph>
       <Paragraph>
-        <A isExternal href="https://pilcrow.vercel.app/blog/nextjs-why">
+        <A href="https://pilcrow.vercel.app/blog/nextjs-why" isExternal>
           Next.js, just why?
         </A>
         , Pilcrow
       </Paragraph>
       <Paragraph>
         <A
-          isExternal
           href="https://twitter.com/tannerlinsley/status/1746970043836158330"
+          isExternal
         >
           ...dancing around experimental APIs that my open source users think
           are officially ready for prime time
@@ -30,30 +30,30 @@ export default function () {
         , Tanner Linsley
       </Paragraph>
       <Paragraph>
-        <A isExternal href="https://blog.cassidoo.co/post/annoyed-at-react/">
+        <A href="https://blog.cassidoo.co/post/annoyed-at-react/" isExternal>
           Kind of annoyed at React
         </A>
         , Cassidy Williams
       </Paragraph>
       <Paragraph>
         <A
-          isExternal
           href="https://macwright.com/2024/01/03/miffed-about-react"
+          isExternal
         >
           Increasingly miffed about the state of React releases
         </A>
         , Tom MacWright
       </Paragraph>
       <Paragraph>
-        <A isExternal href="https://www.youtube.com/watch?v=oQiEZ8adag0">
+        <A href="https://www.youtube.com/watch?v=oQiEZ8adag0" isExternal>
           React&apos;s becoming a bit weird...
         </A>
         , Maximilian Schwarzmuller
       </Paragraph>
       <Paragraph>
         <A
-          isExternal
           href="https://www.flightcontrol.dev/blog/nextjs-app-router-migration-the-good-bad-and-ugly"
+          isExternal
         >
           Next.Js App Router Migration: The Good, Bad, And Ugly
         </A>
@@ -151,7 +151,7 @@ export default function () {
       </Paragraph>
       <Paragraph>
         App router is{' '}
-        <A isExternal href="https://nextjs.org/blog/next-13-4">
+        <A href="https://nextjs.org/blog/next-13-4" isExternal>
           announced as ready for production on May 4, 2023
         </A>{' '}
         and create-next-app now recommends starting with it. It is not done. We
@@ -307,14 +307,14 @@ export default function () {
       <ul className="list-inside list-disc">
         <li>
           Hosting:{' '}
-          <A isExternal href="https://render.com">
+          <A href="https://render.com" isExternal>
             Render.com
           </A>
           , Docker Runtime
         </li>
         <li>
           Database:{' '}
-          <A isExternal href="https://neon.tech">
+          <A href="https://neon.tech" isExternal>
             Neon.tech
           </A>
         </li>

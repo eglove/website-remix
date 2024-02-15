@@ -11,7 +11,7 @@ import { TocHeader } from '../components/elements/toc-header';
 
 const numberFormatter = Intl.NumberFormat('en-US');
 
-export async function loader() {
+export async function loader(): Promise<number> {
   const zodDownloadsResponse = await fetch(
     'https://api.npmjs.org/downloads/point/last-week/zod',
   );
@@ -23,31 +23,29 @@ export async function loader() {
   return zodDownloadsData.success ? zodDownloadsData.data.downloads : 5_395_424;
 }
 
-export default function (): JSX.Element {
+export default function ZodIsYourFriend(): JSX.Element {
   const { pathname } = useLocation();
   const zodDownloads = useLoaderData<typeof loader>();
+
+  const tableOfContents = [
+    { href: `/blog/${pathname}#tldr`, label: 'TL;DR' },
+    { href: `/blog/${pathname}#inputsOutputs`, label: 'Inputs and Outputs' },
+    { href: `/blog/${pathname}#forms`, label: 'Forms' },
+    { href: `/blog/${pathname}#apis`, label: "API's" },
+    { href: `/blog/${pathname}#testing`, label: 'Testing' },
+    { href: `/blog/${pathname}#environment`, label: 'Environment Variables' },
+  ];
 
   return (
     <div>
       <ul className="my-2 list-inside" id="toc">
-        <li>
-          <A href={`/blog/${pathname}#tldr`}>TL;DR</A>
-        </li>
-        <li>
-          <A href={`/blog/${pathname}#inputsOutputs`}>Inputs and Outputs</A>
-        </li>
-        <li>
-          <A href={`/blog/${pathname}#forms`}>Forms</A>
-        </li>
-        <li>
-          <A href={`/blog/${pathname}#apis`}>API&apos;s</A>
-        </li>
-        <li>
-          <A href={`/blog/${pathname}#testing`}>Testing</A>
-        </li>
-        <li>
-          <A href={`/blog/${pathname}#environment`}>Environment Variables</A>
-        </li>
+        {tableOfContents.map(item => {
+          return (
+            <li key={item.href}>
+              <A href={item.href}>{item.label}</A>
+            </li>
+          );
+        })}
       </ul>
       <Paragraph>
         {numberFormatter.format(zodDownloads)} weekly NPM downloads. Over{' '}
@@ -359,13 +357,13 @@ export default function (): JSX.Element {
         <A href="/blog/making-react-testable">Making React Testable</A>
         &rdquo; . With{' '}
         <A
-          isExternal
           href="https://github.com/anatine/zod-plugins/tree/main/packages/zod-mock"
+          isExternal
         >
           @anatine/zod-mock
         </A>{' '}
         it&apos;s very easy to mock data from Zod schemas. Using{' '}
-        <A isExternal href="https://fakerjs.dev">
+        <A href="https://fakerjs.dev" isExternal>
           faker.js
         </A>{' '}
         as a dependency this library will do it automatically. Using tools like

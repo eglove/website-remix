@@ -6,8 +6,8 @@ export default function () {
     <Paragraph>
       There isn&apos;t much to say about Colt Steele&apos;s{' '}
       <A
-        isExternal
         href="https://www.udemy.com/course/git-and-github-bootcamp/"
+        isExternal
       >
         Git & GitHub Bootcamp
       </A>{' '}

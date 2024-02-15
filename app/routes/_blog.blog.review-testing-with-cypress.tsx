@@ -32,8 +32,8 @@ export default function () {
         my opinion. But Scott is a great presenter and he&apos;s obviously
         knowledgeable on Cypress. Which is why I give Scott Tolinski&apos;s{' '}
         <A
-          isExternal
           href="https://leveluptutorials.com/tutorials/testing-with-cypress"
+          isExternal
         >
           Testing With Cypress
         </A>{' '}
