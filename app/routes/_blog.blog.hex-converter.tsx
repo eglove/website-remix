@@ -1,4 +1,5 @@
 import { useForm } from '@ethang/use-form/index.js';
+import { isNil } from '@ethang/util/data.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import { Input } from '@nextui-org/input';
 import { Snippet } from '@nextui-org/snippet';
@@ -46,9 +47,9 @@ export default function (): JSX.Element {
     <>
       <form onSubmit={handleSubmit}>
         <fieldset className="mx-auto my-4 max-w-fit">
-          {typeof fieldErrors?.color === 'string' && (
+          {!isNil(fieldErrors?.color) && fieldErrors.color.length > 0 && (
             <Paragraph className="text-red-500">
-              {fieldErrors?.color ?? ''}
+              {fieldErrors.color[0]}
             </Paragraph>
           )}
           <Input

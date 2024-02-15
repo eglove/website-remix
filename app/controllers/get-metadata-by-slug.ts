@@ -2,7 +2,7 @@ import { sanityClient } from '../clients/sanity';
 
 export type GetMetadataBySlug = {
   _id: string;
-  authors: Array<{ name: string }>;
+  authors: { name: string }[];
   description: string;
   featuredImage: {
     description: string;

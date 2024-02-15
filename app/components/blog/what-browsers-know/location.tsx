@@ -26,7 +26,7 @@ export function Location(): JSX.Element {
   const [location, setLocation] = useState<GeolocationPosition>();
 
   const getLocation = (): void => {
-    if (navigator.geolocation !== undefined) {
+    if (typeof navigator !== 'undefined') {
       navigator.geolocation.watchPosition(position => {
         setLocation(position);
       });
@@ -46,7 +46,7 @@ export function Location(): JSX.Element {
             isExternal
             showAnchorIcon
             className="mb-4"
-            href={`https://maps.google.com/?q=${location?.coords.latitude},${location?.coords.longitude}`}
+            href={`https://maps.google.com/?q=${location.coords.latitude},${location.coords.longitude}`}
           >
             Open in Google Maps
           </A>

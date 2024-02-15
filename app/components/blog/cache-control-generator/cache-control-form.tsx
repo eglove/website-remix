@@ -8,10 +8,10 @@ import styles from '../../../assets/css/snippet.module.css';
 import { ItemDescription } from './item-description';
 import { inputGrid } from './util';
 
-export type InputList<T> = Array<{
+export type InputList<T> = {
   description: string;
   key: keyof T;
-}>;
+}[];
 
 type CacheControlFormProperties<T extends Record<string, string | boolean>> = {
   readonly checkBoxes: InputList<T>;

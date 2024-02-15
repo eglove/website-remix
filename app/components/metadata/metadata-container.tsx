@@ -27,8 +27,7 @@ export function MetadataContainer({
   const category = data.metadata[0].tags[0] as Category;
   const totalPages = Math.ceil(data.count / METADATA_PAGE_LENGTH);
 
-  const categoryPage =
-    (betterNumber(searchParameters.get(category)).number as number) ?? 1;
+  const categoryPage = betterNumber(searchParameters.get(category)).number ?? 1;
 
   let categoryLabel = '';
 
@@ -95,7 +94,7 @@ export function MetadataContainer({
                 <CustomPagination
                   {...properties}
                   category={category}
-                  categoryPage={categoryPage}
+                  categoryPage={categoryPage as number}
                   searchParameters={searchParameters}
                 />
               );

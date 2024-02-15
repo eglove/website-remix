@@ -43,8 +43,8 @@ export function Battery(): JSX.Element {
         seconds: batteryManager.dischargingTime,
       });
 
-      const relativeCharging = chargingTime.toRelative() ?? '';
-      const relativeDischarging = dischargingTime.toRelative() ?? '';
+      const relativeCharging = chargingTime.toRelative();
+      const relativeDischarging = dischargingTime.toRelative();
       const zeroStrings = new Set(['in 0 seconds', '0 seconds ago', '']);
 
       setBattery({

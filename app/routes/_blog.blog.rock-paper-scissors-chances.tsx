@@ -76,7 +76,7 @@ export default function (): JSX.Element {
           type="button"
           variant="bordered"
           onPress={(): void => {
-            return handlePlay(rockPaperScissors.Rock);
+            handlePlay(rockPaperScissors.Rock);
           }}
         >
           <Image
@@ -91,7 +91,7 @@ export default function (): JSX.Element {
           type="button"
           variant="bordered"
           onPress={(): void => {
-            return handlePlay(rockPaperScissors.Paper);
+            handlePlay(rockPaperScissors.Paper);
           }}
         >
           <Image
@@ -106,7 +106,7 @@ export default function (): JSX.Element {
           type="button"
           variant="bordered"
           onPress={(): void => {
-            return handlePlay(rockPaperScissors.Scissors);
+            handlePlay(rockPaperScissors.Scissors);
           }}
         >
           <Image

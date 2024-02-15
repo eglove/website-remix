@@ -24,7 +24,7 @@ export default function handleRequest(
   loadContext: AppLoadContext,
 ) {
   return request.headers.get('user-agent') !== null &&
-    isbot(request.headers.get('user-agent') as string)
+    isbot(request.headers.get('user-agent'))
     ? handleBotRequest(
         request,
         responseStatusCode,
@@ -81,7 +81,9 @@ function handleBotRequest(
           }
         },
         onShellError(error: unknown) {
-          reject(error);
+          if (error instanceof Error) {
+            reject(error);
+          }
         },
       },
     );
@@ -116,7 +118,9 @@ function handleBrowserRequest(
           }
         },
         onShellError(error: unknown) {
-          reject(error);
+          if (error instanceof Error) {
+            reject(error);
+          }
         },
         onShellReady() {
           shellRendered = true;

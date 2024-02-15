@@ -247,7 +247,7 @@ export default function (): JSX.Element {
         name="previewDeploymentSuffix"
         value={String(formState.previewDeploymentSuffix)}
         onChange={(event): void => {
-          handleChange(event as unknown as ChangeEvent<Element>);
+          handleChange(event as unknown as ChangeEvent);
         }}
       >
         Preview Deployment Suffix

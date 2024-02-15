@@ -69,10 +69,10 @@ export function ResponseCacheForm(): JSX.Element {
     },
   ];
 
-  const inputs: Array<{
+  const inputs: {
     description: string;
     key: keyof typeof formState;
-  }> = [
+  }[] = [
     {
       description:
         'Server tells the client that a response should be considered stale after x seconds.',

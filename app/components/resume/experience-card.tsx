@@ -8,9 +8,9 @@ import { dateFormatter, formatTech } from './tech-format';
 type ContractPositionProperties = {
   readonly children: ReactNode;
   readonly endDate?: string;
-  readonly methodologiesUsed: Array<keyof typeof skillMap>;
+  readonly methodologiesUsed: (keyof typeof skillMap)[];
   readonly startDate?: string;
-  readonly techUsed: Array<keyof typeof skillMap>;
+  readonly techUsed: (keyof typeof skillMap)[];
   readonly title: string;
 };
 

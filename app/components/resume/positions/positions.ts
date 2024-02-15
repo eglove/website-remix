@@ -5,9 +5,9 @@ import type { SkillKey, skillMap } from '../skills';
 
 type Position = {
   readonly endDate?: string;
-  readonly methodologiesUsed: Array<keyof typeof skillMap>;
+  readonly methodologiesUsed: (keyof typeof skillMap)[];
   readonly startDate: string;
-  readonly techUsed: Array<keyof typeof skillMap>;
+  readonly techUsed: (keyof typeof skillMap)[];
   readonly title: string;
 };
 
@@ -200,7 +200,7 @@ export function getExperience() {
     for (const skill of skillsUsed) {
       const current = experience[skill];
 
-      experience[skill] = (current ?? 0) + duration;
+      experience[skill] = current + duration;
     }
   });
 
