@@ -4,6 +4,7 @@ import { Link } from '@nextui-org/link';
 import type { RemixLinkProps } from '@remix-run/react';
 import { Link as RemixLink } from '@remix-run/react';
 import type { JSX, PropsWithChildren } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type AProperties = JSX.IntrinsicElements['a'] &
   LinkProps &
@@ -18,6 +19,7 @@ export function A(properties: AProperties): JSX.Element {
       as={RemixLink}
       prefetch="viewport"
       {...properties}
+      className={twMerge('text-medium', properties.className)}
       href={undefined}
       to={href ?? (to as string)}
     />
