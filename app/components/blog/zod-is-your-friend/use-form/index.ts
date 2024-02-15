@@ -6,7 +6,7 @@ import type { z } from 'zod';
 import { getZodFieldErrors } from './util';
 
 export type FieldErrors<StateType> =
-  | Record<keyof StateType, string[] | undefined | null>
+  | Record<keyof StateType, string[] | null | undefined>
   | undefined;
 
 export type UseFormProperties<StateType> = {
@@ -80,7 +80,7 @@ export const useForm = <StateType extends Record<string, unknown>>(
       files: File[];
       name: string;
       type: string;
-      value: string | boolean | number | File;
+      value: File | boolean | number | string;
     };
 
     let { value } = eventTarget;

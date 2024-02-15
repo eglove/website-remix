@@ -81,7 +81,7 @@ export function ExampleForm(): JSX.Element {
           value={formState.confirmPassword}
           onChange={handleChange}
         />
-        {isSuccess && (
+        {isSuccess ? (
           <div className="flex gap-2">
             <p className="w-max rounded bg-green-500 p-2 text-white">
               Success!
@@ -90,7 +90,7 @@ export function ExampleForm(): JSX.Element {
               Reset
             </Button>
           </div>
-        )}
+        ) : null}
         {!isSuccess && (
           <Button color="primary" type="submit">
             Submit

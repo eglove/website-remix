@@ -15,7 +15,7 @@ import { renderToPipeableStream } from 'react-dom/server';
 const ABORT_DELAY = 5000;
 
 // eslint-disable-next-line max-params
-export default function handleRequest(
+export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
@@ -39,7 +39,7 @@ export default function handleRequest(
       );
 }
 
-function handleBotRequest(
+async function handleBotRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
@@ -73,9 +73,11 @@ function handleBotRequest(
         onError(error: unknown) {
           // eslint-disable-next-line no-param-reassign
           responseStatusCode = 500;
-          // Log streaming rendering errors from inside the shell.  Don't log
-          // errors encountered during initial shell rendering since they'll
-          // reject and get logged in handleDocumentRequest.
+          /*
+           * Log streaming rendering errors from inside the shell.  Don't log
+           * errors encountered during initial shell rendering since they'll
+           * reject and get logged in handleDocumentRequest.
+           */
           if (shellRendered) {
             console.error(error);
           }
@@ -92,7 +94,7 @@ function handleBotRequest(
   });
 }
 
-function handleBrowserRequest(
+async function handleBrowserRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
@@ -110,9 +112,11 @@ function handleBrowserRequest(
         onError(error: unknown) {
           // eslint-disable-next-line no-param-reassign
           responseStatusCode = 500;
-          // Log streaming rendering errors from inside the shell.  Don't log
-          // errors encountered during initial shell rendering since they'll
-          // reject and get logged in handleDocumentRequest.
+          /*
+           * Log streaming rendering errors from inside the shell.  Don't log
+           * errors encountered during initial shell rendering since they'll
+           * reject and get logged in handleDocumentRequest.
+           */
           if (shellRendered) {
             console.error(error);
           }

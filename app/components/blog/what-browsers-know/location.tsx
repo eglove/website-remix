@@ -40,7 +40,7 @@ export function Location(): JSX.Element {
           Get Location
         </Button>
       )}
-      {location && (
+      {location ? (
         <div>
           <A
             isExternal
@@ -51,8 +51,8 @@ export function Location(): JSX.Element {
             Open in Google Maps
           </A>
         </div>
-      )}
-      {location && (
+      ) : null}
+      {location ? (
         <Table hideHeader isStriped aria-label="Location">
           <TableHeader>
             <TableColumn>Name</TableColumn>
@@ -113,7 +113,7 @@ export function Location(): JSX.Element {
             </TableRow>
           </TableBody>
         </Table>
-      )}
+      ) : null}
     </div>
   );
 }

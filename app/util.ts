@@ -4,19 +4,26 @@ export const CONTENT_CACHE_CONTROL = new Headers({
 });
 
 export function camelToTitle(camelcase: string): string {
-  return camelcase.replaceAll(/([A-Z])/g, ' $1').replace(/^./, string_ => {
-    return string_.toUpperCase();
-  });
+  return camelcase
+    .replaceAll(/(?<CapitalLetter>[A-Z])/u, ' $1')
+    .replace(/^./u, string_ => {
+      return string_.toUpperCase();
+    });
 }
 
-export function codeString(value: string | string[]) {
-  let codeString = value;
+export function codeString(
+  value: string | readonly string[],
+): string | readonly string[] {
+  const codeString = value;
+  const FIRST = 0;
 
-  codeString = Array.isArray(codeString)
-    ? codeString.reduce((result, element, index) => {
-        return result + (index === 0 ? element : `\n${element}`);
-      })
-    : codeString.trim();
+  if (typeof codeString === 'string') {
+    codeString.trim();
+  } else {
+    codeString.reduce((result, element, index) => {
+      return result + (index === FIRST ? element : `\n${element}`);
+    });
+  }
 
   return codeString;
 }

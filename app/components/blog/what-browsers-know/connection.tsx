@@ -28,7 +28,7 @@ export function Connection(): JSX.Element {
     setReferrer(document.referrer);
 
     fetch('https://api.ipify.org?format=json')
-      .then(response => {
+      .then(async response => {
         return response.json();
       })
       .then(data => {
@@ -39,7 +39,7 @@ export function Connection(): JSX.Element {
       });
 
     fetch('https://eu.httpbin.org/stream-bytes/500000')
-      .then(response => {
+      .then(async response => {
         return response.blob();
       })
       .then(blob => {

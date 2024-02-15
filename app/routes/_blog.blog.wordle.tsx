@@ -33,9 +33,9 @@ export default function (): JSX.Element {
         {range(0, maxGuessesAllowed).map(index => {
           return (
             <Guess
+              key={index}
               answer={answer}
               guess={[...guesses][index] ?? '     '}
-              key={index}
             />
           );
         })}

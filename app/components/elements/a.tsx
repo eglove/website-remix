@@ -5,21 +5,21 @@ import type { RemixLinkProps } from '@remix-run/react';
 import { Link as RemixLink } from '@remix-run/react';
 import type { JSX, PropsWithChildren } from 'react';
 
-type AProperties = Omit<RemixLinkProps, 'to'> &
-  JSX.IntrinsicElements['a'] &
+type AProperties = JSX.IntrinsicElements['a'] &
   LinkProps &
+  Omit<RemixLinkProps, 'to'> &
   PropsWithChildren;
 
 export function A(properties: AProperties): JSX.Element {
+  const { href, to } = properties;
+
   return (
     <Link
       as={RemixLink}
       prefetch="viewport"
       {...properties}
       href={undefined}
-      to={properties.href ?? (properties.to as string)}
-    >
-      {properties.children}
-    </Link>
+      to={href ?? (to as string)}
+    />
   );
 }

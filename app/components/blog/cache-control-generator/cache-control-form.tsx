@@ -13,7 +13,7 @@ export type InputList<T> = {
   key: keyof T;
 }[];
 
-type CacheControlFormProperties<T extends Record<string, string | boolean>> = {
+type CacheControlFormProperties<T extends Record<string, boolean | string>> = {
   readonly checkBoxes: InputList<T>;
   readonly formState: T;
   readonly handleChange: (event: ChangeEvent) => void;
@@ -24,7 +24,7 @@ const formatter = new Intl.ListFormat('en-US', {
   type: 'unit',
 });
 
-export function CacheControlForm<T extends Record<string, string | boolean>>({
+export function CacheControlForm<T extends Record<string, boolean | string>>({
   checkBoxes,
   formState,
   handleChange,
@@ -72,8 +72,8 @@ export function CacheControlForm<T extends Record<string, string | boolean>>({
         {inputs.map(input => {
           return (
             <Input
-              description={input.description}
               key={input.key as string}
+              description={input.description}
               label={input.key as string}
               name={input.key as string}
               type="number"

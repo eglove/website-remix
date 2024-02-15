@@ -119,7 +119,7 @@ export function LocaleDateStringForm(): JSX.Element {
       </Button>
       <form>
         <fieldset className="grid gap-4 md:grid-cols-3">
-          {isShowingAll && (
+          {isShowingAll ? (
             <Select
               label="Calendar"
               name="calendar"
@@ -134,7 +134,7 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
+          ) : null}
           <Input
             label="Date"
             name="date"
@@ -159,7 +159,7 @@ export function LocaleDateStringForm(): JSX.Element {
               );
             })}
           </Select>
-          {isShowingAll && (
+          {isShowingAll ? (
             <Select
               label="Day"
               name="day"
@@ -174,8 +174,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Day Period"
               name="dayPeriod"
@@ -190,8 +190,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Era"
               name="era"
@@ -206,8 +206,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Format Matcher"
               name="formatMatcher"
@@ -222,8 +222,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Fractional Second Digits"
               name="fractionalSecondDigits"
@@ -238,8 +238,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Hour"
               name="hour"
@@ -254,8 +254,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Hour12"
               name="hour12"
@@ -270,8 +270,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Hour Cycle"
               name="hourCycle"
@@ -286,7 +286,7 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
+          ) : null}
           <Select
             label="Locale"
             name="locale"
@@ -301,7 +301,7 @@ export function LocaleDateStringForm(): JSX.Element {
               );
             })}
           </Select>
-          {isShowingAll && (
+          {isShowingAll ? (
             <Select
               label="Locale Matcher"
               name="localeMatcher"
@@ -316,8 +316,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Minute"
               name="minute"
@@ -332,8 +332,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Month"
               name="month"
@@ -348,8 +348,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Numbering System"
               name="numberingSystem"
@@ -364,8 +364,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Second"
               name="second"
@@ -380,7 +380,7 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
+          ) : null}
           <Select
             label="Time Style"
             name="timeStyle"
@@ -409,7 +409,7 @@ export function LocaleDateStringForm(): JSX.Element {
               );
             })}
           </Select>
-          {isShowingAll && (
+          {isShowingAll ? (
             <Select
               label="TimeZone Name"
               name="timeZoneName"
@@ -424,8 +424,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Weekday"
               name="weekday"
@@ -440,8 +440,8 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
-          {isShowingAll && (
+          ) : null}
+          {isShowingAll ? (
             <Select
               label="Year"
               name="year"
@@ -456,7 +456,7 @@ export function LocaleDateStringForm(): JSX.Element {
                 );
               })}
             </Select>
-          )}
+          ) : null}
         </fieldset>
       </form>
       <Heading variant="h3">Shows As</Heading>

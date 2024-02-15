@@ -10,8 +10,12 @@ export function formatTech(techs: (keyof typeof skillMap)[]): string {
       return skillMap[tech];
     })
     .sort((a, b) => {
-      if (a < b) return -1;
-      if (a > b) return 1;
+      if (a < b) {
+        return -1;
+      }
+      if (a > b) {
+        return 1;
+      }
       return 0;
     });
 

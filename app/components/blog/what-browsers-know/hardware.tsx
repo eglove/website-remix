@@ -82,8 +82,8 @@ export function Hardware(): JSX.Element {
                 <TableRow key={track.id}>
                   {(columnKey): JSX.Element => {
                     const value = getKeyValue(track, columnKey) as
-                      | string
-                      | boolean;
+                      | boolean
+                      | string;
 
                     if (typeof value === 'boolean') {
                       return <TableCell>{value ? 'Yes' : 'No'}</TableCell>;

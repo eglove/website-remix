@@ -1,4 +1,5 @@
 import type { MetaFunction } from '@remix-run/node';
+import type { JSX } from 'react';
 
 import { A } from '../components/elements/a';
 import { PositionSummary } from '../components/resume/positions/position-summary';
@@ -9,22 +10,22 @@ export const meta: MetaFunction = () => {
   return [{ title: 'Ethan Glover Resume' }];
 };
 
-export default function () {
+export default function Resume(): JSX.Element {
   return (
     <div className="p-4 text-sm">
       <h1 className="text-xl font-bold">Ethan Glover</h1>
       <p>
         St. Louis, MO 63017 (Open to Relocation) |{' '}
-        <A isExternal color="foreground" href="tel:8165420568">
+        <A color="foreground" href="tel:8165420568" isExternal>
           (816) 542-0568
         </A>
       </p>
       <p>
-        <A isExternal color="foreground" href="mailto:hello@ethang.email">
+        <A color="foreground" href="mailto:hello@ethang.email" isExternal>
           hello@ethang.email
         </A>{' '}
         |{' '}
-        <A isExternal color="foreground" href="https://ethang.dev">
+        <A color="foreground" href="https://ethang.dev" isExternal>
           https://ethang.dev
         </A>
       </p>

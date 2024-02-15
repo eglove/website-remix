@@ -24,7 +24,7 @@ export type MetaDataReturn = {
 
 export const METADATA_PAGE_LENGTH = 3;
 
-export function getMetadatasByCategory(
+export async function getMetadatasByCategory(
   category: Category,
   page = 1,
 ): Promise<MetaDataReturn> {

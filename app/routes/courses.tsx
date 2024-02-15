@@ -1,11 +1,14 @@
 import { isNil } from '@ethang/util/data.js';
 import { Accordion, AccordionItem } from '@nextui-org/accordion';
-import { json, type MetaFunction } from '@remix-run/node';
+import type { MetaFunction, TypedResponse } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import type { JSX } from 'react';
 
 import { A } from '../components/elements/a';
 import { Heading } from '../components/elements/heading';
 import { Paragraph } from '../components/elements/paragraph';
+import type { Course } from '../controllers/get-recommended-courses';
 import { getRecommendedCourses } from '../controllers/get-recommended-courses';
 import { CONTENT_CACHE_CONTROL } from '../util';
 
@@ -31,7 +34,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function loader() {
+export async function loader(): Promise<TypedResponse<Course[]>> {
   const courses = await getRecommendedCourses();
 
   return json(courses, {
@@ -39,7 +42,7 @@ export async function loader() {
   });
 }
 
-export default function () {
+export default function Courses(): JSX.Element | null {
   const courses = useLoaderData<typeof loader>();
 
   if (isNil(courses)) {
@@ -74,10 +77,11 @@ export default function () {
       </Paragraph>
       <Accordion variant="bordered">
         {courses.map((course, index) => {
-          const title = `#${index + 1} ${course.title}`;
+          const INCREMENT = 1;
+          const title = `#${index + INCREMENT} ${course.title}`;
 
           return (
-            <AccordionItem aria-label={title} key={course._id} title={title}>
+            <AccordionItem key={course._id} aria-label={title} title={title}>
               <div>
                 <span className="font-bold">Instructors:</span>{' '}
                 {authorFormat.format(
@@ -93,7 +97,7 @@ export default function () {
               <div className="mt-3 flex gap-2">
                 {course.links.map(link => {
                   return (
-                    <A isExternal showAnchorIcon href={link} key={link}>
+                    <A key={link} isExternal showAnchorIcon href={link}>
                       {new URL(link).hostname}
                     </A>
                   );

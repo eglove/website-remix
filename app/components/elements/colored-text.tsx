@@ -1,9 +1,9 @@
 import type { JSX, PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-type ColoredTextProperties = {
+type ColoredTextProperties = PropsWithChildren & {
   readonly variant: 'blue' | 'green';
-} & PropsWithChildren;
+};
 
 export function ColoredText({
   variant,

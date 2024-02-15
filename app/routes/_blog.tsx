@@ -1,14 +1,18 @@
 import { isNil } from '@ethang/util/data.js';
-import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/breadcrumbs';
-import { Image } from '@nextui-org/image';
-import type { LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
+import type {
+  LoaderFunctionArgs,
+  MetaFunction,
+  TypedResponse,
+} from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { Outlet, useLoaderData } from '@remix-run/react';
-import { DateTime } from 'luxon';
+import type { JSX } from 'react';
+import type { ReadonlyDeep } from 'type-fest';
 
 import { sanityImageBuilder } from '../clients/sanity';
-import { A } from '../components/elements/a';
-import { Heading } from '../components/elements/heading';
+import { BlogBreadcrumbs } from '../components/blog/common/blog-breadcrumbs';
+import { BlogMetadata } from '../components/blog/common/blog-metadata';
+import { FeaturedImage } from '../components/blog/common/featured-image';
 import type { GetMetadataBySlug } from '../controllers/get-metadata-by-slug';
 import { getMetadataBySlug } from '../controllers/get-metadata-by-slug';
 import { CONTENT_CACHE_CONTROL } from '../util';
@@ -39,8 +43,11 @@ export const meta: MetaFunction = ({ data }) => {
   ];
 };
 
-export async function loader({ request }: LoaderFunctionArgs) {
-  const slug = request.url.split('/').at(4);
+export async function loader({
+  request,
+}: ReadonlyDeep<LoaderFunctionArgs>): Promise<TypedResponse<GetMetadataBySlug> | null> {
+  const PATH_LOCATION = 4;
+  const slug = request.url.split('/').at(PATH_LOCATION);
 
   if (!isNil(slug)) {
     const data = await getMetadataBySlug(slug);
@@ -53,64 +60,37 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return null;
 }
 
-const formatter = new Intl.ListFormat('en-US');
-
-export default function BlogLayout() {
+export default function BlogLayout(): JSX.Element | null {
   const loaderData = useLoaderData<typeof loader>();
 
   if (isNil(loaderData)) {
     return null;
   }
 
+  const IMAGE_SIZE = 72;
   const imageUrl = sanityImageBuilder
     .image(loaderData.featuredImage.image.asset.url)
-    .height(72)
-    .width(72)
+    .height(IMAGE_SIZE)
+    .width(IMAGE_SIZE)
     .format('webp')
     .url();
 
   return (
     <>
-      <Breadcrumbs underline="hover">
-        <BreadcrumbItem>
-          <A className="text-sm" color="foreground" href="/">
-            Home
-          </A>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <A
-            className="text-sm"
-            color="foreground"
-            href={`/blog/${loaderData.slug.current}`}
-          >
-            {loaderData.title}
-          </A>
-        </BreadcrumbItem>
-      </Breadcrumbs>
+      <BlogBreadcrumbs
+        currentSlug={loaderData.slug.current}
+        title={loaderData.title}
+      />
       <div className="my-4 grid gap-4 border-b-2 sm:grid-cols-2-max-content">
-        <div className="p-2">
-          <Image
-            alt={loaderData.featuredImage.description}
-            className="object-contain"
-            height={72}
-            src={imageUrl}
-            width={72}
-          />
-        </div>
-        <div className="p-2">
-          <Heading variant="h2">{loaderData.title}</Heading>
-          <div>
-            {formatter.format(
-              loaderData.authors.map(author => {
-                return author.name;
-              }),
-            )}
-          </div>
-          <time>
-            Last Updated:{' '}
-            {DateTime.fromJSDate(new Date(loaderData.updatedAt)).toRelative()}
-          </time>
-        </div>
+        <FeaturedImage
+          description={loaderData.featuredImage.description}
+          imageUrl={imageUrl}
+        />
+        <BlogMetadata
+          authors={loaderData.authors}
+          title={loaderData.title}
+          updatedAt={loaderData.updatedAt}
+        />
       </div>
       <Outlet />
     </>

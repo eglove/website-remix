@@ -7,10 +7,10 @@ const headingStyleMap = {
   h3: 'my-4 text-lg font',
 };
 
-type HeadingProperties = {
-  readonly variant: keyof typeof headingStyleMap;
-} & JSX.IntrinsicElements[keyof typeof headingStyleMap] &
-  PropsWithChildren;
+type HeadingProperties = JSX.IntrinsicElements[keyof typeof headingStyleMap] &
+  PropsWithChildren & {
+    readonly variant: keyof typeof headingStyleMap;
+  };
 
 export function Heading({
   children,

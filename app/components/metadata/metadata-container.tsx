@@ -74,8 +74,8 @@ export function MetadataContainer({
         {data.metadata.map(item => {
           return (
             <MetadataCard
-              isAboveTheFold={category === 'workingOn'}
               key={item._id}
+              isAboveTheFold={category === 'workingOn'}
               metadata={item}
             />
           );

@@ -16,7 +16,7 @@ export type Publisher = {
   name: string;
 };
 
-export function getRecommendedCourses(): Promise<Course[]> {
+export async function getRecommendedCourses(): Promise<Course[]> {
   const where = '*[_type == "course" && isRecommended == true]';
   const order = 'order(orderRank asc)';
   const select = `{

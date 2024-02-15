@@ -1,8 +1,8 @@
 export type Category =
-  | 'workingOn'
-  | 'thinkingAbout'
+  | 'courseReview'
   | 'design'
-  | 'courseReview';
+  | 'thinkingAbout'
+  | 'workingOn';
 
 export const categories = [
   'workingOn',
