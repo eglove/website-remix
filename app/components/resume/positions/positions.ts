@@ -1,3 +1,4 @@
+import { isNil } from '@ethang/util/data.js';
 import lodash from 'lodash';
 import { DateTime } from 'luxon';
 
@@ -183,8 +184,11 @@ export const positions = {
   } as Position,
 };
 
-export function getExperience() {
-  const experience = {} as Record<SkillKey, number>;
+export function getExperience(): {
+  experience: number | undefined;
+  skill: string;
+}[] {
+  const experience = {} as Record<SkillKey, number | undefined>;
 
   // eslint-disable-next-line unicorn/no-array-for-each
   lodash.forEach(positions, position => {
@@ -201,16 +205,18 @@ export function getExperience() {
     for (const skill of skillsUsed) {
       const current = experience[skill];
 
-      experience[skill] = current + duration;
+      experience[skill] = (current ?? 0) + duration;
     }
   });
+
+  console.log(experience);
 
   return (
     lodash
       .chain(experience)
       // eslint-disable-next-line unicorn/no-array-for-each
       .forEach((months, skill) => {
-        if (months >= 13) {
+        if (!isNil(months) && months >= 13) {
           experience[skill as SkillKey] = Number(months / 12);
         } else {
           // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
