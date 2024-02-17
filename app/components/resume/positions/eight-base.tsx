@@ -10,6 +10,7 @@ export function EightBase(): JSX.Element {
         Worked on a low-code platform for a startup for generating GraphQL APIs
         through a React-based user interface.
       </li>
+
       <li>
         This was a short contract to help a company whose primary team was in
         Russia at the start of the war with Ukraine. With payment systems cut

@@ -12,11 +12,13 @@ export default function TypescriptFormEnums(): JSX.Element {
           HTML Input Types
         </A>
       </Paragraph>
+
       <Paragraph>
         <A href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">
           HTML Autocomplete Attributes
         </A>
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export enum AutoComplete {',
@@ -77,6 +79,7 @@ export default function TypescriptFormEnums(): JSX.Element {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           'export enum InputTypes {',

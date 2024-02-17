@@ -14,21 +14,24 @@ export default function Resume(): JSX.Element {
   return (
     <div className="p-4 text-sm">
       <h1 className="text-xl font-bold">Ethan Glover</h1>
+
       <p>
         St. Louis, MO 63017 (Open to Relocation) |{' '}
-        <A color="foreground" href="tel:8165420568" isExternal>
+        <A isExternal color="foreground" href="tel:8165420568">
           (816) 542-0568
         </A>
       </p>
+
       <p>
-        <A color="foreground" href="mailto:hello@ethang.email" isExternal>
+        <A isExternal color="foreground" href="mailto:hello@ethang.email">
           hello@ethang.email
         </A>{' '}
         |{' '}
-        <A color="foreground" href="https://ethang.dev" isExternal>
+        <A isExternal color="foreground" href="https://ethang.dev">
           https://ethang.dev
         </A>
       </p>
+
       <p className="my-4">
         Software engineer with experience across many different technologies. I
         have been writing code and working with the web for most of my life. I
@@ -40,9 +43,13 @@ export default function Resume(): JSX.Element {
         behavior-driven development. I am constantly working on side projects
         and love jumping in and learning new things.
       </p>
+
       <h2 className="my-4 text-xl font-bold">Core Skills</h2>
+
       <SkillBars />
+
       <PositionSummary />
+
       <ProjectSummary />
     </div>
   );

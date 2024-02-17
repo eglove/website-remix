@@ -20,12 +20,13 @@ export default function StateOfJsFrameworks(): JSX.Element {
         at all, Astro&apos;s simplicity made it very easy to move over my
         projects and get deployed to CloudFlare Pages with 0 effort.
       </Paragraph>
+
       <Paragraph>
         But there&apos;s another project I&apos;ve been struggling with,
         Introspect. My home for my{' '}
         <A
-          href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a"
           isExternal
+          href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a"
         >
           recommended courses.
         </A>
@@ -40,38 +41,46 @@ export default function StateOfJsFrameworks(): JSX.Element {
         it&apos;s very interesting that a lot of frameworks seem to be
         converging on this idea. But the question is, who is doing it best?
       </Paragraph>
+
       <Paragraph>
         I&apos;ve been exploring different JS frameworks and I&apos;ve started
         to develop a few requirements that I need met.
       </Paragraph>
+
       <ul className="grid list-inside list-decimal gap-2">
         <li>
           Uses JSX for{' '}
-          <A href="https://github.com/eglove/eslint-config-ethang" isExternal>
+          <A isExternal href="https://github.com/eglove/eslint-config-ethang">
             eslint-config-ethang
           </A>{' '}
           compatibility.
         </li>
+
         <li>Router is coupled with forms for data invalidation.</li>
+
         <li>Makes use of Browser APIs over React APIs.</li>
+
         <li>
           Has adapter support for CloudFlare Pages and using Edge runtime rather
           than Node. (With NodeJS compatibility for things like Buffer.)
         </li>
+
         <li>
           Makes use of form action interception so I don&apos;t have to write
           JSON endpoints, but provides good escape hatches for building and
           using JSON API&apos;s.
         </li>
       </ul>
+
       <Paragraph>Let&apos;s talk about the options.</Paragraph>
+
       <Paragraph>
-        <A className="font-bold" href="https://htmx.org/" isExternal>
+        <A isExternal className="font-bold" href="https://htmx.org/">
           HTMX:
         </A>{' '}
         The JavaScript library that pretends not to be JavaScript to appeal to
         backend-only devs who hate JavaScript. The{' '}
-        <A href="https://htmx.org/essays/" isExternal>
+        <A isExternal href="https://htmx.org/essays/">
           HTMLX Essay page
         </A>{' '}
         is full of rants about how nothing follows REST, and why HTMX&apos;s
@@ -83,31 +92,37 @@ export default function StateOfJsFrameworks(): JSX.Element {
         few basic functions). HTMX has no router, and thereby no intelligent way
         to handle data holistically.
       </Paragraph>
+
       <div className="grid gap-2">
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           No JSX
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           No Router
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Abstracts Browser APIs into HTML.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Needs framework for work with edge such as creating Buffer&apos;s for
           PassKey Auth.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           No form action interception, defaults to AJAX APIs.
         </p>
       </div>
+
       <Paragraph>
-        <A className="font-bold" href="https://astro.build/" isExternal>
+        <A isExternal className="font-bold" href="https://astro.build/">
           Astro:
         </A>{' '}
         This is of course what I landed on originally. And it works great for my
@@ -124,19 +139,23 @@ export default function StateOfJsFrameworks(): JSX.Element {
         weak with dashboard type apps, but to be fair, so was SPA. SPA only made
         them viable/realistic.
       </Paragraph>
+
       <div className="grid gap-2">
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Uses JSX
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Frontmatter allows you to write server side logic for form actions.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Exposes plain Request/Response objects to use native browser APIs.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Excellent CloudFlare adapter that automatically adds NodeJS
@@ -145,6 +164,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           available on the newer import(dot)meta(dot)env. (process does not
           exist on edge runtime).
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Astro does not have a client side router that allows form actions to
@@ -153,7 +173,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
       </div>
 
       <Paragraph>
-        <A className="font-bold" href="https://nextjs.org/" isExternal>
+        <A isExternal className="font-bold" href="https://nextjs.org/">
           NextJS:
         </A>{' '}
         The framework that swears it&apos;s stable, even if the entire world is
@@ -172,11 +192,13 @@ export default function StateOfJsFrameworks(): JSX.Element {
         library for tracking form status, and using RSC which is canary in
         React. But according them... it&apos;s &ldquo;stable&rdquo;.
       </Paragraph>
+
       <div className="grid gap-2">
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Uses JSX
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           This gets a no because this is not currently possible without using
@@ -184,6 +206,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           JSON API routes and TanStack Query the same way we did before app
           router.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Use of browser APIs is severly limited because of the Vercel
@@ -191,6 +214,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           Developers have lost access to simple things like headers and cookies
           which makes it difficult to work with Browser APIs.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <ExclamationCircleIcon color="orange" height={16} width={16} />
           NextJS was built with edge runtime in mind. However basic things like
@@ -200,14 +224,16 @@ export default function StateOfJsFrameworks(): JSX.Element {
           creating a custom loader for images on CloudFlare CDN. But that is not
           a complete solution.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Same as the second point, in terms of intercepting HTML form actions,
           these features are experimental.
         </p>
       </div>
+
       <Paragraph>
-        <A className="font-bold" href="https://remix.run/" isExternal>
+        <A isExternal className="font-bold" href="https://remix.run/">
           Remix:
         </A>{' '}
         This framework has always felt like a response to NextJS. Always
@@ -217,21 +243,25 @@ export default function StateOfJsFrameworks(): JSX.Element {
         Introspect with Remix and really like the way they handle forms. Most of
         it&apos;s core features are specifically what I&apos;m looking for.
       </Paragraph>
+
       <div className="grid gap-2">
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Uses JSX
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Remix was basically made to couple React Router, server side logic,
           and HTML forms.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Does a great job of exposing Browser APIs where they&apos;re used and
           encouraging their use as much as possible.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           The CloudFlare adapter is a bit rough. You have to get environment
@@ -239,6 +269,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           of the world, but can be annoying. And NodeJS compatibility is not
           available.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           By default Remix encourages using React Router + HTML forms for data
@@ -248,8 +279,9 @@ export default function StateOfJsFrameworks(): JSX.Element {
           features.
         </p>
       </div>
+
       <Paragraph>
-        <A className="font-bold" href="https://qwik.builder.io/" isExternal>
+        <A isExternal className="font-bold" href="https://qwik.builder.io/">
           QwikCity:
         </A>{' '}
         I have been watching Qwik for a very long time and have been enamored by
@@ -262,11 +294,13 @@ export default function StateOfJsFrameworks(): JSX.Element {
         enough to cause major bugs. This alone makes QwikCity a non-starter for
         me.
       </Paragraph>
+
       <div className="grid gap-2">
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <CheckCircleIcon color="green" height={16} width={16} />
           Uses JSX
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           QwikCity doesn&apos;t really have much of a client-side anything. It
@@ -275,6 +309,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           the client. And form values are not pulled from input values. Put
           these together and forms are unreliable.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Doesn&apos;t really use most browser API&apos;s properly. You
@@ -282,6 +317,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           redirects often only work in what they call &ldquo;MPA mode&rdquo;
           which apparently just means when JavaScript is disabled.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <ExclamationCircleIcon color="orange" height={16} width={16} />
           The CloudFlare adapter for QwikCity works great as long as you use the
@@ -291,6 +327,7 @@ export default function StateOfJsFrameworks(): JSX.Element {
           be serialized, it&apos;s often difficult to figure out how to get them
           through Qwik&apos;s numerous &ldquo;serialization boundaries&rdquo;.
         </p>
+
         <p className="grid grid-cols-auto-1fr items-center gap-2">
           <NoSymbolIcon color="red" height={16} width={16} />
           Again the issue here is synchronization. You can not reliably predict

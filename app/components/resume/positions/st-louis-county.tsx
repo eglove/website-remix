@@ -15,6 +15,7 @@ export function StLouisCounty(): JSX.Element {
         going. Allow initial versions to be wrong so future versions can be
         right.
       </li>
+
       <li>
         Introduced automated testing to legacy codebases by setting up and
         writing unit tests for .NET backends as well as E2E and accessibility
@@ -27,6 +28,7 @@ export function StLouisCounty(): JSX.Element {
         set up would require significant refactoring, even entire rewrites. This
         is why we pivoted to a focus on E2E as much as possible.
       </li>
+
       <li>
         Taught concepts of composibility and making use of methodologies like
         Atomic Design by Brad Frost. Much of the codebases were copy/pasted
@@ -35,6 +37,7 @@ export function StLouisCounty(): JSX.Element {
         writing abstractions for UI components, as well as utility functions to
         make life easier in the future.
       </li>
+
       <li>
         Added and stressed the importance of using automated tests, linting and
         static analysis through CI/CD pipelines.

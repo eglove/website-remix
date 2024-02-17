@@ -14,30 +14,37 @@ export default function () {
         anything inherently faster. But by allowing the client to make highly
         specific requests, it naturally uses less resources.
       </Paragraph>
+
       <Paragraph>
         That being said, because GraphQL is just a specification and
         doesn&apos;t handle logic for you, just because you&apos;re using
         GraphQL doesn&apos;t mean you&apos;re taking full advantage.
       </Paragraph>
+
       <Paragraph>
         For example, when you use Prisma to write a resolver to fetch an item,
         GraphQL itself will only retrieve the data the caller requested.
         However, that does not mean Prisma won&apos;t retrieve that excess data
         from the database server side.
       </Paragraph>
+
       <Heading variant="h3">Select All</Heading>
+
       <CodeWrapper language="graphql">
         {['query Query {', '  user(id: 123) {', '    username', '  }', '}']}
       </CodeWrapper>
+
       <Paragraph>
         This query will only return the username field from a user resolver.
         (Let&apos;s assume we&apos;re talking about a user database here.)
         However, that does not mean the Prisma function used to retrieve this
         data doesn&apos;t do:
       </Paragraph>
+
       <CodeWrapper language="sql">
         {['select * from user where id = 123']}
       </CodeWrapper>
+
       <Paragraph>
         Luckily, <A href="https://paljs.com/">PalJs</A> provides an easy
         <A href="https://paljs.com/plugins/select">PrismaSelect</A> function
@@ -46,6 +53,7 @@ export default function () {
         small and simple function to make it easy to use for all resolvers (info
         comes from every incoming Apollo query):
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import { PrismaSelect } from '@paljs/plugins';",
@@ -62,19 +70,24 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This will transform that select all SQL query into the following:
       </Paragraph>
+
       <CodeWrapper language="sql">
         {['select username from user where id = 123']}
       </CodeWrapper>
+
       <Heading variant="h3">Relationships</Heading>
+
       <Paragraph>
         One of the challenges of writing resolvers can be creating relationships
         between tables. For example, I want to make the below query. The user
         table is related to the blog table with a relationship of userId {`=>`}{' '}
         authorId.
       </Paragraph>
+
       <CodeWrapper language="graphql">
         {[
           'query Query {',
@@ -86,25 +99,30 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         There are a couple of things I want Prisma to do here.
       </Paragraph>
+
       <NumberedList
         items={[
           'Recognize that the initial query to the users table needs to get userId if the child query is querying the blog table.',
           'Recognize that the userId field on user relates to the authorId field on blog.',
         ]}
       />
+
       <Paragraph>
         I don&apos;t want the caller to have to select the userId field and I
         don&apos;t want to spend too much time writing if statements for every
         resolver relationship. And unfortunately, the GraphQL info object and
         Prisma&apos;s generated types don&apos;t help us much here.
       </Paragraph>
+
       <Paragraph>
         So what I&apos;ve come up with is a resolveArguments function to do all
         of this work for me. Here&apos;s how it works:
       </Paragraph>
+
       <Paragraph>
         The key to the functionality is in the array of “RelationInfo” objects.
         Each item in the array represents a relationship between the resolver on
@@ -112,6 +130,7 @@ export default function () {
         use this function in the child resolver. Sticking with our example
         above, we&apos;d put this in the blogs resolver, not the user resolver.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export interface RelationInfo {',
@@ -121,6 +140,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           'const resolvedArguments = resolveArguments({',
@@ -137,11 +157,13 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Let&apos;s walk through what this function does. From the start, while
         we&apos;re resolving arguments we can go ahead and apply our select
         abstraction from above.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'let resolvedArguments = parameters.arguments_;',
@@ -150,11 +172,13 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         From here, we can start filling out the request. We do that by looping
         over the relationInfo array and finding which one of it&apos;s parent
         table names relates to the info objects parent table name.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'for (const relation of parameters.relationInfo) {',
@@ -163,6 +187,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         While I mentioned that I don&apos;t want the caller to have to select
         userId, unfortunately you have to remember we&apos;re starting from the
@@ -170,10 +195,12 @@ export default function () {
         don&apos;t have control over what happens in the user query at this
         point. So we need that userId.
       </Paragraph>
+
       <Paragraph>
         It would at least be a nice courtesy to let users know which field needs
         to be queried:
       </Paragraph>
+
       <CodeWrapper>
         {[
           "if (typeof thisParent?.[relation.parentColumnName] === 'undefined') {",
@@ -184,12 +211,14 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Otherwise, we can move on and get our resolved arguments. Remember the
         point of this was to make sure we&apos;re using the appropriate
         relationship fields. So essentially all we need to do is make sure
         Prisma&apos;s where statement contains authorId: userId.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'return {',
@@ -201,12 +230,14 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Simple as that, we use the spread operator to make sure we&apos;re not
         stripping out any fields from the original request and simply add a
         where for the relationship. Altogether it would look something like
         this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'interface RelationInfo {',
@@ -270,6 +301,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           'const blogs = async (',
@@ -295,18 +327,21 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This allows you to create boilerplate resolvers that only require a
         relationship array and the default parameters Apollo provides from
         incoming queries. It also helps Prisma generate smarter SQL queries. The
         SQL query here would be something like this:
       </Paragraph>
+
       <CodeWrapper language="sql">
         {[
           'select userId from User where userId = ‘userId’',
           'select title from blog where authorId = ‘userId’',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         In case you&apos;re wondering why Prisma generates two SQL statements
         instead of a Join. It&apos;s because it&apos;s more efficient.
@@ -315,6 +350,7 @@ export default function () {
         could have queried the blog table directly with the userId. But as these
         scale up and become more complex, Prisma will generate different SQL.
       </Paragraph>
+
       <Paragraph>
         The point of these abstractions is to take advantage of Prisma as a
         backend. Prisma is really freaking smart. Ideally you want to give it as
@@ -327,11 +363,14 @@ export default function () {
         hitting the database and generates what it believes to be the best
         queries (it&apos;s usually right).
       </Paragraph>
+
       <Heading variant="h3">Solving The Many-To-Many N+1 Problem</Heading>
+
       <Paragraph>
         ORM&apos;s get criticized for the N+1 problem. As Prisma&apos;s
         optimization guide says:
       </Paragraph>
+
       <Blockquote
         link="https://www.prisma.io/docs/guides/performance-and-optimization/query-optimization-performance"
         source="Prisma, Query Optimization"
@@ -342,6 +381,7 @@ export default function () {
         particularly in combination with GraphQL, because it is not always
         immediately obvious that your code is generating inefficient queries.
       </Blockquote>
+
       <Paragraph>
         However, that doesn&apos;t mean this issue can&apos;t be solved on a
         programmatic level such that we can automatically generate efficient
@@ -349,6 +389,7 @@ export default function () {
         intelligent SQL queries. However, this does not apply to findMany
         queries.
       </Paragraph>
+
       <Paragraph>
         Because this site doesn&apos;t use a database. (
         <A href="https://ethang.dev/blog/on-hosting-static-pages">
@@ -359,6 +400,7 @@ export default function () {
         sites refers to a location and caseData refers to a support ticket. I
         used the following query:
       </Paragraph>
+
       <CodeWrapper language="graphql">
         {[
           'query Query {',
@@ -371,27 +413,32 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Without optimizing for N+1 you get one query selecting all sites and a
         new query for each of those sites selecting all caseDatas. The generated
         SQL from prisma looks like this:
       </Paragraph>
+
       <SanityImage
         alt="Unresolved site, case data."
         height={377}
         src="https://cdn.sanity.io/images/drccvtog/production/8276b034dfa8167a9402eb6dfd44ff334d4f0738-1028x377.png"
         width={1028}
       />
+
       <Paragraph>
         This query took about 6 seconds to complete. Here&apos;s what it looks
         like after using my resolveFindMany() function.
       </Paragraph>
+
       <SanityImage
         alt="Resolved site, case data."
         height={524}
         src="https://cdn.sanity.io/images/drccvtog/production/eefca1253a989c1f35937f3065484af380fe791a-1156x524.png"
         width={1156}
       />
+
       <Paragraph>
         Now, instead of hundreds of individual select statements we get three
         queries. The first is the same, we&apos;re basically just grabbing all
@@ -399,6 +446,7 @@ export default function () {
         using as a relationship to caseData). Last it grabs the caseData. Note
         that instead of Join, Prisma is using SQL&apos;s IN keyword here.
       </Paragraph>
+
       <Paragraph>
         You could bring up a lot of arguments about this implementation.
         Complain about the first two queries being essentially the same. Argue
@@ -409,6 +457,7 @@ export default function () {
         .) At the end of the day, this implementation is based on Prisma&apos;s
         research and use of relationships to create efficient queries.
       </Paragraph>
+
       <Paragraph>
         This second query took about 4 seconds. A 2 second savings. Keep in mind
         that I am not running this multiple times or doing any real
@@ -418,12 +467,14 @@ export default function () {
         amount of time on any findMany query without much effort from the
         developer. Simply use the resolveFindMany() function.
       </Paragraph>
+
       <Paragraph>
         So what does this function look like? It is honestly very nasty and not
         totally TypeScript friendly. I&apos;ll give a basic list of what it does
         and leave the entire function I&apos;m using in production below. For
         now we&apos;ll keep using the site caseData query as an example.
       </Paragraph>
+
       <NumberedList
         items={[
           'From the caseData resolver use the same relationship array resolveArguments from above does to get the parent model.',
@@ -432,20 +483,25 @@ export default function () {
           'Chain the current table (caseData) to that findUnique query to run them together.',
         ]}
       />
+
       <Paragraph>What you end up with is something like this:</Paragraph>
+
       <CodeWrapper>
         {['Prisma.Site.findUnique({where: {siteId}}).CaseData()']}
       </CodeWrapper>
+
       <Paragraph>
         This is created for every site found on the parent query. Remember,
         Prisma batches findUnique queries. So by generating a findUnique query
         for every N results from sites, Prisma will batch them together using
         SQL&apos;s IN keyword as seen above.
       </Paragraph>
+
       <Paragraph>
         So the issue is just generating this based on the GraphQL info object.
         Meaning, we want our resolver to return something like this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'return resolveFindMany({',
@@ -458,15 +514,18 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         We&apos;re again passing along the default argument on every Apollo
         query but also including a relationInfo array and some resolvedArguments
         (using the above mentioned code).
       </Paragraph>
+
       <Paragraph>
         This is the messy TypeScript confused function I currently use (totally
         functional and performant):
       </Paragraph>
+
       <CodeWrapper>
         {[
           '/*',
@@ -564,29 +623,35 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Heading variant="h3">Last Words</Heading>
+
       <Paragraph>
         GraphQL is a huge booster to any API. It makes for a good Gateway when
         using a lot of third-party API&apos;s. It&apos;s more performant, and
         easier to work with and maintain than a REST API.
       </Paragraph>
+
       <Paragraph>
         However, that doesn&apos;t mean everything is done for you out of the
         box. GraphQL is a specification, nothing more. You can use services like
         Hasura to generate GraphQL API&apos;s but if you&apos;re looking to
         build your own, it does involve writing code.
       </Paragraph>
+
       <Paragraph>
         The initial perception a lot of people have of it is that it somehow
         just magically does everything for you. Not recognizing that all it can
         do is map requests to resolvers and return data based on that.
       </Paragraph>
+
       <Paragraph>
         I&apos;ve had to listen to professional developers get confused over how
         authentication works with GraphQL... as if REST we&apos;re handling it
         for them previously. The internet still works the same when you&apos;re
         using GraphQL. Headers and post data still exist.
       </Paragraph>
+
       <Paragraph>
         The point of this post was to share how I&apos;ve been able to generate
         efficient queries with Prisma using GraphQL queries. As this is one of

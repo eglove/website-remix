@@ -12,23 +12,33 @@ export default function WhatBrowsersKnow(): JSX.Element {
   return (
     <div className="mt-4 grid gap-4">
       <TableOfContents />
+
       <Heading id="location" variant="h3">
         Location
       </Heading>
+
       <Location />
+
       <Heading id="software" variant="h3">
         Software
       </Heading>
+
       <Software />
+
       <Heading variant="h3">Media Hardware</Heading>
+
       <Hardware />
+
       <Heading id="connection" variant="h3">
         Connection
       </Heading>
+
       <Connection />
+
       <Heading id="battery" variant="h3">
         Battery
       </Heading>
+
       <Battery />
     </div>
   );

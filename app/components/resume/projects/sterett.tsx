@@ -23,20 +23,22 @@ export function Sterett(): JSX.Element {
         updates, events, and meeting notes. Sanity is used as a CMS while the
         frontend is built with Astro and React.
       </li>
+
       <li>
         <Link
+          isExternal
           className="text-medium"
           href="https://github.com/eglove/sterett"
-          isExternal
         >
           github.com/eglove/sterett
         </Link>
       </li>
+
       <li>
         <Link
+          isExternal
           className="text-medium"
           href="https://sterettcreekvillagetrustee.com/"
-          isExternal
         >
           sterettcreekvillagetrustee.com
         </Link>

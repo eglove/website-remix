@@ -21,6 +21,7 @@ export function BlogMetadata({
   return (
     <div className="p-2">
       <Heading variant="h2">{title}</Heading>
+
       <div>
         {formatter.format(
           authors.map(author => {
@@ -28,6 +29,7 @@ export function BlogMetadata({
           }),
         )}
       </div>
+
       <time>
         Last Updated: {DateTime.fromJSDate(new Date(updatedAt)).toRelative()}
       </time>

@@ -21,17 +21,21 @@ export default function () {
         conflicting CORS rules, and routing between an express node server and
         react-router.
       </Paragraph>
+
       <Paragraph>
         I had the chance to take what was there and pull it into a new project.
         I removed Material UI completely (vanilla CSS is more scalable) and
         brought in Next.js as a framework.
       </Paragraph>
+
       <Paragraph>
         I thought I would do my best to share some lessons learned during this
         process, what I did to improve things and what I would do differently in
         the future.
       </Paragraph>
+
       <Heading variant="h2">React is Not a Framework</Heading>
+
       <Paragraph>
         React is a UI library. Not a framework. It&apos;s very good at what it
         does. Hooks are brilliant. But I don&apos;t believe it&apos;s realistic
@@ -40,7 +44,9 @@ export default function () {
         with many integrations. (We&apos;ll get back to handling this stuff
         later.)
       </Paragraph>
+
       <Paragraph>That&apos;s where Next.js comes in.</Paragraph>
+
       <Paragraph>
         Next.js is a React framework. Complete with its own server to build an
         API and handle server-side rendering. As well as a brilliant Image
@@ -48,6 +54,7 @@ export default function () {
         directory-based routing, data fetching tools and more. I would even
         argue that Next is a full-stack framework, albeit a small one.
       </Paragraph>
+
       <Paragraph>
         If you&apos;re working with a well-written API that follows proper REST
         conventions, or better yet a GraphQL API and don&apos;t have a lot of
@@ -59,7 +66,9 @@ export default function () {
         ? If you&apos;re starting a new React project I recommend always going
         Next.js.
       </Paragraph>
+
       <Heading variant="h2">Use Eslint</Heading>
+
       <Paragraph>
         I created my own lint config for Next and TypeScript. It basically just
         extends... well... a lot of stuff. Critics may note that there&apos;s a
@@ -68,12 +77,14 @@ export default function () {
         some tweaking to order and a few custom rules, this is working out for
         me.
       </Paragraph>
+
       <Paragraph>
         Eslint can catch a lot of issues such as missing useEffect dependencies
         (note the useEffect article I link below), accessibility issues, unused
         imports, inefficient algorithms, etc. Hell, you can even use it to sort
         imports and alphabetically order object properties.
       </Paragraph>
+
       <Paragraph>
         At a minimum, I would highly recommend the{' '}
         <A href="https://nextjs.org/docs/basic-features/eslint">next configs</A>
@@ -81,7 +92,9 @@ export default function () {
         be afraid to get deeper and continuously tweak. Even create your own
         config that you can share between projects.
       </Paragraph>
+
       <Heading variant="h2">Use TypeScript</Heading>
+
       <Paragraph>
         I can&apos;t tell you how many times TypeScript has saved my ass or made
         life easier. I would hate to write JavaScript without it. If you
@@ -93,12 +106,14 @@ export default function () {
         </A>
         .
       </Paragraph>
+
       <Paragraph>
         With TypeScript, I created interfaces for any data calls to a REST API I
         made, got more comfortable with generics to make code more reusable and
         easier to read, created a pretty cool form generator using OOP style
         classes, and best of all, my Intellisense is totally superpowered.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export const getFromLocalStorage = <Type>(',
@@ -132,6 +147,7 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           "import { toCapitalizedWords } from '../../util/string';",
@@ -408,6 +424,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           "import { ChangeEvent, SyntheticEvent } from 'react';",
@@ -583,7 +600,9 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Heading variant="h2">Don&apos;t Abstract Fetch</Heading>
+
       <Paragraph>
         I&apos;m working with a lot of APIs. Twilio, Rocket Chat, FileCloud,
         Outlook, and of course our own. Using REST, WebSockets, and WebRTC.
@@ -591,11 +610,13 @@ export default function () {
         invalidation, and listening to websockets. Fetching has become my
         biggest pain point on this project.
       </Paragraph>
+
       <Paragraph>
         For get requests I use <A href="https://swr.vercel.app/">useSWR</A> and
         for posts I wrote a custom usePost hook (as useSWR isn&apos;t really
         intended for pushing data).
       </Paragraph>
+
       <Paragraph>
         It&apos;s tempting to create a file that exports a bunch of fetch
         requests to any endpoint so you can use them anywhere in the
@@ -605,6 +626,7 @@ export default function () {
         functions? What happens when you got a lot of requests for a complex
         page with many integrations?
       </Paragraph>
+
       <Paragraph>
         useSwr is good at handling conditional calls. If the URL is null, it
         won&apos;t do anything. But if that changes, it will. A little something
@@ -612,13 +634,16 @@ export default function () {
         available. (For example, if you&apos;re pulling it from state.) You can
         expand this logic however you like.
       </Paragraph>
+
       <CodeWrapper>
         {['const {data} = useSwr(userId ? `domain.com/${userId}` : null)']}
       </CodeWrapper>
+
       <Paragraph>
         My usePost hook works the same way, except instead of running as soon as
         url is available, it exports an execute function.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import Error from 'next/error';",
@@ -698,6 +723,7 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         So what&apos;s the problem with this? Chaining requests is the problem.
         Let&apos;s say in order to create a group file share you have to login
@@ -708,6 +734,7 @@ export default function () {
         That&apos;s a minimum of 6 REST API calls that have to be done in order.
         What do you do? Link a bunch of useEffects together?
       </Paragraph>
+
       <Paragraph>
         You might say, that&apos;s a job for the backend. Great, with Next.js we
         have our own Node API. It&apos;s perfect for this kind of thing.
@@ -719,7 +746,9 @@ export default function () {
         nasty useEffect chaining. (By this I mean one useEffect has the returned
         data of another useEffect as a dependency.)
       </Paragraph>
+
       <Paragraph>Here&apos;s what I found that works better:</Paragraph>
+
       <CodeWrapper>
         {[
           "import { RocketChatCreateUserResponse } from '../../types/RocketChat/rocket-chat-create-user-response';",
@@ -863,6 +892,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         TypeScript gives us the opportunity to build some good ol&apos; OOP
         classes. An object with methods, and an instantiation that can keep
@@ -875,21 +905,25 @@ export default function () {
         . Rules you should follow. And if those rules conflict with what
         you&apos;re trying to do. Find another way.
       </Paragraph>
+
       <Paragraph>
         A TypeScript class is{' '}
         <strong>
-          code that can be shared by both the Next API and your client
-        </strong>
-        . So wherever it is most appropriate to make these calls, you can do it
+          code that can be shared by both the Next API and your client.
+        </strong>{' '}
+        So wherever it is most appropriate to make these calls, you can do it
         with the same code. This is pretty freaking cool if you ask me.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const rocketChat = new RocketChatController();',
           'await rocketChat.login();',
         ]}
       </CodeWrapper>
+
       <Heading variant="h2">Don&apos;t SSR Everything</Heading>
+
       <Paragraph>
         <A href="https://www.reddit.com/r/nextjs/comments/q6o81b/ssr_very_slow/">
           Just because
@@ -911,6 +945,7 @@ export default function () {
         </A>
         .
       </Paragraph>
+
       <Paragraph>
         Next does a lot of cool optimization without any input from you. CSS for
         example is rendered server-side. (I also highly recommend using{' '}
@@ -921,6 +956,7 @@ export default function () {
         use Next and it&apos;s not the only tool it has. Use the tools you need,
         when you need them.
       </Paragraph>
+
       <Paragraph>
         Get familiar with{' '}
         <A href="https://nextjs.org/docs/basic-features/data-fetching">
@@ -933,9 +969,11 @@ export default function () {
         putting too much work on the browser. Split it up, load only what you
         need, when you need it.
       </Paragraph>
+
       <Heading variant="h2">
         Learn From Smart People, Don&apos;t Stop Learning
       </Heading>
+
       <Paragraph>
         I initially learned React from{' '}
         <A href="https://advancedreact.com/">Wes Bos</A>. and did a lot of
@@ -949,6 +987,7 @@ export default function () {
         I&apos;ve even linked some of their articles in my documentation of this
         project. Specifically:
       </Paragraph>
+
       <ul>
         <li>
           <A href="https://overreacted.io/a-complete-guide-to-useeffect/">
@@ -956,22 +995,26 @@ export default function () {
           </A>{' '}
           (Please read this!)
         </li>
+
         <li>
           <A href="https://hswolff.com/blog/why-i-love-usereducer/">
             Why I love useReducer
           </A>
         </li>
+
         <li>
           <A href="https://hswolff.com/blog/level-up-usereducer-with-immer/">
             Level Up useReducer with Immer
           </A>
         </li>
+
         <li>
           <A href="https://hswolff.com/blog/how-to-usecontext-with-usereducer/">
             How to useContext with useReducer
           </A>
         </li>
       </ul>
+
       <Paragraph>
         Don&apos;t ever think you know everything, you never will. I&apos;ve
         come across know-it-alls, worked with know-it-alls, and seen projects
@@ -982,7 +1025,9 @@ export default function () {
         </A>{' '}
         set in.
       </Paragraph>
+
       <Heading variant="h2">Use The Next API</Heading>
+
       <Paragraph>
         Even if you&apos;re not intending to use Next for your entire stack, the
         Next API is a quick and easy way to solve some problems. Fixing bad REST
@@ -990,10 +1035,12 @@ export default function () {
         doesn&apos;t have an option to paginate? Send it through Next, paginate
         the results and give yourself a structure that works well with useSWR.
       </Paragraph>
+
       <Paragraph>
         Need to make... ahem.... 6 REST calls to do one thing? Bundle it into a
         single call you can make on your front end.
       </Paragraph>
+
       <Paragraph>
         Want to work with environment variables that you don&apos;t want the
         client to have access to? API routes can access{' '}
@@ -1002,7 +1049,9 @@ export default function () {
         </A>{' '}
         that are not NEXT_PUBLIC.
       </Paragraph>
+
       <Heading variant="h2">Keep Scaling, Keep Refactoring</Heading>
+
       <Paragraph>
         Don&apos;t get stuck with mistakes. I moved this project from taking two
         weeks to add a feature, to a few hours. (So long as an API doesn&apos;t
@@ -1010,6 +1059,7 @@ export default function () {
         I need to clean up. Fetch requests being one of them. I only thought of
         using classes recently.
       </Paragraph>
+
       <Paragraph>
         We&apos;re working on a GraphQL server that we&apos;re adding both our
         database and our third-party APIs to. We&apos;re discovering that we can
@@ -1020,6 +1070,7 @@ export default function () {
         both the app and the integrations, we can start linking things together.
         Add it to the graph. For example:
       </Paragraph>
+
       <CodeWrapper language="graphql">
         {[
           '{',
@@ -1037,11 +1088,13 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Why not? Having a separate server that allows us to make these kinds of
         calls to basically abstract out interacting with data sources will be a
         huge boost.
       </Paragraph>
+
       <Paragraph>
         I&apos;ve thought about hooking something like Prisma up to connect Next
         directly to our database. But with a GraphQL server, I don&apos;t think
@@ -1050,6 +1103,7 @@ export default function () {
         a use for an SQLite server working with Prisma? A cool little in-memory
         app DB. Who knows, I&apos;m keeping an open mind.
       </Paragraph>
+
       <Paragraph>
         If you don&apos;t keep improving your code, it&apos;s going to fall
         apart. If you&apos;ve got a team that&apos;s afraid to step on each

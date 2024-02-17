@@ -15,6 +15,7 @@ export default function () {
         documentation. It goes over every feature you can think of. Variables,
         Chai assertions, mock servers, automating tests, and so on.
       </Paragraph>
+
       <Paragraph>
         That being said, this is basically a rundown of the Postman
         documentation. I would argue that doing this course is better than
@@ -31,6 +32,7 @@ export default function () {
         have put as much effort into creating a coherent, smooth structure as
         I&apos;ve seen in some of the best courses.
       </Paragraph>
+
       <Paragraph>
         I can&apos;t complain about that point too much. Even if I consider it
         to be a major issue. This course is a worthwhile investment. And
@@ -43,6 +45,7 @@ export default function () {
         doesn&apos;t realize how useful Postman is. (And this is most
         companies.)
       </Paragraph>
+
       <Paragraph>
         Despite poor delivery and a follow the docs structure, this is a
         competent course on a good subject so I&apos;m giving it a 4 out of 5.

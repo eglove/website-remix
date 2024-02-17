@@ -15,11 +15,12 @@ export function EslintConfig(): JSX.Element {
         and eslint-config-xo. Adds additional rules for immutable object
         mutations, Tailwind, Prettier, and others.
       </li>
+
       <li>
         <Link
+          isExternal
           className="text-medium"
           href="https://github.com/eglove/eslint-config-ethang"
-          isExternal
         >
           github.com/eglove/eslint-config-ethang
         </Link>

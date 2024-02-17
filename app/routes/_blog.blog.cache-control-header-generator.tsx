@@ -9,15 +9,19 @@ export default function (): JSX.Element {
   return (
     <>
       <A
-        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control"
         isExternal
+        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control"
         underline="always"
       >
         <Heading variant="h2">Cache-Control Docs</Heading>
       </A>
+
       <Heading variant="h3">Request Cache-Control</Heading>
+
       <RequestCacheForm />
+
       <Heading variant="h3">Response Cache-Control</Heading>
+
       <ResponseCacheForm />
     </>
   );

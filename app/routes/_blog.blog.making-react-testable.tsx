@@ -10,11 +10,13 @@ export default function () {
         internal functions? How do I test that setState was run? Why do I hate
         jest.Mock so much?
       </Paragraph>
+
       <Paragraph>
         Simple project organization can help these issues. Let&apos;s take a
         project that&apos;s using tRPC for example. tRPC uses a lot of complex
         type inference and attaches itself to React Query.{' '}
       </Paragraph>
+
       <Paragraph>
         How do you mock these? Their creators Alex Johansson and Tanner Linsley
         aren&apos;t likely to give you a clear answer. In fact, they&apos;re
@@ -23,17 +25,20 @@ export default function () {
         test that they work. B) Mocking them is a ton of setup that may not work
         with your stack. And C) This is not good testing.
       </Paragraph>
+
       <Paragraph>
         I&apos;ve used a few different methods to separate logic from view in
         React components. The two big ones being custom hooks, and data
         components. I think by mixing the two, this can help keep unit tests
         clean, small, and stress free.
       </Paragraph>
+
       <Paragraph>
         Let&apos;s start with a tRPC call. Below is a tRPC call that uses Prisma
         to creates a &ldquo;Project Preference&rdquo; for a user given a
         username and preference name.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import { procedure } from 'source/feature/server/trpc';",
@@ -79,6 +84,7 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         How do we test this call? The answer is we don&apos;t. Instead, we test
         the Zod schemas. In other languages, we would probably call these DTOs.
@@ -86,6 +92,7 @@ export default function () {
         can trust that tRPC and Zod are not broken. If they are, we
         shouldn&apos;t be using them.
       </Paragraph>
+
       <Paragraph>
         If we have more logic around this Prisma call, we probably want to move
         it to it&apos;s own function. The{' '}
@@ -98,7 +105,9 @@ export default function () {
         compared to tRPC and React Query, Prisma Client is shallow enough for
         Jest to handle.
       </Paragraph>
+
       <Paragraph>Let&apos;s take a look at the schema tests.</Paragraph>
+
       <CodeWrapper>
         {[
           "it('should validate correct input', () => {",
@@ -129,6 +138,7 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         When we use this call in a React component, it&apos;s best to create a
         &ldquo;data component.&rdquo; A component whose only job is to either
@@ -137,6 +147,7 @@ export default function () {
         &ldquo;useMutation&rdquo; which is being used to call our create method
         above.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export default function ProjectPreferencesData(): JSX.Element {',
@@ -163,6 +174,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         So how do we test this component? The answer is again, we don&apos;t.
         The API call is already tested via the Zod schemas. And of course once
@@ -170,6 +182,7 @@ export default function () {
         props. Without getting into what&apos;s in the view, let&apos;s just
         skip straight to a test.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "it('should render the correct elements with data', async () => {",
@@ -201,6 +214,7 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         And this is my favorite part of using Zod. We&apos;ve tested the schema
         before. But by using @anatine/zod-mock we can generate mock data for it
@@ -209,13 +223,16 @@ export default function () {
         just give it props. A much simpler and controlled process than the
         sometimes confusing jest.Mock().
       </Paragraph>
+
       <Paragraph>
         But here&apos;s the kicker, we saw before that this view is taking in a
         create function. And here were passing a jest.fn() to mock it. But this
         view is a form. Which means it has state, and hooks. How do we handle
         those?
       </Paragraph>
+
       <Paragraph>Move them to a custom hook.</Paragraph>
+
       <CodeWrapper>
         {[
           'export const useProjectPreferences = ({',
@@ -249,6 +266,7 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         The implementation details of what&apos;s happening here aren&apos;t too
         important. We have two custom hooks, useForm and useUser. Both handle
@@ -256,6 +274,7 @@ export default function () {
         from the component, we can test it&apos;s internal state with Testing
         Library&apos;s renderHook()
       </Paragraph>
+
       <CodeWrapper>
         {[
           "it('should run create on submit', () => {",
@@ -287,6 +306,7 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Again, there are some unimportant details here. We have a
         &ldquo;setTestUserCookie()&rdquo; that gives us a logged in state for a
@@ -294,6 +314,7 @@ export default function () {
         formState&apos;s initial state and make sure &ldquo;create&rdquo; is
         called when the form is submitted.
       </Paragraph>
+
       <Paragraph>
         This is a contrived example. Because this is just a form submit, we can
         get &ldquo;coverage&rdquo; with user actions on the component. So you
@@ -301,6 +322,7 @@ export default function () {
         true, it&apos;s not always necessary to separate hooks into their own
         functions. But for developers, coverage is not an important metric.
       </Paragraph>
+
       <Paragraph>
         Writing thorough tests to ensure the stability of the system is. Keeping
         that organized so you can keep writing thorough tests in the future is

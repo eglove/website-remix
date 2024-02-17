@@ -34,30 +34,34 @@ export default function Wordle(): JSX.Element {
         {range(0, maxGuessesAllowed).map(index => {
           return (
             <Guess
+              key={index}
               answer={answer}
               guess={[...guesses][index] ?? '     '}
-              key={index}
             />
           );
         })}
       </div>
+
       {guesses.size === maxGuessesAllowed && (
-        <p className="my-4 text-lg font-bold">It was {answer.toUpperCase()}!</p>
+        <p className="my-4 text-lg font-bold">It was{answer.toUpperCase()}!</p>
       )}
+
       <form className="my-4" onSubmit={handleSubmit}>
         <label className="text-lg" htmlFor="guess">
           Enter guess:{' '}
         </label>
+
         <input
           className="border-2 border-blue-700"
           disabled={isInputDisabled}
           id="guess"
           name="guess"
-          onChange={handleChange}
           type="text"
           value={formState.guess}
+          onChange={handleChange}
         />
       </form>
+
       <ToastContainer />
     </div>
   );

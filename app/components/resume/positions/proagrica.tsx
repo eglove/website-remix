@@ -12,17 +12,20 @@ export function Proagrica(): JSX.Element {
         used time travel debugging to discover existing state, debug, and build
         new features.
       </li>
+
       <li>
         Developed reusable, and modular components for weather features from
         scratch that respected timezones for fields rather than for the
         user&apos;s location.
       </li>
+
       <li>
         Made use of i18next to handle langauge translations and encourage heavy
         use of JavaScript&apos;s Intl API to properly format dates for specific
         locales, as well as numbers for units such as acres, hectares,
         fahrenheit and celsius.
       </li>
+
       <li>
         Built PDF reporting API from scratch using ReactPDF to server render
         field reports which could be retrieved and downloaded on GET requests.

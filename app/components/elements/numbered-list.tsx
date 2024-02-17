@@ -22,7 +22,7 @@ export function NumberedList({
     <ul className="list-inside list-decimal">
       {itemsWithKey.map(item => {
         return (
-          <li className={twMerge('mb-2', liClassname)} key={item.id}>
+          <li key={item.id} className={twMerge('mb-2', liClassname)}>
             {item.item}
           </li>
         );

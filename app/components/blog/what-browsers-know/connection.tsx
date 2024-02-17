@@ -58,28 +58,35 @@ export function Connection(): JSX.Element {
 
   return (
     <div>
-      <Table aria-label="connection" hideHeader isStriped>
+      <Table hideHeader isStriped aria-label="connection">
         <TableHeader>
           <TableColumn>Name</TableColumn>
+
           <TableColumn>Value</TableColumn>
         </TableHeader>
+
         <TableBody>
           <TableRow>
             <TableCell>Previous Page</TableCell>
+
             <TableCell>
               {!isNil(referrer) && (
-                <A href={referrer} isExternal>
+                <A isExternal href={referrer}>
                   {referrer}
                 </A>
               )}
             </TableCell>
           </TableRow>
+
           <TableRow>
             <TableCell>Public IP</TableCell>
+
             <TableCell>{ip}</TableCell>
           </TableRow>
+
           <TableRow>
             <TableCell>Download Speed</TableCell>
+
             <TableCell>{`${formatter.format(speed)}/s`}</TableCell>
           </TableRow>
         </TableBody>

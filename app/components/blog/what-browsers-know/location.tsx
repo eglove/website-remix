@@ -40,71 +40,90 @@ export function Location(): JSX.Element {
           Get Location
         </Button>
       )}
+
       {location ? (
         <div>
           <A
-            className="mb-4"
-            href={`https://maps.google.com/?q=${location.coords.latitude},${location.coords.longitude}`}
             isExternal
             showAnchorIcon
+            className="mb-4"
+            href={`https://maps.google.com/?q=${location.coords.latitude},${location.coords.longitude}`}
           >
             Open in Google Maps
           </A>
         </div>
       ) : null}
+
       {location ? (
-        <Table aria-label="Location" hideHeader isStriped>
+        <Table hideHeader isStriped aria-label="Location">
           <TableHeader>
             <TableColumn>Name</TableColumn>
+
             <TableColumn>Value</TableColumn>
           </TableHeader>
+
           <TableBody>
             <TableRow key="1">
               <TableCell>Retrieved</TableCell>
+
               <TableCell>
                 {new Date(location.timestamp).toLocaleString()}
               </TableCell>
             </TableRow>
+
             <TableRow key="2">
               <TableCell>Latitude</TableCell>
+
               <TableCell>{location.coords.latitude}</TableCell>
             </TableRow>
+
             <TableRow key="3">
               <TableCell>Longitude</TableCell>
+
               <TableCell>{location.coords.longitude}</TableCell>
             </TableRow>
+
             <TableRow key="4">
               <TableCell>Accuracy</TableCell>
+
               <TableCell>
                 {meterFormatter.format(location.coords.accuracy)}
               </TableCell>
             </TableRow>
+
             <TableRow key="5">
               <TableCell>Altitude</TableCell>
+
               <TableCell>
                 {location.coords.altitude === null
                   ? ''
                   : meterFormatter.format(location.coords.altitude)}
               </TableCell>
             </TableRow>
+
             <TableRow key="6">
               <TableCell>Altitude Accuracy</TableCell>
+
               <TableCell>
                 {location.coords.altitudeAccuracy === null
                   ? ''
                   : meterFormatter.format(location.coords.altitudeAccuracy)}
               </TableCell>
             </TableRow>
+
             <TableRow key="7">
               <TableCell>Heading</TableCell>
+
               <TableCell>
                 {location.coords.heading === null
                   ? ''
                   : degreeFormatter.format(location.coords.heading)}
               </TableCell>
             </TableRow>
+
             <TableRow key="8">
               <TableCell>Speed</TableCell>
+
               <TableCell>
                 {location.coords.speed === null
                   ? ''

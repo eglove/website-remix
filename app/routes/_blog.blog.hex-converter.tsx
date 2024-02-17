@@ -52,12 +52,13 @@ export default function (): JSX.Element {
               {fieldErrors.color[0]}
             </Paragraph>
           )}
+
           <Input
             label="Hex Color"
             name="color"
-            onChange={handleChange}
             value={formState.color}
             variant="bordered"
+            onChange={handleChange}
           />
         </fieldset>
       </form>
@@ -65,42 +66,41 @@ export default function (): JSX.Element {
       <div className="flex flex-wrap gap-2">
         <Card className="grow border-2" shadow="none">
           <CardHeader className="bg-black text-white">Keyword</CardHeader>
+
           <CardBody style={{ backgroundColor: keyword }}>
-            <Snippet
-              className={styles.Snippet}
-              color="primary"
-              variant="solid"
-            >{`color: ${keyword};`}</Snippet>
+            <Snippet className={styles.Snippet} color="primary" variant="solid">
+              {`color: ${keyword};`}
+            </Snippet>
           </CardBody>
         </Card>
+
         <Card className="grow border-2" shadow="none">
           <CardHeader className="bg-black text-white">HSL</CardHeader>
+
           <CardBody style={{ backgroundColor: hslString }}>
-            <Snippet
-              className={styles.Snippet}
-              color="primary"
-              variant="solid"
-            >{`color: ${hslString};`}</Snippet>
+            <Snippet className={styles.Snippet} color="primary" variant="solid">
+              {`color: ${hslString};`}
+            </Snippet>
           </CardBody>
         </Card>
+
         <Card className="grow border-2" shadow="none">
           <CardHeader className="bg-black text-white">RGB</CardHeader>
+
           <CardBody style={{ backgroundColor: rgbString }}>
-            <Snippet
-              className={styles.Snippet}
-              color="primary"
-              variant="solid"
-            >{`color: ${rgbString};`}</Snippet>
+            <Snippet className={styles.Snippet} color="primary" variant="solid">
+              {`color: ${rgbString};`}
+            </Snippet>
           </CardBody>
         </Card>
+
         <Card className="grow border-2" shadow="none">
           <CardHeader className="bg-black text-white">HWB</CardHeader>
+
           <CardBody style={{ backgroundColor: hwbString }}>
-            <Snippet
-              className={styles.Snippet}
-              color="primary"
-              variant="solid"
-            >{`color: ${hwbString};`}</Snippet>
+            <Snippet className={styles.Snippet} color="primary" variant="solid">
+              {`color: ${hwbString};`}
+            </Snippet>
           </CardBody>
         </Card>
       </div>

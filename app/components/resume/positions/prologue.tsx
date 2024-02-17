@@ -10,11 +10,13 @@ export function Prologue(): JSX.Element {
         Extended public shipment tracking pages for international and domestic
         shipments with Vue and Laravel.
       </li>
+
       <li>
         Worked with an application for delivering quotes and booking shipments
         for clients through multiple logistics carriers such as FedEx, UPS, and
         others.
       </li>
+
       <li>
         Supported and maintained APIs for third-party consumption in order to
         rate, quote, and ship deliveries for small packages, LTL, and

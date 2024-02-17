@@ -14,6 +14,7 @@ export default function () {
         we&apos;ll still use them here.” Then tacked on hooks as an appendix
         item.
       </Paragraph>
+
       <Paragraph>
         When it comes to his Junior to Senior course, it&apos;s a similar story.
         Except the course was already patched with an extra hooks section after
@@ -35,6 +36,7 @@ export default function () {
         a “movement” to avoid hooks. There is not. Hooks are the standard way to
         write React apps today.
       </Paragraph>
+
       <Paragraph>
         I don&apos;t know why Andrei has been so resistant to hooks for the last
         few years. I think when you take other things into consideration like a
@@ -43,6 +45,7 @@ export default function () {
         to update the project to hooks after it&apos;s deployed, this all tells
         me he&apos;s just not updating his courses.
       </Paragraph>
+
       <Paragraph>
         I knew when Andrei started bringing on other instructors to Zero to
         Mastery and pumping out 3/5 courses like Academind, his own courses
@@ -53,6 +56,7 @@ export default function () {
         Because they&apos;re pumped out at a very fast rate by instructors who
         frankly aren&apos;t that good at teaching.
       </Paragraph>
+
       <Paragraph>
         OK... let&apos;s settle down and talk about the positive really quick.
         The Complete Junior to Senior Web Developer covers a lot of stuff. Image
@@ -63,6 +67,7 @@ export default function () {
         updates, these other subjects haven&apos;t changed much in the last 5
         years.
       </Paragraph>
+
       <Paragraph>
         Andrei Neagoi is NOT the guy to go to to learn React anymore. This is
         why my recommend list makes sure to keep a variety of instructors and
@@ -71,6 +76,7 @@ export default function () {
         date, you can still get a huge wealth of knowledge out of this course.
         All things that will put you ahead of many, if not most developers.
       </Paragraph>
+
       <Paragraph>
         So this is a very competent course overall. Andrei&apos;s presentation
         skills are great as always. The course follows what feels like a linear
@@ -78,6 +84,7 @@ export default function () {
         one random subject after another that never connects. Everything builds
         on the previous.
       </Paragraph>
+
       <Paragraph>
         There&apos;s one thing that saves this course entirely from a worse
         score and being removed from the recommended list entirely. The React
@@ -89,6 +96,7 @@ export default function () {
         anything about classes by following that section as Andrei argues. That
         section is the result of laziness and nothing more.
       </Paragraph>
+
       <Paragraph>
         Given the high quality of everything else and the fact that the React
         section is not required, ZTM&apos;s Junior to Senior Web Developer just

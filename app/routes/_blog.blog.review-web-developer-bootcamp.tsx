@@ -7,8 +7,8 @@ export default function () {
       <Paragraph>
         Sixty-three and a half hours of web development goodness.{' '}
         <A
-          href="https://www.udemy.com/course/the-web-developer-bootcamp/"
           isExternal
+          href="https://www.udemy.com/course/the-web-developer-bootcamp/"
         >
           Colt Steele&apos;s Web Developer Bootcamp
         </A>{' '}
@@ -26,6 +26,7 @@ export default function () {
         own after you&apos;ve mastered the basics, and that&apos;s what this
         course can provide.
       </Paragraph>
+
       <Paragraph>
         Not much time is spent on HTML but as long as you understand the basics
         up to semantic elements, you know everything you need to get started
@@ -37,6 +38,7 @@ export default function () {
         BEFORE getting into Bootstrap. Where a lot of courses will just have you
         download a bootstrap template and call that “knowing CSS.”
       </Paragraph>
+
       <Paragraph>
         I had a Bootcamp instructor embarrassingly tell students, “This is how
         you do it in the real world, you download a template and change the
@@ -46,6 +48,7 @@ export default function () {
         internet. CSS is an important skill to have and it should not be glossed
         over.
       </Paragraph>
+
       <Paragraph>
         As the course gets into JavaScript, it covers basic programming. Native
         types, if-else, switch, loops, objects, functions, etc. All of this
@@ -58,6 +61,7 @@ export default function () {
         short summary of common security issues, and finally deployment. WOO!
         That&apos;s a lot of code.
       </Paragraph>
+
       <Paragraph>
         I&apos;ve had to go through a LOT of courses to cover all of these
         topics individually. I&apos;ve never seen a course more robust and
@@ -65,6 +69,7 @@ export default function () {
         not too boring, he doesn&apos;t talk to you like a child, and he
         explains everything thoroughly enough that anyone can understand.
       </Paragraph>
+
       <Paragraph>
         I wish I had this course when I was first starting out. I get excited
         just thinking about how much further it could take someone in a shorter

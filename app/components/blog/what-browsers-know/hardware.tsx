@@ -69,6 +69,7 @@ export function Hardware(): JSX.Element {
           Get Hardware
         </Button>
       )}
+
       {tracks.length > 0 && (
         <Table aria-label="Devices">
           <TableHeader columns={columns}>
@@ -76,6 +77,7 @@ export function Hardware(): JSX.Element {
               return <TableColumn key={column.key}>{column.label}</TableColumn>;
             }}
           </TableHeader>
+
           <TableBody items={tracks}>
             {(track): JSX.Element => {
               return (

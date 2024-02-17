@@ -14,6 +14,7 @@ export default function () {
         it&apos;s important to get the full story and understand what work is
         actually needed to get top placement on search engines.
       </Paragraph>
+
       <Paragraph>
         The first thing I want to address before getting to the course, however,
         is Alex Genadinik. This guy spams the same creepy, most untrustworthy
@@ -24,6 +25,7 @@ export default function () {
         so obvious this guy has read way to many “how to public speaking” Forbes
         articles.
       </Paragraph>
+
       <Paragraph>
         That being said, I think his SEO course is great. Before I got into web
         development, I was into SEO and web marketing. As I learned web
@@ -36,6 +38,7 @@ export default function () {
         argue it&apos;s important for developers to understand backlink building
         even if that&apos;s not really a part of their job.
       </Paragraph>
+
       <Paragraph>
         There is often a gap between developers and the people they work with,
         including marketing. So it&apos;s good to have as much overlap knowledge
@@ -46,6 +49,7 @@ export default function () {
         that should always happen naturally. Do not try to trick or network your
         way into educational resources.
       </Paragraph>
+
       <Paragraph>
         When learning about SEO you&apos;ll find people who make it their job to
         teach SEO. This is like coming across sales people who don&apos;t have a
@@ -54,6 +58,7 @@ export default function () {
         it talks about outdated things like WordPress. Or using GTMetrix and
         Lighthouse as guides for performance.
       </Paragraph>
+
       <Paragraph>
         As developers, we know to ignore these things. Later you&apos;ll learn
         how to properly use Chrome&apos;s performance tab in developer tools as
@@ -63,6 +68,7 @@ export default function () {
         Lighthouse scores, but the website loads very quickly. It is usable in
         very impressive time on a slow 3G connection.
       </Paragraph>
+
       <Paragraph>
         I know from experience that if you load WordPress down with a bunch of
         performance plugins, you can improve your Lighthouse scores at the
@@ -73,12 +79,14 @@ export default function () {
         invalidation, component memoization, database optimization and
         algorithms. Don&apos;t worry about GTMetrix.
       </Paragraph>
+
       <Paragraph>
         I think the most key things to learn here are site structure, rich
         snippets and schema markup. You&apos;ll learn a lot about how marketing
         sees websites and what they&apos;re looking for in creating content.
         This is great knowledge to have as developers.
       </Paragraph>
+
       <Paragraph>
         I think Alex Genadinik does a great job of presenting the information.
         He covers seemingly every detail. He is obviously deep in the world of
@@ -90,8 +98,8 @@ export default function () {
         things that others just don&apos;t which I very much appreciate.
         That&apos;s why I give Alex Genadinik&apos;s{' '}
         <A
-          href="https://www.udemy.com/course/seo-with-google-other-large-platforms-to-get-great-scale/"
           isExternal
+          href="https://www.udemy.com/course/seo-with-google-other-large-platforms-to-get-great-scale/"
         >
           SEO Training Masterclass
         </A>{' '}

@@ -15,11 +15,12 @@ export function UseForm(): JSX.Element {
         React + AJAX form submissions. Includes ability to validate forms with
         Zod schemas.
       </li>
+
       <li>
         <A
+          isExternal
           className="text-medium"
           href="https://github.com/eglove/use-form"
-          isExternal
         >
           github.com/eglove/use-form
         </A>

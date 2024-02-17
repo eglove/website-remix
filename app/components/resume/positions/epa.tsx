@@ -18,6 +18,7 @@ export function Epa(): JSX.Element {
           https://www.epa.gov/airmarkets/ecmps-re-engineering-effort
         </Link>
       </li>
+
       <li>
         Created new REST API to handle data in a multi-schema database making
         careful use of JavaScript promise patterns to take advantage of
@@ -28,6 +29,7 @@ export function Epa(): JSX.Element {
         reproducible examples and help QA to ensure the highest quality
         possible.
       </li>
+
       <li>
         Moved to help with React frontend as our work on the contract ended
         early. I helped work with tables to display EPA data and allow users to

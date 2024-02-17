@@ -32,11 +32,14 @@ export default function () {
         JavaScript can be strange. Like any programming language. Here are some
         things to help with that.
       </Paragraph>
+
       <Heading variant="h2">Checking if numbers can be coerced</Heading>
+
       <Paragraph>
         isNan(n) returns true if n is NaN or is a value that cannot be coerced
         into a number. (Note that Number(null) === 0).
       </Paragraph>
+
       <CodeWrapper>
         {[
           `isNaN(0/0) // ${isNaN(0 / 0)}`,
@@ -47,7 +50,9 @@ export default function () {
           `isNaN(2) // ${isNaN(2)}`,
         ]}
       </CodeWrapper>
+
       <Paragraph>Number.isNaN(n) returns true only if n is NaN.</Paragraph>
+
       <CodeWrapper>
         {[
           `Number.isNaN(0/0) // ${Number.isNaN(0 / 0)}`,
@@ -58,7 +63,9 @@ export default function () {
           `Number.isNaN(2) // ${Number.isNaN(2)}`,
         ]}
       </CodeWrapper>
+
       <Paragraph>The solution:</Paragraph>
+
       <CodeWrapper>
         {[
           'export function isNumber(value: unknown): boolean {',
@@ -74,6 +81,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           `isNumber(0/0) // ${isBigIntOrNumber(0 / 0)}`,
@@ -84,7 +92,9 @@ export default function () {
           `isNumber(2) // ${isBigIntOrNumber(2)}`,
         ]}
       </CodeWrapper>
+
       <Heading variant="h2">Float Imprecision</Heading>
+
       <CodeWrapper>
         {[
           'function areFloatsEqual(x, y, epsilon = 1e-10) {',
@@ -92,48 +102,56 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           '0.1 + 0.2 === 0.3 // false',
           'areFloatsEqual(0.3, 0.1 + 0.2); // true',
         ]}
       </CodeWrapper>
+
       <Heading variant="h3">Try It Out:</Heading>
+
       <div className="grid grid-cols-2 gap-4">
         <Input
           label="Value 1"
           name="value1"
-          onChange={handleChange}
           type="number"
           value={formState.value1}
+          onChange={handleChange}
         />
+
         <Input
           label="Value 2"
           name="value2"
-          onChange={handleChange}
           type="number"
           value={formState.value2}
+          onChange={handleChange}
         />
+
         <Input
           label="Epsilon"
           name="epsilon"
-          onChange={handleChange}
           value={formState.epsilon}
+          onChange={handleChange}
         />
+
         <Input
           label="Expected Sum"
           name="expectedSum"
-          onChange={handleChange}
           type="number"
           value={formState.expectedSum}
+          onChange={handleChange}
         />
       </div>
+
       <div className="grid gap-2">
         <CodeWrapper>
           {[
             `${formState.value1} + ${formState.value2} === ${formState.expectedSum} // ${isEqual}`,
           ]}
         </CodeWrapper>
+
         <CodeWrapper>
           {[
             `areFloatsEqual(${formState.expectedSum}, ${formState.value1} + ${formState.value2}, ${formState.epsilon}) // ${isEpsilonEqual}`,

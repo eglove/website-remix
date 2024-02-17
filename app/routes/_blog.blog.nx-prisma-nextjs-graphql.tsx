@@ -22,22 +22,27 @@ export default function () {
         the tools necessary for efficient linting, building, testing, and
         managing multiple libraries and apps.
       </Paragraph>
+
       <Paragraph>
         But I want to talk about something more specific. Organizing monorepos
         with NextJS apps and Prisma to take full advantage of what NX has to
         offer.
       </Paragraph>
+
       <Paragraph>
         The basic idea of a monorepo is that 80% of your code is in libraries,
         20% is in apps. Or as I like to put it, the logic is in the libraries.
         And the wrappers and layouts are in the apps.
       </Paragraph>
+
       <Heading variant="h3">Prisma and the Backend</Heading>
+
       <Paragraph>
         Let&apos;s take a database API for example. If you&apos;re using Prisma,
         you already have prebuilt, typed methods to access your database.
         However that doesn&apos;t complete a REST, GraphQL or RPC API.
       </Paragraph>
+
       <Paragraph>
         The first thing I like to do is setup Prisma to plan for multiple
         databases. By specifying an output directory for the Prisma client I can
@@ -46,12 +51,14 @@ export default function () {
         other databases. I will typically then create a sterett-client.ts file
         in the Prisma folder to initialize and export that client.
       </Paragraph>
+
       <SanityImage
         alt="Monorepo directory in WebStorm IDE"
         height={Math.round(688)}
         src="https://cdn.sanity.io/images/drccvtog/production/3e970ebc74107e9ab6c87f1e08b72e2e51c02f94-1026x688.png"
         width={Math.round(1026)}
       />
+
       <Paragraph>
         Second is starting a library to hold the models for this database. Below
         you&apos;ll see I&apos;ve created a library called
@@ -63,12 +70,14 @@ export default function () {
         be called with EventModel.findUnique(), rather than having to use the
         new keyword.
       </Paragraph>
+
       <SanityImage
         alt="Example of model in monorepo."
         height={471}
         src="https://cdn.sanity.io/images/drccvtog/production/d75ad42d845c28b2b862bfd168095119c5e47787-1365x471.png"
         width={1365}
       />
+
       <Paragraph>
         <span className="font-bold">
           With this library setup you can call this from any server-side
@@ -81,6 +90,7 @@ export default function () {
         endpoints are up to the app to create. The point is to have common code
         you can import and use in any app, no matter its structure.
       </Paragraph>
+
       <Paragraph>
         For me, you might have also noticed another generator I&apos;m using in
         the Prisma schema.{' '}
@@ -89,6 +99,7 @@ export default function () {
         &lsquo;@ethang/sterett-typegraphql&rsquo;. Basically it generates an
         entire GraphQL schema and its resolvers from the Prisma schema.
       </Paragraph>
+
       <Paragraph>
         I don&apos;t necessarily recommend always generating GraphQL resolvers.
         A lot of times generation simply can not properly handle the custom
@@ -97,6 +108,7 @@ export default function () {
         because it&apos;s for a small admin dashboard app that only needs
         read/write access as defined by the client.
       </Paragraph>
+
       <Paragraph>
         To build a more robust GraphQL API that can take full advantage of
         something like Prisma, I recommend NestJS and{' '}
@@ -108,12 +120,14 @@ export default function () {
         This generator will allow you to do that and still give you the control
         you likely need.
       </Paragraph>
+
       <SanityImage
         alt="GraphQL api importing TypeGraphQL generated resolvers."
         height={867}
         src="https://cdn.sanity.io/images/drccvtog/production/8421ddc1f08f69e7e399516a2703d59f6b8f7e35-606x867.png"
         width={606}
       />
+
       <Paragraph>
         But with typegraphql-schema, all I have to do to setup a fully
         functional GraphQL server is import those generated resolvers, then add
@@ -121,12 +135,15 @@ export default function () {
         only thing the backend is missing at this point is authentication which
         I&apos;ll add later.
       </Paragraph>
+
       <Heading variant="h3">Organizing NextJS</Heading>
+
       <Paragraph>
         We&apos;ve now got a GraphQL server very quickly up and running that
         will allow us to flexibly interact with the database. So let&apos;s move
         on to the client.
       </Paragraph>
+
       <Paragraph>
         NextJS already makes it very easy to organize routes out of the box with
         it&apos;s file based routing. Typically it&apos;s in the page file where
@@ -134,6 +151,7 @@ export default function () {
         keep components small, when they start to exceed 100 lines, they&apos;re
         probably too big.
       </Paragraph>
+
       <Paragraph>
         The way I go about this is to write out everything I need on the page,
         then push view layers down and as small as possible after. For a long
@@ -141,12 +159,14 @@ export default function () {
         my position on that and started doing logic components and view
         components.
       </Paragraph>
+
       <Paragraph>
         My reasoning for this comes from the idea of reducing unnecessary
         rerenders by making use of props. This is a more comfortable way to me,
         to write out logic and send individual props to the component to tell it
         when to rerender.
       </Paragraph>
+
       <Paragraph>
         For example, this Next page has one simple state property and a GraphQL
         fetch. The Create New button will never rerender as the Route and name
@@ -155,21 +175,25 @@ export default function () {
         variable changes (on page traversal) or if the total count of events
         changes.
       </Paragraph>
+
       <SanityImage
         alt="NextJS page showing components."
         height={834}
         src="https://cdn.sanity.io/images/drccvtog/production/676bb02390f464d93749484116f11ec59551bc9d-1857x834.png"
         width={1857}
       />
+
       <Paragraph>
         If we extend that into something a little more robust we get something
         like this with form and form-view components. This is an upsert (update
         or insert) form that prefills the form with data if an object is passed
         to the component, and updates or creates based on that presence.
       </Paragraph>
+
       <Paragraph>
         <span className="font-bold">upsert-event-form.tsx</span>
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export function UpsertEventForm({',
@@ -239,9 +263,11 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         <span className="font-bold">upsert-event-form-view.tsx</span>
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export function UpsertEventFormView({',
@@ -309,13 +335,16 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Logic and view are kept separate, and React is left to handle props as
         needed. If you&apos;re passing context to a view component, you can also
         wrap the return function in a useMemo hook and provide it with
         dependencies specific to the item you&apos;re pulling off of context.
       </Paragraph>
+
       <Heading variant="h3">NextJS Directory Structure</Heading>
+
       <Paragraph>
         For directory structure I like to start with the{' '}
         <A href="https://angular.io/guide/file-structure">Angular approach</A>{' '}
@@ -330,6 +359,7 @@ export default function () {
         together multiple components to form a larger view, and handle any
         client side logic.
       </Paragraph>
+
       <Paragraph>
         As for common components, it&apos;s always worth considering if those
         components are only specific to the app. If they can be used by other
@@ -337,12 +367,14 @@ export default function () {
         above, all of the Truss components are imported from a
         &lsquo;trussworks-components&rsquo; library on my NX monorepo.
       </Paragraph>
+
       <SanityImage
         alt="Example NextJS file structure."
         height={555}
         src="https://cdn.sanity.io/images/drccvtog/production/4332c94399368a3ec734151df20dea3a1f034173-337x555.png"
         width={337}
       />
+
       <Paragraph>
         Unlike what Bulletproof React recommends, I think it&apos;s more
         comfortable to keep styles, tests and types specific to a component
@@ -351,6 +383,7 @@ export default function () {
         up to new style/types/etc. directories. Start small and atomic, and only
         escalate files when needed.
       </Paragraph>
+
       <Paragraph>
         If you need to{' '}
         <A href="https://beta.reactjs.org/learn/scaling-up-with-reducer-and-context">
@@ -362,7 +395,9 @@ export default function () {
         structure. I&apos;m using Apollo Client here and have no need for any
         other state management.
       </Paragraph>
+
       <Heading variant="h3">NextJS GraphQL Structure</Heading>
+
       <Paragraph>
         Finally, when it comes to organizing GraphQL calls, that can be a little
         awkward. Traditionally you might put all of your API calls into one
@@ -372,13 +407,16 @@ export default function () {
         separate files along with return types that use TypeScript&apos;s Pick
         utility to state exactly what&apos; returned.
       </Paragraph>
+
       <SanityImage
         alt="File structure for organization GraphQL calls."
         height={739}
         src="https://cdn.sanity.io/images/drccvtog/production/2eb149f15fb5022b8f7aba41fbda57c7113987e3-1106x739.png"
         width={1106}
       />
+
       <Heading variant="h3">But don&apos;t listen to me...</Heading>
+
       <Paragraph>
         This is only the structure I&apos;ve come up with that I find to be
         comfortable in almost all cases. But I always like to say, every project
@@ -388,6 +426,7 @@ export default function () {
         quickly. It&apos;s important to make sure that you can be comfortable
         browsing, reading and modifying code without confusion or getting lost.
       </Paragraph>
+
       <Paragraph>
         Continued reading:{' '}
         <A href="https://ethang.dev/blog/nx-prisma-nextjs-graphql">

@@ -63,29 +63,34 @@ export function CacheControlForm<T extends Record<string, boolean | string>>({
               >
                 {checkBox.key as string}
               </Checkbox>
+
               <ItemDescription>{checkBox.description}</ItemDescription>
             </div>
           );
         })}
       </div>
+
       <div className={inputGrid}>
         {inputs.map(input => {
           return (
             <Input
-              description={input.description}
               key={input.key as string}
+              description={input.description}
               label={input.key as string}
               name={input.key as string}
-              onChange={handleChange}
               type="number"
               value={formState[input.key] as string}
+              onChange={handleChange}
             />
           );
         })}
       </div>
+
       <Snippet className={twMerge('w-max', styles.Snippet)}>
         <span>{`new Headers({`}</span>
+
         <span>{`${headerString}'`}</span>
+
         <span>{`})`}</span>
       </Snippet>
     </>

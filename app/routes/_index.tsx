@@ -68,8 +68,8 @@ export default function Index(): JSX.Element {
       {loaderData.map((datum, index) => {
         return (
           <MetadataContainer
-            data={datum}
             key={Symbol(index).toString()}
+            data={datum}
             pages={pages}
           />
         );

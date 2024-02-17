@@ -34,13 +34,18 @@ export default function App() {
     <html className={twMerge(!isIgnoredPath && 'bg-sky-950')} lang="en-US">
       <head>
         <meta charSet="utf-8" />
+
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+
         <Meta />
+
         <Links />
       </head>
+
       <body className={twMerge(!isIgnoredPath && 'mt-4')}>
         <NextUIProvider>
           {!isIgnoredPath && <Navigation />}
+
           {isIgnoredPath ? (
             <Outlet />
           ) : (
@@ -50,8 +55,11 @@ export default function App() {
               </CardBody>
             </Card>
           )}
+
           <ScrollRestoration />
+
           <Scripts />
+
           <LiveReload />
         </NextUIProvider>
       </body>

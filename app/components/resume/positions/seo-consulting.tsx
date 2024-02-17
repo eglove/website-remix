@@ -11,11 +11,13 @@ export function SeoConsulting(): JSX.Element {
         This primarily took the form of making use of YoastSEO, as well as
         improving page speed, and getting a blog started.
       </li>
+
       <li>
         Consulted with OneSpiritOneWorld.org, a non-profit working to end dog
         homelessness and abuse to improve SEO and page performance as well.
         Encouraged a heavier social media presence.
       </li>
+
       <li>
         Developed React/GraphQL web app to track charities and donations to help
         with deductions and favorite charities.

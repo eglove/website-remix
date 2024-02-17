@@ -10,6 +10,7 @@ export function Avatara(): JSX.Element {
         Worked with multiple technologies in an experimental environment using
         WebRTC, GraphQL, Rust, WebAssembly, Web Components, .NET MAUI and more.
       </li>
+
       <li>
         Built a team collaboration app from scratch which included features such
         as P2P video conferences, chat, phone calls, calendar, file sharing and
@@ -17,11 +18,13 @@ export function Avatara(): JSX.Element {
         by websockets and styled with CSS modules. I was by myself on this
         project tasked with bringing a general idea to life.
       </li>
+
       <li>
         Rewrote REST API to GraphQL and wrote abstractions to get the best of
         Apollo Server and Prisma working together. This resulted in a 7x
         performance improvement for many backend queries.
       </li>
+
       <li>
         Created monorepo architecture with NX as well as a custom Node CLI as a
         wrapper for additional utilities. Such as using git sparse-checkout to

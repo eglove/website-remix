@@ -23,12 +23,14 @@ export function SkillBars(): JSX.Element {
           }
 
           return (
-            <div className="grid items-center gap-2" key={item.skill}>
+            <div key={item.skill} className="grid items-center gap-2">
               <div className="flex justify-between">
                 <div>{skillMap[item.skill as keyof typeof skillMap]}</div>
+
                 <div>{yearFormatter.format(item.experience)}</div>
               </div>
-              <div className="w-full rounded bg-gray-300" key={item.skill}>
+
+              <div key={item.skill} className="w-full rounded bg-gray-300">
                 <div
                   className="h-2 rounded bg-blue-500"
                   style={{

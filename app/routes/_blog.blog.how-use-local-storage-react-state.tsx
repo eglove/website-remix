@@ -13,10 +13,12 @@ export default function () {
         someone really understands the basics of React hooks and lifecycles. To
         explain what I mean let&apos;s look at a very common mistake.
       </Paragraph>
+
       <Paragraph>
         This code will cause the value in local storage to reset to empty every
         time you refresh the page:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const [todos, setTodos] = useState<string[]>(() => {',
@@ -50,9 +52,11 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         If you look at console log you will see messages in this order:
       </Paragraph>
+
       <NumberedList
         items={[
           'Set Initial State',
@@ -62,10 +66,12 @@ export default function () {
           'Synchronize todos with local storage',
         ]}
       />
+
       <Paragraph>
         Yikes, bit of a mess right? No wonder we&apos;re not getting the results
         we want, what&apos;s going on here?
       </Paragraph>
+
       <Paragraph>
         The todos are initially set to an empty array. The first useEffect runs
         and sets todos in local storage to that initial empty value. The third
@@ -74,16 +80,19 @@ export default function () {
         useEffect one more time which causes a rerender and we override those
         todos once more.
       </Paragraph>
+
       <Paragraph>
         ...All we want to do is synchronize state to local storage, how do we
         clean this up?
       </Paragraph>
+
       <Paragraph>
         The first thing to understand is that useState initial value is set on
         the initial render. This sounds obvious, but it&apos;s an underused
         tool. Often I see people always putting in a default empty value just to
         satisfy a type error, or just leave it empty.
       </Paragraph>
+
       <Paragraph>
         <span className="font-bold">
           useState&apos;s initial value is going to reset on every render
@@ -94,6 +103,7 @@ export default function () {
         I&apos;m using NextJS in this example so I need to check if window is
         defined.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const [todos, setTodos] = useState<string[]>(() => {',
@@ -125,24 +135,29 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Now our todos are properly synchronizing with state, if we refresh the
         page, the values are still there. But we still have a problem. This is
         what our console logs look like now:
       </Paragraph>
+
       <NumberedList
         items={['Set initial state', 'Synchronize todos with local storage']}
       />
+
       <Paragraph>
         Our last useEffect is running on initial render when really we
         don&apos;t want it to. The flow is something like this:
       </Paragraph>
+
       <NumberedList
         items={[
           'Get todos from local storage',
           'Synchronize todos to local storage',
         ]}
       />
+
       <Paragraph>
         <span className="font-bold">
           Why do we need to synchronize immediately after we get todos the from
@@ -151,6 +166,7 @@ export default function () {
         Instead we can get rid of the useEffect altogether and only update after
         a todo is added.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const [todos, setTodos] = useState<string[]>(() => {',
@@ -179,11 +195,14 @@ export default function () {
           '};\n',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Now we are properly synchronizing state of local storage and we should
         only have one console log on initial render:
       </Paragraph>
+
       <NumberedList items={['Set initial state']} />
+
       <Paragraph>
         And as a bonus we&apos;ve gotten rid of all useEffects. Which is always
         a win. By the React documentation, useEffect is an escape hatch, and you
@@ -193,6 +212,7 @@ export default function () {
           React is driven by changes in props and events, not by side effects.
         </span>
       </Paragraph>
+
       <Paragraph>
         To get a better understanding of this I highly{' '}
         <A href="https://beta.reactjs.org/learn/you-might-not-need-an-effect">

@@ -21,9 +21,9 @@ export function CodeWrapper({
 }: CodeProperties): JSX.Element {
   return (
     <SyntaxHighlighter
+      showLineNumbers
       customStyle={styles}
       language={language}
-      showLineNumbers
       style={theme as Record<string, CSSProperties>}
     >
       {codeString(children) as string[]}

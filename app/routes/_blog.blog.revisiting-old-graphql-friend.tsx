@@ -22,6 +22,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         Apollo Client have. So if React Query doesn&apos;t yet support RSC, and
         Apollo Client does, it&apos;s time to bring in GraphQL.
       </Paragraph>
+
       <Paragraph>
         I have said before that{' '}
         <A href="/blog/for-the-scaling-js-playbook">
@@ -32,6 +33,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         different than my experiences with every other GraphQL codegen tool.
         Which means, it&apos;s back to writing it by hand, the right way.
       </Paragraph>
+
       <Paragraph>
         So I revisited{' '}
         <A href="/blog/making-graphql-better">
@@ -43,6 +45,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         generated types as Prisma types are far more complex. Which means
         writing a lot of types by hand that look something like this.
       </Paragraph>
+
       <CodeWrapper language="graphql">
         {[
           'type Query {',
@@ -57,6 +60,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
           '}',
         ]}
       </CodeWrapper>
+
       <CodeWrapper language="graphql">
         {[
           'input PersonWhereInput {',
@@ -74,6 +78,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         But the results are phenomenal. GraphQL becomes a fully customizable ORM
         that allows you to properly establish relationships between different
@@ -81,6 +86,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         major downside. And that&apos;s getting Prisma and GraphQL to play well
         together.
       </Paragraph>
+
       <Paragraph>
         Prisma by itself is very performant.{' '}
         <A href="https://www.prisma.io/blog/prisma-and-serverless-73hbgKnZ6t">
@@ -96,6 +102,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         </A>
         .
       </Paragraph>
+
       <Paragraph>
         This is explained better in my original post on GraphQL. But the point
         here is that as I was working with it this time around, I found that the
@@ -103,14 +110,17 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         weren&apos;t being used. In many cases, the resolution was failing to
         find database relationships and falling back on N+1 queries.
       </Paragraph>
+
       <Paragraph>
         So after a day of debugging here are my three functions to optimize
         Prisma with GraphQL.
       </Paragraph>
+
       <Paragraph>
         The simple select to get rid of the dreaded `select *` and only select
         what was given to the GraphQL API.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import { PrismaSelect } from '@paljs/plugins'",
@@ -123,6 +133,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Resolve arguments. This takes nested calls and turns them into new
         Prisma requests with relationships taken into account. The primary
@@ -130,6 +141,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         make the next request, and yelling at you when you don&apos;t include it
         in that parent request select.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import type { Prisma } from '@prisma/client';",
@@ -238,10 +250,12 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         And the famous resolveFindMany which uses the Prisma fluent API and
         flips one-to-many requests around to allow for query batching.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import type { GraphQLResolveInfo } from 'graphql';",
@@ -324,6 +338,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Ultimately, I will be removing GraphQL from the project as well as
         avoiding NextJS server actions in favor of route handlers. The issue
@@ -332,6 +347,7 @@ export default function RevisitingOldGraphqlFriend(): JSX.Element {
         fetch. And Apollo&apos;s &ldquo;refetchQueries&rdquo; does nothing to
         invalidate the NextJS cache.
       </Paragraph>
+
       <Paragraph>
         The only way to achieve this is to put all queries and mutations in
         route handlers and make fetch requests. This means revalidation tags can

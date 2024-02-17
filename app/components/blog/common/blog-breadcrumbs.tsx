@@ -19,6 +19,7 @@ export function BlogBreadcrumbs({
           Home
         </A>
       </BreadcrumbItem>
+
       <BreadcrumbItem>
         <A className="text-sm" color="foreground" href={`/blog/${currentSlug}`}>
           {title}

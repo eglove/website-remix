@@ -15,12 +15,14 @@ export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
         and learn what they need to learn. It&apos;s not boring, but it
         doesn&apos;t get you pumped for HTML, and that&apos;s perfectly fine.
       </Paragraph>
+
       <Paragraph>
         This course will give newbies a total rundown on the history of the
         internet, start with HTML and CSS, move into JavaScript and eventually
         cover React. It&apos;s a fantastic, simple course that gives a good
         overview and starting point for a career in web development.
       </Paragraph>
+
       <Paragraph>
         This course, however, is starting to age. I&apos;ve always been annoyed
         when courses say they have the “2022 update” in November of 2021. But
@@ -32,6 +34,7 @@ export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
         Bootstrap is a good thing to use when you need to focus on learning HTML
         and importing external CSS. So again, I can&apos;t knock it too much.
       </Paragraph>
+
       <Paragraph>
         The problem is when it gets into React. The thing about courses getting
         updates every year and suddenly getting the “2022” tag in their titles,
@@ -40,6 +43,7 @@ export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
         instead of this because the old version is broken”. Or worse, just notes
         in between videos. And unfortunately, that&apos;s happening here.
       </Paragraph>
+
       <Paragraph>
         To be fair, just because it&apos;s a new year, doesn&apos;t mean
         everything needs to be redone from scratch. But the course itself is
@@ -49,6 +53,7 @@ export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
         fair enough. But the age is starting to get uncomfortable now isn&apos;t
         it?
       </Paragraph>
+
       <Paragraph>
         React hooks are not included as part of the normal course. Despite being
         the standard pattern for React for 2 years. Instead, they are tacked on
@@ -61,6 +66,7 @@ export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
         overdue for an overhaul. The course could use a new project or a new API
         to replace Clarifai, and it really should use hooks from the start.
       </Paragraph>
+
       <Paragraph>
         Everything here is technically competent, and Andrei&apos;s presentation
         skills make this a worthwhile investment of your time. However, with the
@@ -70,6 +76,7 @@ export default function ReviewZtmCompleteWebDeveloper(): JSX.Element {
         development course for newbies, I do feel a responsibility to find
         something else, which I will work on.
       </Paragraph>
+
       <Paragraph>
         Because of it&apos;s aging feel, and a lack of ambition from Andrei and
         his team to go the extra mile and make true updates rather than patch

@@ -24,6 +24,7 @@ export default function () {
         starting with a monolith to get going and slowly split out into
         microservices when and if needed relatively pain free.
       </Paragraph>
+
       <Paragraph>
         As you read through this you may think that some changes are more
         difficult to make than it seems like I&apos;m making it out to be.
@@ -31,7 +32,9 @@ export default function () {
         scale. Any major change to an app requires work, nothing goes perfectly
         all of the time. But I do think this helps keep the pain minimal.
       </Paragraph>
+
       <Heading variant="h3">Starting Small</Heading>
+
       <Paragraph>
         Let&apos;s say you&apos;re building a productivity app. Users sign up,
         they track their habits/todos and their weight/calories as well. A
@@ -39,10 +42,12 @@ export default function () {
         <A href="https://render.com">Render</A> and plan on using{' '}
         <A href="https://www.prisma.io">Prisma</A> as an ORM.
       </Paragraph>
+
       <Paragraph>
         The problem is, however, I always have a temptation to reach straight
         for something like GraphQL.
       </Paragraph>
+
       <Paragraph>
         I&apos;m thinking of how nice it is to have a fully documented,
         type-safe, and introspectable API, and forgetting how much work it is. I
@@ -55,15 +60,19 @@ export default function () {
         GraphQL. Nor are you setting yourself up to scale for the problems that
         GraphQL so gracefully solves. But we&apos;ll get back to those later.
       </Paragraph>
+
       <Paragraph>So the question is, what do I fall back to?</Paragraph>
+
       <Paragraph>
         For me currently, it&apos;s just NextJS. Make full use of it&apos;s
         server side prop methods and API routes. This sounds like a mess to some
         people, but let&apos;s start off right. Let&apos;s rewind even more.
       </Paragraph>
+
       <Paragraph>
         <A href="https://nx.dev">Start with NX.</A>
       </Paragraph>
+
       <Paragraph>
         Starting with an &ldquo;extensible build system&rdquo; is, in my
         opinion, the key to scale without pain. The point of a monorepo is not
@@ -72,19 +81,24 @@ export default function () {
         We&apos;re talking about an NX workspace for this productivity app
         we&apos;re starting right now.
       </Paragraph>
+
       <Paragraph>
         In fact, with a workspace started, we can start the project with:
       </Paragraph>
+
       <CodeWrapper language="powershell">
         {['npx nx g @nrwl/next:app productivity-app']}
       </CodeWrapper>
+
       <Paragraph>
         However, the first thing I&apos;d actually work on is creating a library
         for our Prisma schema:
       </Paragraph>
+
       <CodeWrapper language="powershell">
         {['npx nx g @nrwl/node:lib productivity-app-prisma']}
       </CodeWrapper>
+
       <Paragraph>
         There&apos;s not much to add to this. Simply a .prisma file to start
         planning out schema, and a client file to{' '}
@@ -93,10 +107,12 @@ export default function () {
         </A>{' '}
         to avoid issues with too many connections.
       </Paragraph>
+
       <Paragraph>
         With a Prisma client in place, you can now call it inside of server only
         contexts. Meaning API Routes, getServerSideProps, getStaticProps, etc.
       </Paragraph>
+
       <Paragraph>
         Now you can just start building the app. To get page data I recommend
         using{' '}
@@ -109,6 +125,7 @@ export default function () {
         built version, then update with any changes during hydration. I build
         often enough that this works ok for a small blog.
       </Paragraph>
+
       <Paragraph>
         For our app features, user sign-ups, todo-tracking, basically any POST
         request, Next API routes work just fine. If all you&apos;re doing is
@@ -116,22 +133,26 @@ export default function () {
         with going this route. If for GET requests, you want client side
         rendering, you can add API calls to an API route as well.
       </Paragraph>
+
       <Paragraph>
         To help keep things organized I like to centralize fetches to the API in
         a callable object.
       </Paragraph>
+
       <SanityImage
         alt="Example of centralizing API in NextJS"
         height={927}
         src="https://cdn.sanity.io/images/drccvtog/production/3f42812d4c43a73bc90214c09dbc12531fc2575b-758x927.png"
         width={758}
       />
+
       <Paragraph>
         On the note of the actual logic of the calls here, it would be a good
         idea to put that logic in a separate NX library. So instead of the Next
         API route creating a new user, it just calls a function in another
         library.
       </Paragraph>
+
       <Paragraph>
         This sets things up so that when you want to move your API to it&apos;s
         own server, all you have to do is create new routes and call the same
@@ -142,6 +163,7 @@ export default function () {
           required.
         </span>
       </Paragraph>
+
       <Paragraph>
         But to get this app going for now. This is all you need. We&apos;ve
         achieved the goal of setting ourselves up to be able to build a
@@ -149,6 +171,7 @@ export default function () {
         to &ldquo;scale up&rdquo;, isn&apos;t necessarily about number of users
         or number of features. This setup can go very, very far.
       </Paragraph>
+
       <Paragraph>
         As a quick note on state, do not add another state management library
         until you can not find an answer for what you&apos;re trying to do. I
@@ -159,6 +182,7 @@ export default function () {
         </A>
         .
       </Paragraph>
+
       <Paragraph>
         When using analytics or third party scripts, I would recommend enabling{' '}
         <A href="https://nextjs.org/docs/basic-features/script">
@@ -167,7 +191,9 @@ export default function () {
         which in the background uses{' '}
         <A href="https://partytown.builder.io">PartyTown</A>.
       </Paragraph>
+
       <Heading variant="h3">Going Bigger</Heading>
+
       <Paragraph>
         This productivity app is getting popular. It&apos;s gained a lot of
         users, you&apos;ve added paid plans, everything is going well. But now
@@ -179,12 +205,14 @@ export default function () {
         everyday, but has no exercise habits, so you might put a &ldquo;Go for a
         walk&rdquo; recommendation in front of them.
       </Paragraph>
+
       <Paragraph>
         As an additional feature, if someone is missing a particular habit
         often, the app might recommend that they plan to do it less often. Such
         as every 3 days instead of every day. This helps them stay consistent
         without learning to ignore it.
       </Paragraph>
+
       <Paragraph>
         You determine to build a series of algorithms that run for every user
         and build a unique recommendation list for them that will show up on
@@ -192,6 +220,7 @@ export default function () {
         route every time they try to go to their profile. It&apos;s going to
         cause some major performance problems.
       </Paragraph>
+
       <Paragraph>
         Someone might suggest serverless functions to run CRON jobs, but this
         isn&apos;t quite the right fit. You&apos;ve got more features planned
@@ -199,18 +228,21 @@ export default function () {
         is better triggered every time someone adds or removes a habit to help
         keep that recommendation relevant to the data its pulling from.
       </Paragraph>
+
       <Paragraph>
         Now might be a good time to move to a standalone Node server. But
         there&apos;s no reason to restrict the app to the rules of REST. And, we
         probably want end to end type safety. Until now you may have been
         inferring types from Prisma and passing that into NextJS props.
       </Paragraph>
+
       <Paragraph>
         At this point I would recommend using tRPC to build this new server. Add
         it as a new app on your monorepo, and set it up to call the logic you
         put in your API library earlier. tRPC is a natural fit for monorepos
         with the way it shares types.
       </Paragraph>
+
       <Paragraph>
         Then go into the centralized object and update the calls to use the tRPC
         client.{' '}
@@ -219,6 +251,7 @@ export default function () {
           is required.
         </span>
       </Paragraph>
+
       <Paragraph>
         The reason I didn&apos;t recommend starting with tRPC is because in
         terms of starting the app as a small serverless build, I think using it
@@ -227,6 +260,7 @@ export default function () {
         the same job. NextJS handles itself at that size just fine. So tRPC is
         really needed if you never make it to this point.
       </Paragraph>
+
       <Paragraph>
         But with tRPC setup as its own server, you can start triggering any
         heavy processes as jobs every time someone adds or updates a habit to
@@ -234,23 +268,28 @@ export default function () {
         pulling new recommendations after they&apos;re written to the database
         by these jobs rather than waiting on them to show the page.
       </Paragraph>
+
       <Paragraph>
         You&apos;ve now got a space for dedicated backend work and you can start
         getting fancy without overloading a serverless frontend deployment or
         slowing down your users experience.
       </Paragraph>
+
       <Paragraph>
         All with minimal refactoring. By just calling the same logic from a new
         server we didn&apos;t have to copy/paste a bunch of stuff into a new
         repository or go through a painful process of rewriting everything under
         a new context.
       </Paragraph>
+
       <Heading variant="h3">Going Biggest</Heading>
+
       <Paragraph>
         This app exploded in popularity. You&apos;ve got 2 separate teams to
         maintain the frontend and backend. And you&apos;ve got a huge list of
         features in the works.
       </Paragraph>
+
       <Paragraph>
         You want people to be able to follow one another. Maybe add some social
         network features like posting updates, images, adding likes etc. Images
@@ -262,6 +301,7 @@ export default function () {
         these new features into microservices to keep things manageable and
         testable in isolation.
       </Paragraph>
+
       <Paragraph>
         This means using an API gateway to route calls to all of these services
         and build flexible responses.{' '}
@@ -271,12 +311,14 @@ export default function () {
         . It needs to be well documented, type safe, and expandable to handle
         any number of services.
       </Paragraph>
+
       <Paragraph>
         This, finally, is where GraphQL comes in. Using GraphQL as a gateway we
         can use federation to merge multiple graphs into one central API. All
         services, even third party APIs can be put on a graph with relationships
         created between them to allow for nested calls where appropriate.
       </Paragraph>
+
       <Paragraph>
         The only way to do this right, for it to match the needs of this app or
         any app, is to write the schema incrementally by hand. Not generate it.
@@ -288,6 +330,7 @@ export default function () {
         This is the point of GraphQL. It is the point of graphs. The
         relationships are the most important part.
       </Paragraph>
+
       <Paragraph>
         As this becomes established, the frontend can use a mix of TanStack
         Query and and Prisma&apos;s{' '}
@@ -301,13 +344,16 @@ export default function () {
         TanStack, once again this is just a case of updating our centralized API
         object.
       </Paragraph>
+
       <Paragraph>
         <span className="font-bold">
           As long as the inputs and outputs are the same, no further refactoring
           is required.
         </span>
       </Paragraph>
+
       <Heading variant="h3">Concluding</Heading>
+
       <Paragraph>
         Just to reiterate, this is only my current favorite play in my playbook.
         It&apos;s not the answer to every app. But it&apos;s a pretty decent one
@@ -315,6 +361,7 @@ export default function () {
         much about the future. In 2-3 years time I&apos;ll likely have an
         entirely different opinion. That&apos;s how technology works.
       </Paragraph>
+
       <Paragraph>
         By moving logic, validations, etc., into libraries, the way that code is
         delivered becomes increasingly unimportant.{' '}
@@ -324,21 +371,25 @@ export default function () {
         I think that&apos;s a great way to keep things flexible and open to
         evolution.
       </Paragraph>
+
       <Paragraph>
         Continued reading:{' '}
         <A href="https://ethang.dev/blog/nx-prisma-nextjs-graphql">
           Organizing NX, Prisma, NextJS and GraphQL
         </A>
       </Paragraph>
+
       <Paragraph>
         As some additional resources, I recommend the following two videos. One
         is a short conversation on microservices, the other is the previously
         linked video on how Netflix scaled it&apos;s API:
       </Paragraph>
+
       <YouTube
         id="Hybt9NdmsBw"
         title={`"People Get Microservices Wrong All The Time!" | Dave, Simon Brown & Hannes Lowette On Microservices`}
       />
+
       <YouTube
         id="QrEOvHdH2Cg"
         title="How Netflix Scales Its API with GraphQL Federation"

@@ -87,25 +87,27 @@ export function MetadataContainer({
           )}
         </Heading>
       </CardHeader>
+
       <CardBody className="grid gap-2 px-2 pb-2 pt-0 md:grid-cols-3">
         {data.metadata.map(item => {
           return (
             <MetadataCard
-              isAboveTheFold={category === 'workingOn'}
               key={item._id}
+              isAboveTheFold={category === 'workingOn'}
               metadata={item}
             />
           );
         })}
       </CardBody>
+
       {totalPages > 1 && (
         <CardFooter className="grid justify-center">
           <Pagination
             isCompact
+            showControls
             isDisabled={navigation.state !== 'idle'}
             page={Number(pages[category])}
             renderItem={getPaginationItem}
-            showControls
             total={totalPages}
           />
         </CardFooter>

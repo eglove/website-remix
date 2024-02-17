@@ -13,6 +13,7 @@ export function PositionSummary() {
         as a frontend, and many backend technologies such as Node, .NET, Java
         and PHP.
       </li>
+
       <li>
         At LegrandAV I led an upgrade from vanilla React and Sitecore to NextJS.
         The project had been at a standstill for 2 months due to hosting
@@ -21,6 +22,7 @@ export function PositionSummary() {
         from outsourcing to markup services for frontend work and make use of
         accessible libraries such as NextUI.
       </li>
+
       <li>
         With St. Louis County, introduced automated testing to legacy codebases
         by setting up and writing unit tests for .NET backends as well as E2E
@@ -33,12 +35,14 @@ export function PositionSummary() {
         getting tests set up would require significant refactoring, even entire
         rewrites. This is why we pivoted to a focus on E2E as much as possible.
       </li>
+
       <li>
         At Proagrica, I worked with a highly dynamic farming dashboard for an
         international audience. Made use of Redux to manage complex state
         interactions and used time travel debugging to discover existing state,
         debug, and build new features.
       </li>
+
       <li>
         With the EPA, I helped rebuild Emissions Collection and Monitoring
         System (ECMPS) for reporting emission data with a new tech stack. I was
@@ -48,6 +52,7 @@ export function PositionSummary() {
         gave us time to produce more reproducible examples and help QA to ensure
         the highest quality possible.
       </li>
+
       <li>
         At Avatara I built a team collaboration app from scratch which included
         features such as P2P video conferences, chat, phone calls, calendar,

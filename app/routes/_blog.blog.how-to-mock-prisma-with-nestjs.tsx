@@ -12,11 +12,13 @@ export default function () {
         lot of wild and hacky workarounds. But by consulting Prisma
         documentation I found a very simple, and clean answer.
       </Paragraph>
+
       <Paragraph>
         First thing, let&apos;s say we have this code that creates a new user.
         You&apos;ll notice we&apos;re using dependency injection to bring in a
         PrismaService which connects to the database.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'constructor(private readonly prisma: PrismaService) {}',
@@ -32,6 +34,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         First we need to{' '}
         <A href="https://www.prisma.io/docs/guides/testing/unit-testing">
@@ -40,6 +43,7 @@ export default function () {
         to create mock objects. Most importantly for our case is creating the
         singleton.ts file.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "import { PrismaClient } from '@prisma/client'",
@@ -59,9 +63,11 @@ export default function () {
           'export const prismaMock = prisma as unknown as DeepMockProxy<PrismaClient>',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         We can then use the exported prismaMock as a provider in our unit test.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'let service: UserService;',
@@ -78,11 +84,13 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Then just return to the Prisma documentation to keep following their
         example to write a test for creating a new user with the singleton
         method.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "test('should create new user ', async () => {",

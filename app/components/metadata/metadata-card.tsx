@@ -24,6 +24,7 @@ export function MetadataCard({
       <div className="flex w-full justify-between gap-1">
         <div>
           <Heading variant="h3">{metadata.title}</Heading>
+
           <div>
             Updated:{' '}
             {DateTime.fromJSDate(new Date(metadata.updatedAt), {
@@ -31,6 +32,7 @@ export function MetadataCard({
             }).toRelative() ?? ''}
           </div>
         </div>
+
         <div className="flex items-center pt-2">
           <SanityImage
             alt={metadata.featuredImage.description}

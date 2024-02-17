@@ -62,24 +62,26 @@ export default function () {
         a second class citizen in JS frameworks. In order to use powerful
         browser tools like{' '}
         <Link
-          href="https://developer.mozilla.org/en-US/docs/Web/API/Cache"
           isExternal
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Cache"
         >
           Cache API
         </Link>{' '}
         and{' '}
         <Link
-          href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
           isExternal
+          href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"
         >
           IndexedDB
         </Link>{' '}
         in React you need escape hatch APIs like useEffect.
       </Paragraph>
+
       <Paragraph>
         That&apos;s why I was very happy to see Remix working on what
         they&apos;re calling &ldquo;Client Data&rdquo;.
       </Paragraph>
+
       <Blockquote
         link="https://github.com/remix-run/remix/discussions/7634"
         source="Client Data RFC"
@@ -89,6 +91,7 @@ export default function () {
         they can call to get the data from the server. This enables a client
         loader to be able to return data from the server, the client, or both.
       </Blockquote>
+
       <Paragraph>
         So let&apos;s give this a shot. First we can create a basic API call.
         There&apos;s many advantages to separating Request creation from
@@ -97,6 +100,7 @@ export default function () {
         response.json(), it&apos;s very easy to opt out of the default call.
         Second, we can use Cache API.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "export const TYPICODE_BASE_URL = 'https://jsonplaceholder.typicode.com';",
@@ -121,13 +125,17 @@ export default function () {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Then we can fetch this data server side with the usual Remix loader.
       </Paragraph>
+
       <CodeWrapper>
         {['export async function loader() {', '  return getPosts();', '}']}
       </CodeWrapper>
+
       <Paragraph>Finally, we can use the client loader.</Paragraph>
+
       <CodeWrapper>
         {[
           'export async function clientLoader({ serverLoader }: ClientLoaderFunctionArgs) {',
@@ -145,13 +153,16 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Regardless of which the data comes from, they&apos;re both available on
         useLoaderData.
       </Paragraph>
+
       <CodeWrapper>
         {['const { data, success } = useLoaderData<typeof loader>();']}
       </CodeWrapper>
+
       <Paragraph>
         In this scenario, on the initial load the server loader will be called
         to get initial data. On subsequent calls, the server loader is not
@@ -159,11 +170,13 @@ export default function () {
         is in cache. If it is, it simply returns cached data. If it&apos;s not,
         it will make a call to the server loader.
       </Paragraph>
+
       <Paragraph>
         And because this blog is written in Remix you can try these fun buttons
         to get an idea for how this works. (Don&apos;t forget to try deleting
         data from Cache API).
       </Paragraph>
+
       <div className="mb-4 flex gap-2">
         <Button
           className="rounded-none"
@@ -172,10 +185,12 @@ export default function () {
         >
           Client Navigate
         </Button>
+
         <Button className="rounded-none" color="secondary" onPress={reload}>
           Hard Reload
         </Button>
       </div>
+
       <div className="flex gap-2">
         <div
           className={twMerge(
@@ -185,6 +200,7 @@ export default function () {
         >
           Getting data from API
         </div>
+
         <div
           className={twMerge(
             'text-white p-2',
@@ -194,6 +210,7 @@ export default function () {
           Getting data from Cache
         </div>
       </div>
+
       <Paragraph>
         The question is now, why? Why not just depend on the built in caching of
         Remix? I think this opens up a lot of possibilities, there&apos;s a lot

@@ -27,20 +27,22 @@ export function Introspect(): JSX.Element {
         resources or courses and adding them to a list. This was inspired by my
         own list of recommended courses to learn web development.
       </li>
+
       <li>
         <Link
+          isExternal
           className="text-medium"
           href="https://github.com/eglove/introspect-2"
-          isExternal
         >
           github.com/eglove/introspect-2
         </Link>
       </li>
+
       <li>
         <Link
+          isExternal
           className="text-medium"
           href="https://introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a/"
-          isExternal
         >
           introspect.dev/list/e7f779a0-838f-48d1-9aa7-3b3b5c534b8a
         </Link>

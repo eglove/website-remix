@@ -25,7 +25,8 @@
       "no-console": "off",
       "react/display-name": "warn",
       "react/jsx-max-depth": "off",
-      "react/jsx-no-bind": "warn"
+      "react/jsx-no-bind": "warn",
+      "react/jsx-no-literals": "off"
     }
   },
   "dependencies": {
@@ -44,7 +45,7 @@
     "color-convert": "^2.0.1",
     "convert": "^4.14.1",
     "framer-motion": "^11.0.5",
-    "isbot": "^4.4.0",
+    "isbot": "^5.1.0",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "react": "^18.2.0",
@@ -69,7 +70,7 @@
     "@types/ua-parser-js": "^0.7.39",
     "@types/uuid": "^9.0.8",
     "eslint": "^8.56.0",
-    "eslint-config-ethang": "^13.0.13",
+    "eslint-config-ethang": "^14.0.4",
     "tailwindcss": "^3.4.1",
     "type-fest": "^4.10.2",
     "typescript": "^5.3.3"

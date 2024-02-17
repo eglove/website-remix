@@ -74,26 +74,35 @@ export function Battery(): JSX.Element {
   }, []);
 
   return (
-    <Table aria-label="Location" hideHeader isStriped>
+    <Table hideHeader isStriped aria-label="Location">
       <TableHeader>
         <TableColumn>Name</TableColumn>
+
         <TableColumn>Value</TableColumn>
       </TableHeader>
+
       <TableBody>
         <TableRow key="1">
           <TableCell>Charging</TableCell>
+
           <TableCell>{battery?.charging === true ? 'Yes' : 'No'}</TableCell>
         </TableRow>
+
         <TableRow key="2">
           <TableCell>Time to Charge</TableCell>
+
           <TableCell>{battery?.chargingTime}</TableCell>
         </TableRow>
+
         <TableRow key="3">
           <TableCell>Time to Discharge</TableCell>
+
           <TableCell>{battery?.dischargingTime}</TableCell>
         </TableRow>
+
         <TableRow key="4">
           <TableCell>Level</TableCell>
+
           <TableCell>
             {battery === undefined
               ? undefined

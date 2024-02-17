@@ -21,42 +21,65 @@ export function Software(): JSX.Element {
   }, []);
 
   return (
-    <Table aria-label="browser" isStriped>
+    <Table isStriped aria-label="browser">
       <TableHeader>
         <TableColumn>Type</TableColumn>
+
         <TableColumn>Name</TableColumn>
+
         <TableColumn>Version/Model</TableColumn>
+
         <TableColumn>Vendor</TableColumn>
       </TableHeader>
+
       <TableBody>
         <TableRow>
           <TableCell>Browser</TableCell>
+
           <TableCell>{userAgent?.browser.name}</TableCell>
+
           <TableCell>{userAgent?.browser.version}</TableCell>
+
           <TableCell>{undefined}</TableCell>
         </TableRow>
+
         <TableRow>
           <TableCell>Browser Engine</TableCell>
+
           <TableCell>{userAgent?.engine.name}</TableCell>
+
           <TableCell>{userAgent?.engine.version}</TableCell>
+
           <TableCell>{undefined}</TableCell>
         </TableRow>
+
         <TableRow>
           <TableCell>Operating System</TableCell>
+
           <TableCell>{userAgent?.os.name}</TableCell>
+
           <TableCell>{userAgent?.os.version}</TableCell>
+
           <TableCell>{undefined}</TableCell>
         </TableRow>
+
         <TableRow>
           <TableCell>CPU Architecture</TableCell>
+
           <TableCell>{userAgent?.cpu.architecture}</TableCell>
+
           <TableCell>{undefined}</TableCell>
+
           <TableCell>{undefined}</TableCell>
         </TableRow>
+
         <TableRow>
           <TableCell>Device</TableCell>
+
           <TableCell>{userAgent?.device.type}</TableCell>
+
           <TableCell>{userAgent?.device.model}</TableCell>
+
           <TableCell>{userAgent?.device.vendor}</TableCell>
         </TableRow>
       </TableBody>

@@ -11,6 +11,7 @@ export default function () {
         in the way and produce confusing code. For any given function I would
         rather read it procedurally.
       </Paragraph>
+
       <Paragraph>
         Let&apos;s take for example an endpoint that requires us to search for
         some related data before making an update. We first need to parse a
@@ -18,6 +19,7 @@ export default function () {
         actions may or may not throw an error. The code might look something
         like this.
       </Paragraph>
+
       <CodeWrapper language="typescript">
         {[
           'let parsed: ParsedType;',
@@ -43,6 +45,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         A very simple example that can quickly get out of control the longer the
         logic gets. Zod already has built in functional error handling, so we
@@ -52,6 +55,7 @@ export default function () {
         feature. That&apos;s why I wrote a tryCatch utility function. The result
         of which gives us this.
       </Paragraph>
+
       <CodeWrapper language="typescript">
         {[
           'const parsed = bodySchema.safeParse(request.body)',
@@ -83,17 +87,19 @@ export default function () {
           'return results.data',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         And of course the code for this utility function with both a sync and
         async version{' '}
         <A
-          href="https://github.com/eglove/util/blob/3a78991ca4e56ca4c765cfb5d82a436257917789/src/data.ts#L23"
           isExternal
+          href="https://github.com/eglove/util/blob/3a78991ca4e56ca4c765cfb5d82a436257917789/src/data.ts#L23"
         >
           can be found in my util library
         </A>
         .
       </Paragraph>
+
       <CodeWrapper language="typescript">
         {[
           'type TryCatchResult<Type> =',

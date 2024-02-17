@@ -12,14 +12,17 @@ export function Hooks(): JSX.Element {
       title="@ethang/hooks"
     >
       <li>NPM library and custom hooks for use with React.</li>
+
       <li>
         useAnimationInterval is a setInterval alternative that takes into
         account lag in timers caused by browser framerate.
       </li>
+
       <li>
         useEventListener makes use of AbortController to abstract out the need
         for writing useEffects for events in React.
       </li>
+
       <li>
         Also includes:{' '}
         {unitFormat.format([
@@ -34,11 +37,12 @@ export function Hooks(): JSX.Element {
           'useWindowSize',
         ])}
       </li>
+
       <li>
         <Link
+          isExternal
           className="text-medium"
           href="https://github.com/eglove/hooks"
-          isExternal
         >
           github.com/eglove/hooks
         </Link>

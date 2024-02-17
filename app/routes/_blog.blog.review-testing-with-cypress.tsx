@@ -12,12 +12,14 @@ export default function () {
         Like accessibility, testing is a very important, necessary, and an often
         uncovered aspect of development.
       </Paragraph>
+
       <Paragraph>
         Cypress is an awesome modern testing tool that allows you to write and
         generate E2E tests. Scott&apos;s rundown of it&apos;s features are
         thorough and quick. This course will get you up and running with Cypress
         with best practices in pretty short order.
       </Paragraph>
+
       <Paragraph>
         The only thing this course really lacks is depth. Again, it would be
         better if every thing were tested in Wes Bos&apos; Advanced React
@@ -25,6 +27,7 @@ export default function () {
         accessibility I think tests are such a fundamental part of development,
         you shouldn&apos;t be writing code without tests.
       </Paragraph>
+
       <Paragraph>
         If this course focused less on a being a quick rundown of Cypress and
         it&apos;s features and more on testing a project (normalizing Cypress as
@@ -32,8 +35,8 @@ export default function () {
         my opinion. But Scott is a great presenter and he&apos;s obviously
         knowledgeable on Cypress. Which is why I give Scott Tolinski&apos;s{' '}
         <A
-          href="https://leveluptutorials.com/tutorials/testing-with-cypress"
           isExternal
+          href="https://leveluptutorials.com/tutorials/testing-with-cypress"
         >
           Testing With Cypress
         </A>{' '}

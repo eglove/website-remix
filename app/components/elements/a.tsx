@@ -12,14 +12,14 @@ type AProperties = JSX.IntrinsicElements['a'] &
   PropsWithChildren;
 
 export function A(properties: AProperties): JSX.Element {
-  const { href, to } = properties;
+  const { href, to, className } = properties;
 
   return (
     <Link
       as={RemixLink}
       prefetch="viewport"
       {...properties}
-      className={twMerge('text-medium', properties.className)}
+      className={twMerge('text-medium', className)}
       href={undefined}
       to={href ?? (to as string)}
     />

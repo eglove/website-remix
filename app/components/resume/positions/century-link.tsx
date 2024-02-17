@@ -11,6 +11,7 @@ export function CenturyLink(): JSX.Element {
         vanilla JavaScript and CSS stylesheets. Maintained compatibility with
         Internet Explorer 11.
       </li>
+
       <li>
         Helped and guided team more familiar with Java and HTML templating to
         create a Vue based proof of concept. A frontend rewrite is something the

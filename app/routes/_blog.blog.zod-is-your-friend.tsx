@@ -47,6 +47,7 @@ export default function ZodIsYourFriend(): JSX.Element {
           );
         })}
       </ul>
+
       <Paragraph>
         {numberFormatter.format(zodDownloads)} weekly NPM downloads. Over{' '}
         {numberFormatter.format(3000)} dependent libraries. Built in support
@@ -62,10 +63,12 @@ export default function ZodIsYourFriend(): JSX.Element {
           Misused, TypeScript will do more harm than good.
         </span>
       </Paragraph>
+
       <Paragraph>
         For example, to get the number of downloads for Zod I make a fetch call
         to the NPM registry:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const zodDownloadsResponse = await fetch(',
@@ -73,18 +76,22 @@ export default function ZodIsYourFriend(): JSX.Element {
           ');',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         To get the response data you need to parse the JSON from the Response
         object.
       </Paragraph>
+
       <CodeWrapper>
         {['const zodDownloadsData = await zodDownloadsResponse.json()']}
       </CodeWrapper>
+
       <Paragraph>
         There should be a glaring issue with this. zodDownloadsData is now
         implicitly typed as &lsquo;any&rsquo;. People new to TypeScript might
         solve this problem by casting it to a type.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'type ZodDownloads = {',
@@ -97,6 +104,7 @@ export default function ZodIsYourFriend(): JSX.Element {
           'const zodDownloadsData = await zodDownloadsResponse.json() as ZodDownloads;',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This is a terrible mistake. It gives the developer the illusion of type
         safety and doesn&apos;t make use of TypeScript at all. This is
@@ -105,6 +113,7 @@ export default function ZodIsYourFriend(): JSX.Element {
         is not to create handy autocompletes that reassure you everything is OK,
         it is to help you create a type safe application.
       </Paragraph>
+
       <Blockquote
         link="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/"
         source="Parse, don’t validate"
@@ -115,12 +124,15 @@ export default function ZodIsYourFriend(): JSX.Element {
         systematic justification, that one or another would catch all the “bad”
         cases.
       </Blockquote>
+
       <TocHeader href={`/blog/${pathname}`} id="tldr" text="TL;DR" />
+
       <Paragraph>
         Zod provides a functional approach to parsing data without being purist
         or dogmatic about functional programming. Never assume you&apos;re
         getting the correct data from an external system. Check it first.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const zodDownloadsSchema = z.object({',
@@ -162,16 +174,19 @@ export default function ZodIsYourFriend(): JSX.Element {
           '}',
         ]}
       </CodeWrapper>
+
       <TocHeader
         href={`/blog/${pathname}`}
         id="inputsOutputs"
         text="Inputs and Outputs"
       />
+
       <Paragraph>
         Zod goes beyond simple types because it is making runtime checks, we can
         add any parsing logic we want. For example I have a
         &ldquo;createBlog&rdquo; function:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const createBlog = (',
@@ -181,14 +196,16 @@ export default function ZodIsYourFriend(): JSX.Element {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         First thing, I&apos;m letting this function throw. Mostly because it
         runs for every blog at build time. I&apos;m OK with letting the build
         fail on error. But also notice the &lsquo;z.{' '}
-        <span className="font-bold">input</span>&rsquo; and &lsquo;z.{' '}
-        <span className="font-bold">output</span>&rsquo; for the parameter and
+        <span className="font-bold">input</span> &rsquo; and &lsquo;z.{' '}
+        <span className="font-bold">output</span> &rsquo; for the parameter and
         return types. The schema looks like this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export const createBlogSchema = z',
@@ -208,10 +225,12 @@ export default function ZodIsYourFriend(): JSX.Element {
           '  });',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         The defaults and transformations help create two different types. The
         input types equivalent looks like this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'type CreateBlogInput = {',
@@ -224,11 +243,13 @@ export default function ZodIsYourFriend(): JSX.Element {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Notice there is no _id, and authors and timezone are both optional due
         to the fact that they have default values. The equivalent output type
         will look like this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'type CreateBlogOutput = {',
@@ -242,18 +263,22 @@ export default function ZodIsYourFriend(): JSX.Element {
           '};',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Now _id is included and all fields are required. Two types for the price
         of one! We know exactly what we can pass in and exactly what we&apos;ll
         get back. And we know this for sure because of the runtime parsing.
       </Paragraph>
+
       <Paragraph>
         Of course as a last note, the triviality of this function makes getting
         both input and output types from a single Zod schema possible. This is
         basically treating Zod as a class constructor. Which is entirely valid.
         But maybe not the usual use case.
       </Paragraph>
+
       <TocHeader href={`/blog/${pathname}`} id="forms" text="Forms" />
+
       <Paragraph>
         <A href="https://react-hook-form.com">React Hook Form</A>
         is just one example of a form library with built in support for
@@ -261,7 +286,9 @@ export default function ZodIsYourFriend(): JSX.Element {
         forms without lengthy if/else conditions and checks within a submit
         function.
       </Paragraph>
+
       <Paragraph>A sign up form may use a schema like this:</Paragraph>
+
       <CodeWrapper>
         {[
           'const nameSchema = z.string().min(3).max(100);',
@@ -292,16 +319,19 @@ export default function ZodIsYourFriend(): JSX.Element {
           '  );',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This gives us a pretty straightforward and quickly readable definition
         of this forms rules. names need to be between 3 and 100 characters. We
         have built-in email validation. A regex test for the password. And a
         final refine to make sure the password and confirmPassword are equal.
       </Paragraph>
+
       <Paragraph>
         When using react hook form, all you have to do is include the ZodSchema
         as a &ldquo;resolver&rdquo; and it will run before the form onSubmit.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const { formState: { errors } } = useForm({',
@@ -309,9 +339,13 @@ export default function ZodIsYourFriend(): JSX.Element {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>Go ahead and give it a try.</Paragraph>
+
       <ExampleForm />
+
       <TocHeader href={`/blog/${pathname}`} id="apis" text={"API's"} />
+
       <Paragraph>
         tRPC makes beautiful use of Zod by baking it into the framework itself.{' '}
         I used tRPC and Zod as{' '}
@@ -322,6 +356,7 @@ export default function ZodIsYourFriend(): JSX.Element {
         . For the tl;dr, tRPC provides a clean interface to parse and validate
         all incoming and outgoing data from your API:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'export const create = procedure',
@@ -345,25 +380,28 @@ export default function ZodIsYourFriend(): JSX.Element {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         But of course because Zod is a standalone library it works fine anywhere
         with TypeScript. Just create a schema and parse it. Handle errors with
         the previously mentioned try/catch or functional safeParse.
       </Paragraph>
+
       <TocHeader href={`/blog/${pathname}`} id="testing" text="Testing" />
+
       <Paragraph>
         Again, Zod as a tool for testing is largely covered in the previously
         mentioned &ldquo;
         <A href="/blog/making-react-testable">Making React Testable</A>
         &rdquo; . With{' '}
         <A
-          href="https://github.com/anatine/zod-plugins/tree/main/packages/zod-mock"
           isExternal
+          href="https://github.com/anatine/zod-plugins/tree/main/packages/zod-mock"
         >
           @anatine/zod-mock
         </A>{' '}
         it&apos;s very easy to mock data from Zod schemas. Using{' '}
-        <A href="https://fakerjs.dev" isExternal>
+        <A isExternal href="https://fakerjs.dev">
           faker.js
         </A>{' '}
         as a dependency this library will do it automatically. Using tools like
@@ -374,6 +412,7 @@ export default function ZodIsYourFriend(): JSX.Element {
         TDD or BDD or none at all. These frameworks won&apos;t help you if you
         don&apos;t split up your code.
       </Paragraph>
+
       <Paragraph>
         Learning to separate parsing from logic means smaller, more concise, and
         more accurate tests. With each piece easier to test in full. Schema can
@@ -382,6 +421,7 @@ export default function ZodIsYourFriend(): JSX.Element {
         eventually leads to missed tests due to the fact that the code ran and
         we long longer see the misstep in coverage reports.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "it('should validate correct input', () => {",
@@ -412,11 +452,13 @@ export default function ZodIsYourFriend(): JSX.Element {
           '});',
         ]}
       </CodeWrapper>
+
       <TocHeader
         href={`/blog/${pathname}`}
         id="environment"
         text="Environment Variables"
       />
+
       <Paragraph>
         As a bonus, and a testament to the flexibility of Zod. For every
         project, I always include a .environment.ts file which reads
@@ -429,6 +471,7 @@ export default function ZodIsYourFriend(): JSX.Element {
         process.env has to be shotgun parsed. So we can simply parse it with
         Zod.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const environmentSchema = z.object({',
@@ -441,6 +484,7 @@ export default function ZodIsYourFriend(): JSX.Element {
           'environment.OPENAI_KEY // Type is string, not string | undefined!',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This conveniently forces environment variables to be checked when the
         app is started or during build. If something is missing, it throws and

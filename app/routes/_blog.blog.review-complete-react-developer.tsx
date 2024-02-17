@@ -6,6 +6,7 @@ export default function () {
   return (
     <>
       <Heading variant="h3">The Update</Heading>
+
       <Paragraph>
         In the 2021 update, Zero To Mastery seemingly took a stance against
         React Hooks. The coverage of hooks was lackluster and the appended
@@ -17,6 +18,7 @@ export default function () {
         or two footnote videos, it&apos;s all brand new with the latest
         approaches and knowledge.
       </Paragraph>
+
       <Paragraph>
         The courses first small project does start by teaching classes but
         quickly rewrites it to hooks in following videos. Yihua argues that
@@ -28,7 +30,9 @@ export default function () {
         be using them over class components. Any new projects should absolutely
         be using them.
       </Paragraph>
+
       <Heading variant="h3">The Good</Heading>
+
       <Paragraph>
         I am overall very impressed with this course. It&apos;s great for people
         who already know web development and want to get into React. Starting
@@ -40,6 +44,7 @@ export default function () {
         hooks, Redux has remained a sticky thorn in the side of the ecosystem.
         And that makes it still worth learning.
       </Paragraph>
+
       <Paragraph>
         The course also gives a general overview and introduction to GraphQL and
         how Apollo Client can be used as a state management tool to replace a
@@ -49,7 +54,9 @@ export default function () {
         course was first created and I&apos;m happy to see Yihua making the
         updates that are needed to keep it relevant.
       </Paragraph>
+
       <Heading variant="h3">The Bad</Heading>
+
       <Paragraph>
         There is one detail that really annoyed me in the coverage of hooks,
         however. Yihua explains the useEffect hook dependency array as allowing
@@ -66,13 +73,14 @@ export default function () {
         place the correct dependencies. The Kent C. Dodds course covers this in
         greater detail.
       </Paragraph>
+
       <Paragraph>
         Yihua also makes heavy use of SASS and Styled Components in this course.
         To me these tools are very bad abstractions. Styled Components had some
         importance before{' '}
         <A
-          href="https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/"
           isExternal
+          href="https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/"
         >
           React supported CSS modules
         </A>
@@ -84,7 +92,9 @@ export default function () {
         first you are handicapping your knowledge of how CSS actually works and
         how much simpler it is to do the exact same thing.
       </Paragraph>
+
       <Heading variant="h3">The Verdict</Heading>
+
       <Paragraph>
         This 2022 update is impressive enough to me that I want to take the
         course again in full, rebuilding the app as they did and following along
@@ -93,6 +103,7 @@ export default function () {
         project and another large one without breaking up the context of what
         its teaching.
       </Paragraph>
+
       <Paragraph>
         I won&apos;t complain too much about the usage of SASS and Styled
         Components. While they may be useless, I wouldn&apos;t recommend this
@@ -100,6 +111,7 @@ export default function () {
         taking this course, you should have the knowledge to form your own
         educated opinion about these things.
       </Paragraph>
+
       <Paragraph>
         The coverage of useEffect is very unfortunate. But, while I
         wouldn&apos;t consider this course for beginner developers, I would
@@ -109,11 +121,12 @@ export default function () {
         useEffect is dangerous, but it won&apos;t cause issues in this app, and
         can be corrected in more advanced courses.
       </Paragraph>
+
       <Paragraph>
         So because of the quality of presentation, the coverage of many
         different modern approaches to state management, and a very impressive
         turnaround on the update, I give Yihua Zhang&apos;s{' '}
-        <A href="https://zerotomastery.io/courses/learn-react/" isExternal>
+        <A isExternal href="https://zerotomastery.io/courses/learn-react/">
           Complete React Developer
         </A>{' '}
         a 5 out of 5.

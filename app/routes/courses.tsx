@@ -52,6 +52,7 @@ export default function Courses(): JSX.Element | null {
   return (
     <>
       <Heading variant="h1">Learn Web Dev</Heading>
+
       <Paragraph>
         I have been maintaining this list of course for over 4 years. It&apos;s
         meant as a way to provide a straightforward curriculum of what you need
@@ -59,6 +60,7 @@ export default function Courses(): JSX.Element | null {
         given point in time, I believe this is the best way to get started with,
         and learn everything you need to know to work with the web.
       </Paragraph>
+
       <Paragraph>
         <span className="font-bold">
           What about free sources like Odin Project?
@@ -75,13 +77,14 @@ export default function Courses(): JSX.Element | null {
         mental models, and advice that can be provided by experienced, quality
         instructors.
       </Paragraph>
+
       <Accordion variant="bordered">
         {courses.map((course, index) => {
           const INCREMENT = 1;
           const title = `#${index + INCREMENT} ${course.title}`;
 
           return (
-            <AccordionItem aria-label={title} key={course._id} title={title}>
+            <AccordionItem key={course._id} aria-label={title} title={title}>
               <div>
                 <span className="font-bold">Instructors:</span>{' '}
                 {authorFormat.format(
@@ -90,14 +93,16 @@ export default function Courses(): JSX.Element | null {
                   }),
                 )}
               </div>
+
               <div>
                 <span className="font-bold">Publisher:</span>{' '}
                 {course.publisher.name}
               </div>
+
               <div className="mt-3 flex gap-2">
                 {course.links.map(link => {
                   return (
-                    <A href={link} isExternal key={link} showAnchorIcon>
+                    <A key={link} isExternal showAnchorIcon href={link}>
                       {new URL(link).hostname}
                     </A>
                   );

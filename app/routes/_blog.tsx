@@ -81,17 +81,20 @@ export default function BlogLayout(): JSX.Element | null {
         currentSlug={loaderData.slug.current}
         title={loaderData.title}
       />
+
       <div className="my-4 grid gap-4 border-b-2 sm:grid-cols-2-max-content">
         <FeaturedImage
           description={loaderData.featuredImage.description}
           imageUrl={imageUrl}
         />
+
         <BlogMetadata
           authors={loaderData.authors}
           title={loaderData.title}
           updatedAt={loaderData.updatedAt}
         />
       </div>
+
       <Outlet />
     </>
   );

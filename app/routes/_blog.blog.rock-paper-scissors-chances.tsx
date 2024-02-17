@@ -76,56 +76,69 @@ export default function RockPaperScissorsChances(): JSX.Element {
 
   return (
     <div>
-      <div>Times Won: {currentStreak}</div>
+      <div>
+        Times Won:
+        {currentStreak}
+      </div>
+
       <div>Chances of Winning:</div>
+
       <div>
         1 in {numberFormatter.format(Math.round(100 / chances))} /{' '}
         {percentageFormatter.format(chances)}
       </div>
+
       <div>
         <span className="font-bold">Last Round:</span> {lastRoundMessage}
       </div>
+
       <div className="my-4 flex gap-4">
         <Button
           className="h-max p-2"
-          onPress={handleRock}
           type="button"
           variant="bordered"
+          onPress={handleRock}
         >
           <Image
             height={50}
             src="https://imagedelivery.net/J0w2cdNV8utZEEOrxN9WDQ/1fa6f1ae-21fb-433f-db2e-c884e8904500/public"
             width={50}
           />
+
           <div>Rock</div>
         </Button>
+
         <Button
           className="h-max p-2"
-          onPress={handlePaper}
           type="button"
           variant="bordered"
+          onPress={handlePaper}
         >
           <Image
             height={50}
             src="https://imagedelivery.net/J0w2cdNV8utZEEOrxN9WDQ/72e8b879-a70c-4adc-a70d-49faa0a96c00/public"
             width={50}
           />
+
           <div>Paper</div>
         </Button>
+
         <Button
           className="h-max p-2"
-          onPress={handleScissors}
           type="button"
           variant="bordered"
+          onPress={handleScissors}
         >
           <Image
             height={50}
             src="https://imagedelivery.net/J0w2cdNV8utZEEOrxN9WDQ/2bf2b198-8230-4707-72c6-ce280e7e6200/public"
             width={50}
           />
+
           <div>Scissors</div>
         </Button>
       </div>
+
       <YouTube
         id="PmWQmZXYd74"
         title="Can You Win This Game of Rock, Paper, Scissors?"

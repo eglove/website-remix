@@ -12,6 +12,7 @@ export default function () {
         population from the ability to use our apps. Which has increasingly
         become a legal battle.
       </Paragraph>
+
       <Paragraph>
         I will start this review by saying that this course, Testing
         Accessibility, is way too expensive. The pricing is very explicitly
@@ -20,6 +21,7 @@ export default function () {
         we talk about actively excluding people from participating, this course
         is guilty by it&apos;s unfair pricing scheme.
       </Paragraph>
+
       <Paragraph>
         On the content itself, it uses a mixture of text and video. Oftentimes
         the videos will abruptly cut off mid sentence, have some text in
@@ -29,6 +31,7 @@ export default function () {
         is very poorly done and I don&apos;t get the feeling this course was
         given much attention.
       </Paragraph>
+
       <Paragraph>
         The example app &ldquo;Camspots&rdquo; and the problems around it are
         optimized for the course itself and it&apos;s short videos. You can
@@ -38,6 +41,7 @@ export default function () {
         like you&apos;re doing much. As opposed to an instructor like Wes Bos
         who can make you feel like you&apos;re building something together.
       </Paragraph>
+
       <Paragraph>
         I think in terms of thinking about accessibility, having an entire app
         isn&apos;t entirely necessary. Maybe building out components from
@@ -45,6 +49,7 @@ export default function () {
         date picker that Marcy comes back to often, but the instruction on code
         always feels like a side effect, not an integrated piece of the course.
       </Paragraph>
+
       <Paragraph>
         Simply focusing more on what developers should be getting out of this
         course rather than running through some preplanned script would go a
@@ -53,6 +58,7 @@ export default function () {
         finish in a sort of simulated paired-programming environment gives the
         context needed to learn the material in a way that sticks.
       </Paragraph>
+
       <Paragraph>
         The information in the course itself is very high quality and more
         detailed than I&apos;ve seen in any other course around accessibility.

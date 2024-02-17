@@ -23,16 +23,17 @@ export function TableOfContents(): JSX.Element {
 
   return (
     <Table
-      aria-label="Table of Contents"
-      className="max-w-sm"
       isCompact
       isStriped
+      aria-label="Table of Contents"
+      className="max-w-sm"
     >
       <TableHeader columns={columns}>
         {column => {
           return <TableColumn key={column.key}>{column.label}</TableColumn>;
         }}
       </TableHeader>
+
       <TableBody items={sections}>
         {section => {
           return (

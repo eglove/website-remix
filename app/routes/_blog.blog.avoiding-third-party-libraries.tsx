@@ -10,6 +10,7 @@ export default function () {
         important to remember that sometimes the simplest solution is the best
         one.
       </Paragraph>
+
       <Paragraph>
         In the world of web development, there are many libraries and frameworks
         that offer solutions for common problems, such as authentication and
@@ -17,6 +18,7 @@ export default function () {
         their own set of problems, such as bloat and potential security
         vulnerabilities.
       </Paragraph>
+
       <Paragraph>
         For example, when it comes to authentication, many developers use
         specialized libraries like{' '}
@@ -26,6 +28,7 @@ export default function () {
         be a more secure and efficient solution than relying on a third-party
         library.
       </Paragraph>
+
       <Paragraph>
         Or the use of global providers for managing light theme vs dark theme.
         While these libraries can be useful, the
@@ -33,6 +36,7 @@ export default function () {
         user&apos;s device settings and provide a more consistent experience
         across all of their apps.
       </Paragraph>
+
       <Paragraph>
         Furthermore, when it comes to network data, many developers will try to
         shove everything into a global provider such as with Redux. But state
@@ -41,8 +45,9 @@ export default function () {
         often better to use a simpler approach that does support caching such as{' '}
         <A href="https://tanstack.com/query/v4/">React Query</A>,{' '}
         <A href="https://swc.rs">SWC</A>, or the upcoming features built into{' '}
-        <A href="https://beta.nextjs.org/docs/data-fetching/caching">NextJS</A>.
+        <A href="https://beta.nextjs.org/docs/data-fetching/caching">NextJS</A>
       </Paragraph>
+
       <Paragraph>
         While the React ecosystem offers many powerful tools, it&apos;s
         important for developers to remember the native solutions that are

@@ -16,12 +16,14 @@ export default function () {
         until you&apos;re looking at it a week later wondering what the point
         is. I could write `fetch()` in just as many keystrokes.
       </Paragraph>
+
       <Paragraph>
         While taking a Udemy course I was watching the instructor type out one
         of these HTTP method abstractions and started to write my own. What
         I&apos;ve done traditionally is create an object that maps a bunch of
         functions which all return Request objects. Like this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           "const BASE_URL = 'https://jsonplaceholder.typicode.com'",
@@ -34,10 +36,12 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This makes it very easy to define a Request, call it later with fetch,
         and keep a level of customization when it&apos;s called.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'const response = await fetch(api.getTodos(1));',
@@ -45,18 +49,21 @@ export default function () {
           'const data = await response.json();',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         I think this works very well. You can define endpoints, add default
         request options, and override them when they&apos;re called. It works
         especially well when making use of the browsers Cache API because that
         cache uses Request objects as keys.
       </Paragraph>
+
       <Paragraph>
         But then I found myself using URL and URLSearchParams objects quite a
         bit. Typing out raw strings makes me nervous. Both of these objects
         provide a decent level of validation, and make things just a little bit
         easier than template strings. An example use would be this:
       </Paragraph>
+
       <CodeWrapper>
         {[
           "const BASE_URL = 'https://jsonplaceholder.typicode.com'",
@@ -69,6 +76,7 @@ export default function () {
           'await fetch(request)',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         This is a pretty powerful set of tools. So yesterday, while
         procrastinating on this Udemy course with it&apos;s API I don&apos;t
@@ -81,6 +89,7 @@ export default function () {
         global api object, or in the fetch itself. This is what I&apos;ve come
         up with so far:
       </Paragraph>
+
       <CodeWrapper>
         {[
           'import { Api } from "@ethang/fetch/api";',
@@ -121,6 +130,7 @@ export default function () {
           '});',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Now, I know what it looks like, it looks like I&apos;ve just abtracted
         the HTTP method and threw in a Zod schema. But did you notice you
@@ -128,6 +138,7 @@ export default function () {
         of the baseUrl? Pretty cool right? But the flexibility comes in the
         fetch.
       </Paragraph>
+
       <CodeWrapper>
         {[
           "const { data, errors, isSuccess } = await api.fetch('getTodos', {",
@@ -139,6 +150,7 @@ export default function () {
           '// https://jsonplaceholder.typicode.com/todos?filterBy=name&orderBy=date',
         ]}
       </CodeWrapper>
+
       <CodeWrapper>
         {[
           "const { data, errors, isSuccess } = await api.fetch('getTodo', {",
@@ -149,12 +161,14 @@ export default function () {
           '// https://jsonplaceholder.typicode.com/todos/1',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Totally type safe too! The returned data object will match to the output
         type of the the Zod schema given to the request. When you call
         `api.fetch(&apos;`, your IDE will give you hints with available strings
         matching to your methods.
       </Paragraph>
+
       <Paragraph>
         Just about everything can be overridden when you get to a lower level.
         For example, what if as a default you want all API requests to have a 60
@@ -162,6 +176,7 @@ export default function () {
         cache, except in one spot where you want it to have no cache? No
         worries.
       </Paragraph>
+
       <CodeWrapper>
         {[
           'import { Api } from "@ethang/fetch/api";',
@@ -183,6 +198,7 @@ export default function () {
           '}',
         ]}
       </CodeWrapper>
+
       <Paragraph>
         Of course, it&apos;s worth noting that because this depends on Cache
         API, it&apos;s subject to Cache API rules. There is a limited amount of
@@ -194,6 +210,7 @@ export default function () {
         more likely to just not use the caching option and depend on React Query
         instead.
       </Paragraph>
+
       <Paragraph>
         Regardless, I find this to be the most helpful way to centralize an API.
         There is a lot to work on still. What if I don&apos;t want
@@ -202,11 +219,13 @@ export default function () {
         thing. But so far, it feels comfortable and hits on every note I wanted
         it to. And I kinda&apos; like that.
       </Paragraph>
+
       <Paragraph>
-        <A href="https://github.com/eglove/fetch" isExternal>
+        <A isExternal href="https://github.com/eglove/fetch">
           github.com/eglove/fetch
         </A>
       </Paragraph>
+
       <SanityImage
         alt="Code for @ethang/fetch"
         height={593}

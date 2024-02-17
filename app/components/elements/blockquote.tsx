@@ -17,8 +17,14 @@ export function Blockquote({
   return (
     <blockquote className="my-4 border-l-4 border-gray-500 py-2 pl-4 italic">
       <p className="mb-2">{children}</p>
+
       <cite className="block text-right font-bold">
-        {!isNil(link) && <A href={link} isExternal>{`- ${source}`}</A>}
+        {!isNil(link) && (
+          <A isExternal href={link}>
+            {`- ${source}`}
+          </A>
+        )}
+
         {isNil(link) && `- ${source}`}
       </cite>
     </blockquote>

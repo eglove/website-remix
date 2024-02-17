@@ -7,58 +7,66 @@ export default function () {
   return (
     <>
       <Heading variant="h3">Echoed Opinions</Heading>
+
       <Paragraph>
-        <A href="https://www.epicweb.dev/why-i-wont-use-nextjs" isExternal>
+        <A isExternal href="https://www.epicweb.dev/why-i-wont-use-nextjs">
           Why I Won&apos;t Use Next.js
         </A>
         , Kent C. Dodds
       </Paragraph>
+
       <Paragraph>
-        <A href="https://pilcrow.vercel.app/blog/nextjs-why" isExternal>
+        <A isExternal href="https://pilcrow.vercel.app/blog/nextjs-why">
           Next.js, just why?
         </A>
         , Pilcrow
       </Paragraph>
+
       <Paragraph>
         <A
-          href="https://twitter.com/tannerlinsley/status/1746970043836158330"
           isExternal
+          href="https://twitter.com/tannerlinsley/status/1746970043836158330"
         >
           ...dancing around experimental APIs that my open source users think
           are officially ready for prime time
         </A>
         , Tanner Linsley
       </Paragraph>
+
       <Paragraph>
-        <A href="https://blog.cassidoo.co/post/annoyed-at-react/" isExternal>
+        <A isExternal href="https://blog.cassidoo.co/post/annoyed-at-react/">
           Kind of annoyed at React
         </A>
         , Cassidy Williams
       </Paragraph>
+
       <Paragraph>
         <A
-          href="https://macwright.com/2024/01/03/miffed-about-react"
           isExternal
+          href="https://macwright.com/2024/01/03/miffed-about-react"
         >
           Increasingly miffed about the state of React releases
         </A>
         , Tom MacWright
       </Paragraph>
+
       <Paragraph>
-        <A href="https://www.youtube.com/watch?v=oQiEZ8adag0" isExternal>
+        <A isExternal href="https://www.youtube.com/watch?v=oQiEZ8adag0">
           React&apos;s becoming a bit weird...
         </A>
         , Maximilian Schwarzmuller
       </Paragraph>
+
       <Paragraph>
         <A
-          href="https://www.flightcontrol.dev/blog/nextjs-app-router-migration-the-good-bad-and-ugly"
           isExternal
+          href="https://www.flightcontrol.dev/blog/nextjs-app-router-migration-the-good-bad-and-ugly"
         >
           Next.Js App Router Migration: The Good, Bad, And Ugly
         </A>
         , Brandon Bayer
       </Paragraph>
+
       <Paragraph>
         I&apos;ve been a Vercel and NextJS stan for years. Since version 7 when
         it was being compared to Jekyll and Hugo, I&apos;ve been defending it as
@@ -69,6 +77,7 @@ export default function () {
         convince for the last 5 years, I&apos;m sorry we couldn&apos;t meet in
         the middle.
       </Paragraph>
+
       <Paragraph>
         I&apos;m done with NextJS for the same reason a lot of people are
         hearing about for the first time and thinking, &ldquo;this is actually
@@ -80,6 +89,7 @@ export default function () {
         </A>
         .
       </Paragraph>
+
       <Blockquote
         link="https://react.dev/learn/start-a-new-react-project"
         source="Start a New React Project"
@@ -88,6 +98,7 @@ export default function () {
         you&apos;re looking to start a production-ready project, Next.js is a
         great place to start.
       </Blockquote>
+
       <Blockquote source="Next.js Conf 2022, October 25, 2022">
         I&apos;ve been thinking of NextJS 13 as really like, this is the real
         React 18 release. Because even though we have a lot of primitives in
@@ -101,6 +112,7 @@ export default function () {
         React community to now be able to take advantage of all of these
         improvements that we spent so many years researching and building.
       </Blockquote>
+
       <Blockquote
         link="https://twitter.com/dan_abramov/status/1585080534488985601"
         source="Dan Abramov, Oct 25, 2022"
@@ -110,6 +122,7 @@ export default function () {
         stack integration. the most basic one is server rendering; it makes
         sense to render React to HTML, but this requires a bit of manual wiring!
       </Blockquote>
+
       <Blockquote
         link="https://twitter.com/dan_abramov/status/1585076899126345728"
         source="Dan Abramov, Oct 25, 2022"
@@ -120,7 +133,9 @@ export default function () {
         it&apos;s focused on pieces where deep integration with React has most
         value.
       </Blockquote>
+
       <Heading variant="h3">The Abysmal Handling of App Router</Heading>
+
       <Paragraph>
         Reacts big new change that has lead them to finally recommend frameworks
         is React Server Components. An incredible feature who&apos;s
@@ -138,6 +153,7 @@ export default function () {
         building production apps with app router. Which I&apos;ll get into more
         later.
       </Paragraph>
+
       <Paragraph>
         Not much longer after, a second conference for the year is scheduled and
         announced by Vercel. Everyone knows what&apos;s coming, it&apos;s just a
@@ -149,9 +165,10 @@ export default function () {
         issues to them. &ldquo;It&apos;s pretty much ready now. But we need more
         reproducible bugs.&rdquo;
       </Paragraph>
+
       <Paragraph>
         App router is{' '}
-        <A href="https://nextjs.org/blog/next-13-4" isExternal>
+        <A isExternal href="https://nextjs.org/blog/next-13-4">
           announced as ready for production on May 4, 2023
         </A>{' '}
         and create-next-app now recommends starting with it. It is not done. We
@@ -161,6 +178,7 @@ export default function () {
         begin with. Vercel is communicating through the filter of PR and
         marketing and they are not being transparent.
       </Paragraph>
+
       <Blockquote
         link="https://twitter.com/dan_abramov/status/1673394979106856960"
         source="Dan Abramov, Jun. 26 2023"
@@ -169,6 +187,7 @@ export default function () {
         discourse. at least atm. not good energy. i wonder what a fun and
         playful version of this could look like
       </Blockquote>
+
       <Blockquote
         link="https://twitter.com/dan_abramov/status/1702437951236395087"
         source="Dan Abramov, Jun. 30 2023"
@@ -178,6 +197,7 @@ export default function () {
         non-heckin-stop. but my personal feeling is that this attitude and
         climate will eventually burn people out one by one. no future is assured
       </Blockquote>
+
       <Blockquote
         link="https://twitter.com/dan_abramov/status/1702437951236395087"
         source="Dan Abramov, Sep. 14 2023"
@@ -187,6 +207,7 @@ export default function () {
         is jerky. marked as stable early but clearly (imo!!!) a move into the
         right direction, with the visual layer architecture persisting to now
       </Blockquote>
+
       <Paragraph>
         Dan is the only person that got close to speaking honestly about the
         reality of app router and it&apos;s RSC implementation. He&apos;s quite
@@ -200,6 +221,7 @@ export default function () {
         on progress. It&apos;s unhealthy to take criticism against a company or
         product as an individual, no matter how much you&apos;ve contributed.
       </Paragraph>
+
       <Paragraph>
         While the bloggers were enjoying the ability to async/await their
         favorite CMS directly in a React component, a lot of people were
@@ -216,7 +238,9 @@ export default function () {
         bugs it had caused. This is barely touching the tip of the iceberg in
         terms of issues app router has and still has today.
       </Paragraph>
+
       <Heading variant="h3">Why Leave NextJS Now?</Heading>
+
       <Paragraph>
         When App Router went stable, I tried building a new application with it
         from scratch. Dynamic content with lots of updates by multiple users.
@@ -226,6 +250,7 @@ export default function () {
         One that I don&apos;t trust to work and one that I&apos;m not proud of
         showing off. It killed my energy for the project entirely.
       </Paragraph>
+
       <Paragraph>
         I won&apos;t say app router didn&apos;t work for everything I migrated
         it to. I have a basic site that pulls data from Sanity. Incremental
@@ -237,6 +262,7 @@ export default function () {
         multiple categories of data on the same page. This is what told me
         I&apos;m done with NextJS.
       </Paragraph>
+
       <Paragraph>
         The simple answer to multiple paginations on the same page is client
         side rendering. But this caused an issue with NextJS because fetching
@@ -250,6 +276,7 @@ export default function () {
         that you moved to the next page on goes into a loading spinner or
         skeleton AGAIN, before finally showing the content again.
       </Paragraph>
+
       <Paragraph>
         The official NextJS solution to this seems to be parallel routing. But
         parallel routing has to be setup in a layout file. And for the homepage,
@@ -259,12 +286,14 @@ export default function () {
         another route. And I&apos;ll say, btw, that next config rewrites are
         just redirects. They don&apos;t exactly work.
       </Paragraph>
+
       <Paragraph>
         I called this out from the beginning. Using file naming conventions to
         handle logic was a bad idea. It creates restrictions and removes escape
         hatches. This is the wrong kind of opinionation. There&apos;s no
         possibility for an inversion of control.
       </Paragraph>
+
       <Paragraph>
         And of course the NextJS subreddit has become an advertising board,
         immediately deleting any criticism about app router beyond simple issues
@@ -276,6 +305,7 @@ export default function () {
         lets be honest, is primarily hobbyists who aren&apos;t deploying most of
         what they&apos;re doing.
       </Paragraph>
+
       <Paragraph>
         When you couple this with all the other frustrations I had building with
         NextJS, I found it&apos;s just not worth it. So I started looking for
@@ -286,7 +316,9 @@ export default function () {
         anything that isn&apos;t a GraphQL CMS. Svelte has too much Vercel
         influence who I&apos;ve lost all trust in. So I finally landed on Astro.
       </Paragraph>
+
       <Heading variant="h3">Astro &gt; NextJS</Heading>
+
       <Paragraph>
         Astro provides an easy way to hydrate client side components via their
         signature islands. And allow you to prebuild pages so they aren&apos;t
@@ -294,6 +326,7 @@ export default function () {
         a dynamic API route that needs pagination params. It just checks all the
         boxes with none of the headaches.
       </Paragraph>
+
       <Paragraph>
         The compile step of Astro is refreshing. I get a simple dist directory
         and I can use node to run the index file. Build it with a Dockerfile and
@@ -304,30 +337,35 @@ export default function () {
         I can focus on building. But there are plenty of great options out there
         that are honestly better than Vercel. So my current stack is as follows:
       </Paragraph>
+
       <ul className="list-inside list-disc">
         <li>
           Hosting:{' '}
-          <A href="https://render.com" isExternal>
+          <A isExternal href="https://render.com">
             Render.com
           </A>
           , Docker Runtime
         </li>
+
         <li>
           Database:{' '}
-          <A href="https://neon.tech" isExternal>
+          <A isExternal href="https://neon.tech">
             Neon.tech
           </A>
         </li>
+
         <li>
           Domain: <A href="https://www.cloudflare.com">Cloudflare</A>
         </li>
       </ul>
+
       <Paragraph>
         In the future, I&apos;m likely to move images to Cloudflare as well. (Or
         Cloudinary) I&apos;m very surprised by the number of simple services
         Cloudflare offers. They remind me of a network service version of
         DigitalOcean. A couple clicks and you get what you wanted.
       </Paragraph>
+
       <Paragraph>
         Astro also provides a simple way to have some fun with multiple
         frameworks such as LitHTML which I&apos;ve always wanted to make use of.
