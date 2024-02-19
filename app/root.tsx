@@ -1,4 +1,4 @@
-import { isNil } from '@ethang/util/data.js';
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import { Card, CardBody } from '@nextui-org/card';
 import { NextUIProvider } from '@nextui-org/react';
 import { cssBundleHref } from '@remix-run/css-bundle';

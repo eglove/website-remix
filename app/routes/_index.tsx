@@ -1,4 +1,4 @@
-import { betterNumber } from '@ethang/util/better-number.js';
+import { betterNumber } from '@ethang/toolbelt/number/number.js';
 import type {
   LoaderFunctionArgs,
   MetaFunction,

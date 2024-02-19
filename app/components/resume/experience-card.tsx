@@ -1,4 +1,5 @@
-import { isEmpty, isNil } from '@ethang/util/data.js';
+import { isEmpty } from '@ethang/toolbelt/is/empty.js';
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import type { JSX, ReactNode } from 'react';
 import type { ReadonlyDeep } from 'type-fest';

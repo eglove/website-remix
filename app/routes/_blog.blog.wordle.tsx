@@ -1,10 +1,10 @@
 import 'react-toastify/dist/ReactToastify.css';
 
-import { range } from '@ethang/util/data.js';
 import { faker } from '@faker-js/faker';
 import type { TypedResponse } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
+import lodash from 'lodash';
 import type { JSX } from 'react';
 import { ToastContainer } from 'react-toastify';
 
@@ -31,7 +31,7 @@ export default function Wordle(): JSX.Element {
   return (
     <div>
       <div>
-        {range(0, maxGuessesAllowed).map(index => {
+        {lodash.range(0, maxGuessesAllowed).map(index => {
           return (
             <Guess
               key={index}

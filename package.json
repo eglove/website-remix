@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@ethang/hooks": "^1.5.23",
+    "@ethang/toolbelt": "^1.0.11",
     "@ethang/use-form": "^1.6.53",
-    "@ethang/util": "^3.1.1",
     "@faker-js/faker": "^8.4.1",
     "@heroicons/react": "^2.1.1",
     "@nextui-org/react": "^2.2.9",

@@ -1,5 +1,5 @@
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import { useForm } from '@ethang/use-form/index.js';
-import { isNil } from '@ethang/util/data.js';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import { Input } from '@nextui-org/input';
 import { Snippet } from '@nextui-org/snippet';

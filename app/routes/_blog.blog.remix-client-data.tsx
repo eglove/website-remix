@@ -1,4 +1,4 @@
-import { isNil } from '@ethang/util/data.js';
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import { Button } from '@nextui-org/button';
 import { Link } from '@nextui-org/link';
 import type { ClientLoaderFunctionArgs } from '@remix-run/react';

@@ -1,4 +1,4 @@
-import { isNil } from '@ethang/util/data.js';
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import { Accordion, AccordionItem } from '@nextui-org/accordion';
 import type { MetaFunction, TypedResponse } from '@remix-run/node';
 import { json } from '@remix-run/node';

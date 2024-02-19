@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck ignore number types
 /* eslint-disable unicorn/prefer-number-properties */
+import { isBigIntOrNumber } from '@ethang/toolbelt/is/big-int-or-number.js';
 import { useForm } from '@ethang/use-form';
-import { isBigIntOrNumber } from '@ethang/util/number.js';
 import { Input } from '@nextui-org/input';
 
 import { CodeWrapper } from '../components/elements/code-wrapper';

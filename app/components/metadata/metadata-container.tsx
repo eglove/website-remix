@@ -1,4 +1,4 @@
-import { betterNumber } from '@ethang/util/better-number.js';
+import { betterNumber } from '@ethang/toolbelt/number/number.js';
 import { Card, CardFooter, CardHeader } from '@nextui-org/card';
 import { Pagination } from '@nextui-org/pagination';
 import type { PaginationItemRenderProps } from '@nextui-org/react';

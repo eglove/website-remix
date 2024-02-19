@@ -1,4 +1,4 @@
-import { isNil } from '@ethang/util/data.js';
+import { isNil } from '@ethang/toolbelt/is/nil.js';
 import lodash from 'lodash';
 import { DateTime } from 'luxon';
 
