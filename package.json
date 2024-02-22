@@ -30,20 +30,20 @@
     }
   },
   "dependencies": {
-    "@ethang/hooks": "^1.5.23",
-    "@ethang/toolbelt": "^1.0.11",
+    "@ethang/hooks": "^1.5.24",
+    "@ethang/toolbelt": "^1.0.18",
     "@ethang/use-form": "^1.6.53",
     "@faker-js/faker": "^8.4.1",
     "@heroicons/react": "^2.1.1",
     "@nextui-org/react": "^2.2.9",
-    "@remix-run/css-bundle": "^2.6.0",
-    "@remix-run/node": "^2.6.0",
-    "@remix-run/react": "^2.6.0",
-    "@remix-run/serve": "^2.6.0",
-    "@sanity/client": "^6.13.3",
+    "@remix-run/css-bundle": "^2.7.2",
+    "@remix-run/node": "^2.7.2",
+    "@remix-run/react": "^2.7.2",
+    "@remix-run/serve": "^2.7.2",
+    "@sanity/client": "^6.14.2",
     "@sanity/image-url": "^1.0.2",
     "color-convert": "^2.0.1",
-    "convert": "^4.14.1",
+    "convert": "^5.0.0",
     "framer-motion": "^11.0.5",
     "isbot": "^5.1.0",
     "lodash": "^4.17.21",
@@ -58,13 +58,13 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@ethang/project-builder": "^1.1.21",
-    "@remix-run/dev": "^2.6.0",
-    "@remix-run/eslint-config": "^2.6.0",
+    "@ethang/project-builder": "^1.1.24",
+    "@remix-run/dev": "^2.7.2",
+    "@remix-run/eslint-config": "^2.7.2",
     "@types/color-convert": "^2.0.3",
     "@types/lodash": "^4.14.202",
     "@types/luxon": "^3.4.2",
-    "@types/react": "^18.2.55",
+    "@types/react": "^18.2.57",
     "@types/react-dom": "^18.2.19",
     "@types/react-syntax-highlighter": "^15.5.11",
     "@types/ua-parser-js": "^0.7.39",
@@ -73,6 +73,7 @@
     "eslint-config-ethang": "^14.0.9",
     "tailwindcss": "^3.4.1",
     "type-fest": "^4.10.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
   }
 }

@@ -28,7 +28,9 @@ export function PaginationNextPrevious({
       isDisabled={isDisabled}
     >
       <ChevronIcon
-        className={twMerge(type === PaginationItemType.NEXT && 'rotate-180')}
+        className={twMerge(
+          type === PaginationItemType.NEXT && 'rotate-180 text-black',
+        )}
       />
     </A>
   );
