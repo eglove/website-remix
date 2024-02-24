@@ -18,6 +18,10 @@ import { useMemo, useState } from 'react';
 
 import { Heading } from '../components/elements/heading';
 
+export const headers = {
+  'Cache-Control': 'immutable, public',
+};
+
 export default function CurrencyFormat() {
   const locales = useMemo(() => {
     return locale.all.map(locale => {
