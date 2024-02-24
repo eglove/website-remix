@@ -36,9 +36,11 @@ export default function CurrencyFormat() {
   const selectedLocaleTag =
     lodash.find(locales, { id: selectedLocale })?.tag ?? '';
 
-  const formatter = Intl.NumberFormat(selectedLocaleTag, {
-    currency: selectedCurrency,
-    style: 'currency',
+  const formatter = tryCatch(() => {
+    return Intl.NumberFormat(selectedLocaleTag, {
+      currency: selectedCurrency,
+      style: 'currency',
+    });
   });
 
   const rows = useMemo(() => {
@@ -139,7 +141,9 @@ export default function CurrencyFormat() {
         />
       </form>
       <Snippet prefix="" className="my-4 max-w-md">
-        {formatter.format(Number(amount))}
+        {formatter.isSuccess
+          ? formatter.data.format(Number(amount))
+          : formatter.error.message}
       </Snippet>
       <Table
         topContent={<div>Total: {Intl.NumberFormat().format(rows.length)}</div>}
