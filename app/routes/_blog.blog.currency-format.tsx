@@ -39,7 +39,7 @@ export default function CurrencyFormat() {
     return Intl.supportedValuesOf('currency');
   }, []);
 
-  const [selectedLocale, setSelectedLocale] = useState<string>('enUS');
+  const [selectedLocale, setSelectedLocale] = useState<string>('enzUS');
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
   const [amount, setAmount] = useState('10000.55');
 
