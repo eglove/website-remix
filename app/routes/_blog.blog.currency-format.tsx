@@ -65,7 +65,7 @@ export default function CurrencyFormat() {
     }
 
     return rows;
-  }, [amount, currencies, locales]);
+  }, [currencies, locales]);
 
   const columns = [
     {
