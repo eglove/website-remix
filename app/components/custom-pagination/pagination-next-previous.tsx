@@ -29,7 +29,7 @@ export function PaginationNextPrevious({
     >
       <ChevronIcon
         className={twMerge(
-'text-black',
+          'text-black',
           type === PaginationItemType.NEXT && 'rotate-180',
         )}
       />
