@@ -31,7 +31,7 @@ type CurrencyDefinitions = {
 export default function CurrencyFormat() {
   const locales = useMemo(() => {
     return locale.all.map(locale => {
-      return { id: locale.tag.replaceAll('-', ''), tag: locale.tag };
+      return { id: locale.tag.replaceAll('-', 'z'), tag: locale.tag };
     });
   }, []);
 
@@ -41,7 +41,7 @@ export default function CurrencyFormat() {
 
   const [selectedLocale, setSelectedLocale] = useState<string>('enUS');
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
-  const [amount, setAmount] = useState('10000');
+  const [amount, setAmount] = useState('10000.55');
 
   const selectedLocaleTag =
     lodash.find(locales, { id: selectedLocale })?.tag ?? '';
@@ -69,7 +69,7 @@ export default function CurrencyFormat() {
         if (uniqueFormatter.isSuccess) {
           definitions.push({
             currency,
-            formatted: uniqueFormatter.data.format(10_000),
+            formatted: uniqueFormatter.data.format(10_000.55),
             locale: item.tag,
           });
         }
@@ -112,7 +112,7 @@ export default function CurrencyFormat() {
         <Autocomplete
           label="Locale"
           defaultItems={locales}
-          defaultSelectedKey="enUS"
+          defaultSelectedKey="enzUS"
           selectedKey={selectedLocale}
           onSelectionChange={value => {
             setSelectedLocale(value as string);
