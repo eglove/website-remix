@@ -57,7 +57,7 @@ export default function CurrencyFormat() {
         if (uniqueFormatter.isSuccess) {
           rows.push({
             currency,
-            formatted: uniqueFormatter.data.format(Number(amount)),
+            formatted: uniqueFormatter.data.format(10_000),
             locale: item.tag,
           });
         }
