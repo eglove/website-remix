@@ -14,13 +14,19 @@ import {
 } from '@nextui-org/table';
 import locale from 'locale-codes';
 import lodash from 'lodash';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Heading } from '../components/elements/heading';
 
 export const headers = {
   'Cache-Control': 'immutable, public',
 };
+
+type CurrencyDefinitions = {
+  currency: string;
+  formatted: string;
+  locale: string;
+}[];
 
 export default function CurrencyFormat() {
   const locales = useMemo(() => {
@@ -47,8 +53,10 @@ export default function CurrencyFormat() {
     });
   });
 
-  const rows = useMemo(() => {
-    const rows: { currency: string; formatted: string; locale: string }[] = [];
+  const [rows, setRows] = useState<CurrencyDefinitions>([]);
+
+  useEffect(() => {
+    const definitions: CurrencyDefinitions = [];
     for (const item of locales) {
       for (const currency of currencies) {
         const uniqueFormatter = tryCatch(() => {
@@ -59,7 +67,7 @@ export default function CurrencyFormat() {
         });
 
         if (uniqueFormatter.isSuccess) {
-          rows.push({
+          definitions.push({
             currency,
             formatted: uniqueFormatter.data.format(10_000),
             locale: item.tag,
@@ -68,7 +76,7 @@ export default function CurrencyFormat() {
       }
     }
 
-    return rows;
+    setRows(definitions);
   }, [currencies, locales]);
 
   const columns = [
@@ -174,7 +182,7 @@ export default function CurrencyFormat() {
             return <TableColumn key={column.key}>{column.label}</TableColumn>;
           }}
         </TableHeader>
-        <TableBody items={items}>
+        <TableBody emptyContent="Loading" items={items}>
           {row => {
             return (
               <TableRow key={`${row.locale}${row.currency}`}>
