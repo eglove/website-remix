@@ -157,9 +157,60 @@ export default function CurrencyFormat() {
           ? formatter.data.format(Number(amount))
           : formatter.error.message}
       </Snippet>
+      <Table className="my-4" title="Notable Examples">
+        <TableHeader>
+          <TableColumn>Locale</TableColumn>
+          <TableColumn>Currency</TableColumn>
+          <TableColumn>Formatted</TableColumn>
+          <TableColumn>Notes</TableColumn>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>en-US</TableCell>
+            <TableCell>USD</TableCell>
+            <TableCell>$10,000.55</TableCell>
+            <TableCell>
+              No need to specify currency name for local formats.
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>en-US</TableCell>
+            <TableCell>AUD</TableCell>
+            <TableCell>A$10,000.50</TableCell>
+            <TableCell>Spacing between symbols may change.</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>pt-Br</TableCell>
+            <TableCell>USD</TableCell>
+            <TableCell>US$ 10.000,55</TableCell>
+            <TableCell>Commas and periods are often swapped.</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>en-US</TableCell>
+            <TableCell>JPY</TableCell>
+            <TableCell>¥10,001</TableCell>
+            <TableCell>Special characters/symbols.</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>en-US</TableCell>
+            <TableCell>KRW</TableCell>
+            <TableCell>10000.50 -&gt; ₩10,001</TableCell>
+            <TableCell>
+              Not all currencies use decimals, these should be rounded.
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>en-US</TableCell>
+            <TableCell>KRW</TableCell>
+            <TableCell>10000.49 -&gt; ₩10,000</TableCell>
+            <TableCell>Rounding down.</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
       <Table
+        title="All"
         topContent={<div>Total: {Intl.NumberFormat().format(rows.length)}</div>}
-        className="max-w-md"
+        className="my-4"
         aria-label="Currency Formats"
         bottomContent={
           pages > 0 ? (
