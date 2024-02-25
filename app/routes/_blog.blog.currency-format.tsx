@@ -49,6 +49,7 @@ export default function CurrencyFormat() {
   const formatter = tryCatch(() => {
     return Intl.NumberFormat(selectedLocaleTag, {
       currency: selectedCurrency,
+      currencySign: 'accounting',
       style: 'currency',
     });
   });
