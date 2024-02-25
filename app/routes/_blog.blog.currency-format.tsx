@@ -109,8 +109,9 @@ export default function CurrencyFormat() {
   return (
     <>
       <Heading variant="h2">Currency Formatter</Heading>
-      <form className="grid max-w-md grid-cols-3 gap-4">
+      <form className="flex max-w-md flex-wrap gap-4">
         <Autocomplete
+          size="sm"
           label="Locale"
           defaultItems={locales}
           defaultSelectedKey="enzUS"
@@ -128,6 +129,7 @@ export default function CurrencyFormat() {
           }}
         </Autocomplete>
         <Autocomplete
+          size="sm"
           label="Currency"
           defaultItems={currencies}
           defaultSelectedKey="USD"
@@ -145,6 +147,7 @@ export default function CurrencyFormat() {
           })}
         </Autocomplete>
         <Input
+          size="sm"
           type="number"
           value={amount}
           label="Amount"
