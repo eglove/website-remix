@@ -75,8 +75,8 @@ dependencies:
     specifier: ^10.0.5
     version: 10.0.5(react-dom@18.2.0)(react@18.2.0)
   tailwind-merge:
-    specifier: ^2.2.1
-    version: 2.2.1
+    specifier: ^2.2.2
+    version: 2.2.2
   ua-parser-js:
     specifier: ^1.0.37
     version: 1.0.37
@@ -90,7 +90,7 @@ dependencies:
 devDependencies:
   '@ethang/project-builder':
     specifier: ^1.1.26
-    version: 1.1.26(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.16)(rimraf@5.0.5)(simple-git@3.22.0)(tsup@8.0.2)(typescript@5.4.2)
+    version: 1.1.26(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.16)(rimraf@5.0.5)(simple-git@3.23.0)(tsup@8.0.2)(typescript@5.4.2)
   '@remix-run/dev':
     specifier: ^2.8.1
     version: 2.8.1(@remix-run/serve@2.8.1)(typescript@5.4.2)(vite@5.1.6)
@@ -1024,7 +1024,7 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@ethang/project-builder@1.1.26(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.16)(rimraf@5.0.5)(simple-git@3.22.0)(tsup@8.0.2)(typescript@5.4.2):
+  /@ethang/project-builder@1.1.26(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.16)(rimraf@5.0.5)(simple-git@3.23.0)(tsup@8.0.2)(typescript@5.4.2):
     resolution: {integrity: sha512-EgcwHja9mafLFifsTipkqDqsyOe9tiMwi9ttWVf/9nfLo5vMuH42b7tDdJH34U7980kbhNBywEYeaGH/9QI16w==}
     peerDependencies:
       '@ethang/util': ^3.1.1
@@ -1039,7 +1039,7 @@ packages:
       chalk: 5.3.0
       inquirer: 9.2.16
       rimraf: 5.0.5
-      simple-git: 3.22.0
+      simple-git: 3.23.0
       tsup: 8.0.2(postcss@8.4.35)(typescript@5.4.2)
       typescript: 5.4.2
     dev: true
@@ -9553,8 +9553,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  /simple-git@3.22.0:
-    resolution: {integrity: sha512-6JujwSs0ac82jkGjMHiCnTifvf1crOiY/+tfs/Pqih6iow7VrpNKRRNdWm6RtaXpvvv/JGNYhlUtLhGFqHF+Yw==}
+  /simple-git@3.23.0:
+    resolution: {integrity: sha512-P9ggTW8vb/21CAL/AmnACAhqBDfnqSSZVpV7WuFtsFR9HLunf5IqQvk+OXAQTfkcZep8pKnt3DV3o7w3TegEkQ==}
     dependencies:
       '@kwsites/file-exists': 1.1.1
       '@kwsites/promise-deferred': 1.1.1
@@ -9826,8 +9826,8 @@ packages:
     resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
     dev: false
 
-  /tailwind-merge@2.2.1:
-    resolution: {integrity: sha512-o+2GTLkthfa5YUt4JxPfzMIpQzZ3adD1vLVkvKE1Twl9UAhGsEbIZhHHZVRttyW177S8PDJI3bTQNaebyofK3Q==}
+  /tailwind-merge@2.2.2:
+    resolution: {integrity: sha512-tWANXsnmJzgw6mQ07nE3aCDkCK4QdT3ThPMCzawoYA2Pws7vSTCvz3Vrjg61jVUGfFZPJzxEP+NimbcW+EdaDw==}
     dependencies:
       '@babel/runtime': 7.24.0
     dev: false
@@ -9848,7 +9848,7 @@ packages:
     peerDependencies:
       tailwindcss: '*'
     dependencies:
-      tailwind-merge: 2.2.1
+      tailwind-merge: 2.2.2
       tailwindcss: 3.4.1
     dev: false
 
