@@ -47,7 +47,7 @@ export function Location(): JSX.Element {
             isExternal
             showAnchorIcon
             className="mb-4"
-            href={`https://maps.google.com/?q=${location.coords.latitude},${location.coords.longitude}`}
+            href={`https://maps.google.com/?q=${location.coords.latitude.toString()},${location.coords.longitude.toString()}`}
           >
             Open in Google Maps
           </A>

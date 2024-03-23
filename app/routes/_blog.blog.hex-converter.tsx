@@ -33,13 +33,13 @@ export default function (): JSX.Element {
   );
 
   const hsl = convert.hex.hsl(formState.color);
-  const hslString = `hsl(${hsl[0]}deg ${hsl[1]}% ${hsl[2]}%)`;
+  const hslString = `hsl(${hsl[0].toString()}deg ${hsl[1].toString()}% ${hsl[2].toString()}%)`;
 
   const rgb = convert.hex.rgb(formState.color);
-  const rgbString = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+  const rgbString = `rgb(${rgb[0].toString()}, ${rgb[1].toString()}, ${rgb[2].toString()})`;
 
   const hwb = convert.hex.hwb(formState.color);
-  const hwbString = `hwb(${hwb[0]}deg ${hwb[1]}% ${hwb[2]}%)`;
+  const hwbString = `hwb(${hwb[0].toString()}deg ${hwb[1].toString()}% ${hwb[2].toString()}%)`;
 
   const keyword = convert.hex.keyword(formState.color);
 

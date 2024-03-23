@@ -42,7 +42,7 @@ export async function getMetadatasByCategory(
     }
   }}`;
   const order = 'order(updatedAt desc)';
-  const paginate = `[${start}..${end}]`;
+  const paginate = `[${start.toString()}..${end.toString()}]`;
 
   const query = `{
     "metadata": ${where}${select} | ${order}${paginate},

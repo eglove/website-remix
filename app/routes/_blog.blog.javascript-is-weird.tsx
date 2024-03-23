@@ -42,12 +42,12 @@ export default function () {
 
       <CodeWrapper>
         {[
-          `isNaN(0/0) // ${isNaN(0 / 0)}`,
-          `isNaN("not a number") // ${isNaN('not a number')}`,
-          `isNaN(undefined) // ${isNaN()}`,
-          `isNaN(null) // ${isNaN(null)}`,
-          `isNaN("2") // ${isNaN('2')}`,
-          `isNaN(2) // ${isNaN(2)}`,
+          `isNaN(0/0) // ${String(isNaN(0 / 0))}`,
+          `isNaN("not a number") // ${String(isNaN('not a number'))}`,
+          `isNaN(undefined) // ${String(isNaN())}`,
+          `isNaN(null) // ${String(isNaN(null))}`,
+          `isNaN("2") // ${String(isNaN('2'))}`,
+          `isNaN(2) // ${String(isNaN(2))}`,
         ]}
       </CodeWrapper>
 
@@ -55,12 +55,12 @@ export default function () {
 
       <CodeWrapper>
         {[
-          `Number.isNaN(0/0) // ${Number.isNaN(0 / 0)}`,
-          `Number.isNaN("not a number") // ${Number.isNaN('not a number')}`,
-          `Number.isNaN(undefined) // ${Number.isNaN()}`,
-          `Number.isNaN(null) // ${Number.isNaN(null)}`,
-          `Number.isNaN("2") // ${Number.isNaN('2')}`,
-          `Number.isNaN(2) // ${Number.isNaN(2)}`,
+          `Number.isNaN(0/0) // ${String(Number.isNaN(0 / 0))}`,
+          `Number.isNaN("not a number") // ${String(Number.isNaN('not a number'))}`,
+          `Number.isNaN(undefined) // ${String(Number.isNaN())}`,
+          `Number.isNaN(null) // ${String(Number.isNaN(null))}`,
+          `Number.isNaN("2") // ${String(Number.isNaN('2'))}`,
+          `Number.isNaN(2) // ${String(Number.isNaN(2))}`,
         ]}
       </CodeWrapper>
 
@@ -84,12 +84,12 @@ export default function () {
 
       <CodeWrapper>
         {[
-          `isNumber(0/0) // ${isBigIntOrNumber(0 / 0)}`,
-          `isNumber("not a number") // ${isBigIntOrNumber('not a number')}`,
-          `isNumber(undefined) // ${isBigIntOrNumber()}`,
-          `isNumber(null) // ${isBigIntOrNumber(null)}`,
-          `isNumber("2") // ${isBigIntOrNumber('2')}`,
-          `isNumber(2) // ${isBigIntOrNumber(2)}`,
+          `isNumber(0/0) // ${String(isBigIntOrNumber(0 / 0))}`,
+          `isNumber("not a number") // ${String(isBigIntOrNumber('not a number'))}`,
+          `isNumber(undefined) // ${String(isBigIntOrNumber())}`,
+          `isNumber(null) // ${String(isBigIntOrNumber(null))}`,
+          `isNumber("2") // ${String(isBigIntOrNumber('2'))}`,
+          `isNumber(2) // ${String(isBigIntOrNumber(2))}`,
         ]}
       </CodeWrapper>
 
@@ -148,13 +148,13 @@ export default function () {
       <div className="grid gap-2">
         <CodeWrapper>
           {[
-            `${formState.value1} + ${formState.value2} === ${formState.expectedSum} // ${isEqual}`,
+            `${formState.value1} + ${formState.value2} === ${formState.expectedSum} // ${String(isEqual)}`,
           ]}
         </CodeWrapper>
 
         <CodeWrapper>
           {[
-            `areFloatsEqual(${formState.expectedSum}, ${formState.value1} + ${formState.value2}, ${formState.epsilon}) // ${isEpsilonEqual}`,
+            `areFloatsEqual(${formState.expectedSum}, ${formState.value1} + ${formState.value2}, ${formState.epsilon}) // ${String(isEpsilonEqual)}`,
           ]}
         </CodeWrapper>
       </div>

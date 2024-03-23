@@ -34,7 +34,7 @@ export function Connection(): JSX.Element {
       .then(data => {
         setIp((data as { ip: string }).ip);
       })
-      .catch(error => {
+      .catch((error: unknown) => {
         console.error(error);
       });
 
@@ -51,7 +51,7 @@ export function Connection(): JSX.Element {
 
         setSpeed(speedKbps);
       })
-      .catch(error => {
+      .catch((error: unknown) => {
         console.error(error);
       });
   }, []);

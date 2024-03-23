@@ -34,9 +34,9 @@ export function SkillBars(): JSX.Element {
                 <div
                   className="h-2 rounded bg-blue-500"
                   style={{
-                    width: `${
-                      (item.experience / experience[0].experience) * 100
-                    }%`,
+                    width: `${String(
+                      (item.experience / experience[0].experience) * 100,
+                    )}%`,
                   }}
                 />
               </div>

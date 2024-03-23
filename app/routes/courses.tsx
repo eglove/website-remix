@@ -81,7 +81,7 @@ export default function Courses(): JSX.Element | null {
       <Accordion variant="bordered">
         {courses.map((course, index) => {
           const INCREMENT = 1;
-          const title = `#${index + INCREMENT} ${course.title}`;
+          const title = `#${String(index + INCREMENT)} ${course.title}`;
 
           return (
             <AccordionItem key={course._id} aria-label={title} title={title}>
