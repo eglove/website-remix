@@ -68,6 +68,16 @@ export default function () {
       </Paragraph>
 
       <Paragraph>
+        <A
+          isExternal
+          href="https://ondrejvelisek.github.io/how-nextjs-breaks-react-fundamentals/"
+        >
+          How Next.js breaks React Fundamentals (Examples)
+        </A>
+        , Ondrej Velisek
+      </Paragraph>
+
+      <Paragraph>
         I&apos;ve been a Vercel and NextJS stan for years. Since version 7 when
         it was being compared to Jekyll and Hugo, I&apos;ve been defending it as
         a professional grade tool for building modern web applications. And just
